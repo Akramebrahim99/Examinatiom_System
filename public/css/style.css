@@ -1,0 +1,919 @@
+/**Root*/
+:root{
+    /*Fonts*/
+    --main-font: 'Roboto', sans-serif;
+    /*Fonts*/
+    /*navbar*/
+    /*logo*/
+    --logo-color:#3D37F1;
+    --logo-font:'Permanent Marker', cursive;
+    /*logo*/
+    --switch-color: #2A85C9;
+    --nav-hover-color:#3D37F1;/* Not a repetition of color but an easy change of color */
+    --nav-text-color:#090909;
+    /*navbar*/
+    --section-background: #FBFCFD;
+    --white-text-color: #FBFCFD;
+    /*Footer*/
+    --footer-color: #4B647E;
+    --shadow-color: #0000003d;
+    --border-color: #9a9a9a38;
+    --red-color: #e74343; /*it for 'x' shape in link exam card*/
+    --green-color: #36e226;
+    --link-color: #007bff;
+}
+::selection{
+    background-color: var(--nav-hover-color);
+    color: var(--white-text-color);
+}
+/**Root*/
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: var(--main-font);
+}
+a:hover{
+    text-decoration: none;
+}
+/** Start Navbar Scroll */
+.smart-scroll{
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    position: fixed;
+}
+.scrolled-down{transform:translateY(-100%); transition: all 0.5s ease-in-out;}
+.scrolled-up{transform:translateY(0); transition: all 0.5s ease-in-out;}
+/** End Navbar Scroll */
+
+/** Start Navbar */
+.navbar{
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    -webkit-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+    -moz-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+    -ms-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+    -o-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+    box-shadow: 0px -1px 29px 5px var(--shadow-color);
+}
+.bg-light{background-color:#fff !important;}/*bootstrap class*/
+.nav-link{padding: 8px 60px;}
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link{color: var(--nav-hover-color);}
+.navbar .navbar-brand{color: var(--nav-second-color);font-family: var(--logo-font);}
+.navbar .logo-nav{color: var(--logo-color);font-weight: bold;}
+/*Start NavBar Animation*/
+.navbar-expand-lg .navbar-nav{margin-right:65px;}
+.navbar-expand-lg .navbar-nav .nav-link{
+    color: var(--nav-text-color);
+    padding: 23px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--main-font);
+    display: inline-block;
+    position: relative;
+}
+.navbar-expand-lg .navbar-nav .nav-link::after{
+    height: 2px;
+    width: 0px;
+    content: '';
+    display: block;
+    margin: auto;
+}
+/*Start DropDown list(Admin pages)*/
+.nav-item .nav-link.dropdown-toggle::after{
+    margin-left: 0;
+    content: "";
+    border: none;
+}
+.dropdown-menu{
+    margin-top: -10px;
+    border: none;
+}
+/*End DropDown list(Admin pages)*/
+.navbar-expand-lg .navbar-nav .nav-link:hover::after{
+    width: 100%;
+    background: var(--nav-hover-color);
+    transform: translateX(0%) scaleX(1);
+    transition: 0.4s;
+    z-index: 1;
+}
+.navbar-collapse{z-index: 1;background-color: #fff;}/*Make navbar when collapsed have background color white*/
+/*End NavBar Animation*/
+.nav-switch{display:block;margin-top: 22px;} /***in small screen top: 6px;*/
+.language{font-weight: 500;font-family: var(--main-font);}
+/**Start switch Button*/
+.switch{
+    height: 27px;
+    width: 55px;
+    display: inline-block;
+    position: relative;
+}
+.switch input{opacity: 0;width: 0;height: 0;}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:focus + .slider{box-shadow: 0 0 1px var(--switch-color);}
+input:checked + .slider{background-color: var(--switch-color);}
+input:checked + .slider:before{
+    -webkit-transform: translateX(26px);
+    -moz-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    -o-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round{border-radius: 34px;}
+.slider.round:before{border-radius: 50%;}
+/** End switch Style */
+/**End Navbar*/
+
+/** Start First Section */
+.first-section{
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/Path 1361.png');
+    background-repeat: no-repeat;
+    background-position: 442px -35px;
+}
+.first-section .f-info .inner-info{
+    margin-top: 253px;
+}
+.first-section .f-info .inner-info p{margin-top: 10px;}
+.first-section .f-info .inner-info button{
+    height: 40px;
+    width: 130px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--logo-color);
+    color: var(--white-text-color);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/** End First Section */
+
+/** Start services Section*/
+.services{
+    background-color: var(--section-background);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+.services .services-text{margin-bottom: 30px}
+.services .services-par{
+    color: var(--logo-color);
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+/** Card hover */
+.services-cards .card:hover{
+    color: var(--white-text-color);
+    fill: var(--white-text-color);
+    transition: background-color 0.5s ease-in-out;
+}
+.services-cards .card:nth-child(1):hover{background: #EFB274;}
+.services-cards .card:nth-child(2):hover{background: #30BBCB;}
+.services-cards .card:nth-child(3):hover{background: #67509B;}
+.services-cards .card:nth-child(4):hover{background: #2573CB;}
+.services-cards .card:nth-child(5):hover{background: #847FE8;}
+.services-cards .card:nth-child(6):hover{background: #D7676C;}
+/** Card hover */
+/** End services Section*/
+
+/** Start Features Section */
+.features{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.features .features-p{padding-top: 5px;padding-bottom: 17px;}
+/* End Features Section */
+
+/* Start Footer Section */
+.footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--section-background);
+}
+.footer-text-logo{font-family: var(--logo-font);}
+.footer-text-logo .online-text{color: var(--nav-hover-color);}
+.footer svg{
+    width: 55px;
+    height: 43px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.google-svg,
+.facebook-svg{
+    fill: #0A315A;
+    transition: fill 0.5s ease;
+}
+.footer-logo .svg-link-f:hover .facebook-svg{fill: #3b5998;}
+.footer-logo .svg-link-g:hover .google-svg{fill: #DC4E41;}
+.footer .footer-par{
+    margin-top: 5px;
+    color: var(--footer-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    transition: color 0.5s,margin-left 1s ease;
+}
+.footer .footer-par:hover{
+    color: var(--nav-hover-color);
+    margin-left: 5px;
+}
+.copy-right{
+    margin-top: 50px;
+}
+/* End Footer Section */
+
+/**card*/
+.card{
+    width: calc(150% / 2);
+    border: 0;
+    border-radius: 10px;
+    height: 333px;
+}
+.card-img{
+    width: 40%;
+    margin: auto;
+    margin-top: 40px;
+}
+.margin-bottom{margin-bottom: 20px;}
+/**card*/
+
+/*************************************/
+
+/****Exam Page****/
+.exam-main{padding-top: 90px;}
+a.exam-info{display: block;color: var(--nav-text-color);}
+.exam-main .exam-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: bolder;
+    transition: 0.25s ease;
+}
+.exam-main .exam-info:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+    cursor: pointer;
+}
+.exam-main .exam-info .subject-name,
+.exam-main .exam-info .subject-date,
+.exam-main .exam-info .subject-time,
+.exam-main .exam-info .subject-duration{
+    width: 135px;
+    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.last{margin-bottom: 100px;}
+/****Exam Page****/
+
+/*************************************/
+
+/****Student Courses Page****/
+.courses-main{padding-top: 90px;}
+.courses-main .courses-info{
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.courses-main .courses-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.courses-main .courses-info .subject-name,
+.courses-main .courses-info .subject-date,
+.courses-main .courses-info .subject-doctor{
+    width: 135px;
+    margin: 0 calc((100% - 40%)/12);
+    display: inline-block;
+}
+.last:last-child{margin-bottom: 100px;}/*this Shared between each of the course and exam pages for the student and the teacher */
+/****Student Courses Page****/
+
+/*************************************/
+
+/****Result Page****/
+.result-main{padding-top: 90px;}
+.result-main .result-info{
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.result-main .result-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.result-main .result-info .subject-name,
+.result-main .result-info .subject-date,
+.result-main .result-info .subject-doctor{
+    width: 135px;
+    margin: 0 calc((100% - 40%)/12);
+    display: inline-block;
+}
+.last:last-child{margin-bottom: 100px;}/*this Shared between each of the course pages for the student and the teacher */
+/****Student result Page****/
+
+/*************************************/
+
+/**************** Teacher *********************/
+
+/****Teacher Courses Page****/
+/**Model*/
+.modal-title{
+    text-transform: capitalize;
+}
+.close-button,
+.add-button{
+    border-radius: 24px;
+    padding: 6px;
+    width: 100px;
+    background-color: var(--section-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.close-button:hover{
+    background-color: var(--red-color);
+    color: var(--white-text-color);
+}
+.add-button:hover{
+    background-color: var(--nav-hover-color);
+    color: var(--white-text-color);
+}
+/**Model*/
+.teacher-courses-main{padding-top: 90px;}
+.teacher-courses-header{
+    width: 150px;
+    display: inline-block;
+}
+.add-course{
+    border-radius: 24px;
+    padding: 6px;
+    width: 130px;
+    background-color: var(--section-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-course:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.teacher-courses-main .teacher-courses-info{
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.teacher-courses-main .teacher-courses-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.teacher-courses-main .teacher-courses-info .teacher-subject-name,
+.teacher-courses-main .teacher-courses-info .student-register-course,
+.teacher-courses-main .teacher-courses-info .number-student-register-course{
+    width: 165px;
+    margin: 0 13px;
+    display: inline-block;
+}
+.teacher-courses-main .teacher-courses-info .teacher-subject-name{
+    width: 180px;
+}
+.teacher-courses-main .teacher-courses-info .student-register-course{
+    width: 240px;
+}
+.teacher-courses-main .teacher-courses-info .student-register-course{
+    color: var(--link-color);
+}
+.teacher-courses-main .teacher-courses-info .student-register-course:hover{
+    color: var(--nav-hover-color);
+}
+/****Teacher Courses Page****/
+
+/**** Start Teacher Exam links Page****/
+.exam-link-teacher-main{padding-top: 90px;}
+.exam-link-teacher-main input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+    width: 135px;
+}
+.exam-link-teacher-main .exam-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.exam-link-teacher-main .exam-info:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.exam-link-teacher-main .exam-info .subject-name,
+.exam-link-teacher-main .exam-info .subject-date,
+.exam-link-teacher-main .exam-info .subject-time,
+.exam-link-teacher-main .exam-info .subject-duration{
+    width: 110px;
+    margin: 0 10px;
+    display: inline-block;
+}
+.exam-link-teacher-main .exam-info .subject-name{
+    color: var(--link-color);
+    width: 175px;
+}
+.exam-link-teacher-main .exam-info a.subject-name:hover{color: var(--nav-hover-color);}
+.exam-link-teacher-main i{
+    transition: 0.45s ease;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.exam-link-teacher-main i.edit:hover{
+    color: var(--nav-hover-color);
+}
+.exam-link-teacher-main i.remove:hover{
+    color: var(--red-color);
+}
+.green-color:hover{/* for icon save */
+    color: var(--green-color);
+}
+.subject {
+    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+}
+/**** End Teacher Exam links Page ****/
+
+/***Start 404 page*/
+#header-404{
+    font-family: var(--logo-font);
+    text-transform: uppercase;
+    font-size: 3em;
+}
+.svg-404 svg{
+    width: 60%;
+}
+/* img.img-404{
+    height: 73%;
+    width: 100%;
+} */
+.page-404 a{
+    margin: 0 auto 40px auto;
+    padding: 13px;
+    background: var(--nav-hover-color);
+    color: var(--white-text-color);
+    border-radius: 42px;
+}
+/***End 404 page*/
+
+/*********Start Exam Screen*********/
+.exam-screen{
+    font-family: var(--main-font);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.exam-screen .container{max-width: 100%;}/* To make the content not depart from the page */
+.exam-screen .exam-screen-header{margin-bottom: 40px;}
+.screen{
+    height: 350px;
+    border: 1px  solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    /* transition: 1s ease-in-out; */
+}
+.screen .screen-icons{
+    display: none;
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+}
+.screen:hover .screen-icons{
+    width: 100%;
+    display: block;
+    box-shadow: 0px -10px 20px 20px #226ec0;
+}
+.screen i.fa-times{
+    color: var(--white-text-color);
+    font-size: 19px;
+    position: absolute;
+    bottom: 8px;
+    right: 25px;
+}
+.screen i.fa-microphone{
+    font-size: 19px;
+    position: absolute;
+    bottom: 8px;
+    right: 60px;
+    color: var(--white-text-color);
+}
+/*********End Exam Screen*********/
+
+/*************************************/
+
+/**** Start Student Requests ****/
+.student-request{padding-top: 180px;font-family: var(--main-font);}
+.student-request .select-all label{margin: 0;margin-right: 15px;}
+.student-request input[type=submit]{/*All inputs have type submit*/
+    border: none;
+    background-color: transparent;
+    transition: color 0.4s ease-in-out;/*Make transaction only for color style  to make transaction not affect in javascript code when hidden and show inputs*/
+}
+input[type=checkbox]{/** this for select all*/
+    margin: 0;
+    /* width: 13px; */
+    /* height: 13px; */
+}
+.student-request .select-all input[type=checkbox]{margin-right: 10px;}
+.student-request .select-all input[type=submit]{/** it is for 'accept all' and 'remove all' */
+    margin: 0;
+    margin-right: 20px;
+    visibility: hidden;
+}
+.student-request input[type=submit][value='Accept All']:hover,[value='Accept']:hover{color: var(--green-color);}
+.student-request input[type=submit][value='Remove All']:hover,[value='Remove']:hover{color: var(--red-color);}
+.student-request input[type=submit]:focus{outline: none;}/*to remove the border that appears when focus on the 'Accept' input*/
+.student-request .student-info{
+    margin-top: 56px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.student-request .student-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.student-request .student-info .student-name,
+.student-request .student-info .student-id,
+.student-request .student-info .request-input{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 110px;
+    margin: 0 calc((100% - 80%)/6);
+    display: inline-block;
+}
+/* .student-request label.label-student-card{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+.student-request .student-info .student-name{
+    word-break: break-word;/* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+    min-width: 220px;
+}
+.student-request .student-info .request-input input{width: 100%;}/*To make 'input' take all size for 'span' parent*/
+.student-request .student-info .request-input{width: 65px;}
+.student-request .last:last-child{margin-bottom: 100px;}/*this Shared between each of the course and exam pages for the student and the teacher */
+/**** End Student Requests ****/
+
+/*************************************/
+
+/**** Start Assign Course For Teachers ****/
+.assign-course .doctor-name,
+.assign-course .course-name{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border:0;
+    border-bottom: 1px solid var(--border-color);
+    transition: 0.4s ease;
+}
+.assign-course .doctor-name:focus,
+.assign-course .course-name:focus{
+    border:0;
+    border-bottom: 1px solid var(--nav-hover-color);
+    outline: 0 none;
+}
+.teacher-main-info .teacher-courses-header{
+    width: 150px;
+    display: inline-block;
+}
+
+.teacher-main-info{padding-top: 90px;}
+.teacher-main-info input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+    width: 135px;
+}
+.teacher-main-info .teacher-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.teacher-main-info .teacher-info:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.teacher-main-info .teacher-info .subject-doctor-name,
+.teacher-main-info .teacher-info .subject-name{
+    width: 210px;
+    margin: 0 10px;
+    display: inline-block;
+}
+.teacher-main-info i{
+    transition: 0.45s ease;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.teacher-main-info i.remove:hover{
+    color: var(--red-color);
+}
+.teacher-main-info .content:last-child{margin-bottom: 100px;}/*this Shared between each of the course and exam pages for the student and the teacher */
+/**** End Assign Course For Teachers ****/
+
+/*************************************/
+
+/**************** Teacher *********************/
+
+/**** Start Add Courses ****/
+.add-course-time .course-name,
+.add-course-time .course-date,
+.add-course-time .exam-degree,
+.add-course-time .duration-time{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border:0;
+    border-bottom: 1px solid var(--border-color);
+    transition: 0.4s ease;
+}
+.add-course-time .course-name:focus,
+.add-course-time .course-date:focus,
+.add-course-time .exam-degree:focus,
+.add-course-time .duration-time:focus{
+    border:0;
+    border-bottom: 1px solid var(--nav-hover-color);
+    outline: 0 none;
+}
+
+.add-course-time label > .span-with-width{
+    width: 200px;
+    display: inline-block;
+}
+.add-courses .page-header{
+    width: 150px;
+    display: inline-block;
+}
+.add-courses{padding-top: 90px;}
+.add-courses input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+    width: 135px;
+}
+.add-course-button{
+    border-radius: 24px;
+    padding: 6px;
+    width: 130px;
+    background-color: var(--section-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-course-button:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.add-courses .course-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.add-courses .course-info:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.add-courses .course-info .subject-name,
+.add-courses .course-info .subject-date,
+.add-courses .course-info .subject-time,
+.add-courses .course-info .subject-duration,
+.add-courses .course-info .subject-degree{
+    width: 100px;
+    margin: 0 5px;
+    display: inline-block;
+}
+.add-courses .course-info .subject-name{
+    width: 175px;
+}
+.add-courses .course-info .subject-duration,
+.add-courses .course-info .subject-degree{
+        width: 70px;
+}
+.add-courses i{
+    transition: 0.45s ease;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.add-courses i.remove:hover{
+    color: var(--red-color);
+}
+.subject {
+    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+}
+/**** End Add Courses ****/
+
+/*************************************/
+
+/**** Start Add Teacher ****/
+.teacher-name,
+.teacher-email,
+.teacher-password,
+.collage-name,
+.university-name,
+.teacher-phone{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border:0;
+    border-bottom: 1px solid var(--border-color);
+    transition: 0.4s ease;
+}
+.teacher-name:focus,
+.teacher-email:focus,
+.teacher-password:focus,
+.collage-name:focus,
+.university-name:focus,
+.teacher-phone:focus{
+    border:0;
+    border-bottom: 1px solid var(--nav-hover-color);
+    outline: 0 none;
+}
+.add-teacher-model label >  span{
+    width: 200px;
+    display: inline-block;
+}
+.add-courses .page-header{
+    width: 150px;
+    display: inline-block;
+}
+.add-courses{padding-top: 90px;overflow: hidden;}
+.add-courses input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+    width: 135px;
+}
+.add-course-button{
+    border-radius: 24px;
+    padding: 6px;
+    width: 130px;
+    background-color: var(--section-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-course-button:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.add-courses .teacher-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.add-courses .teacher-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.add-courses .teacher-info .doctor-name,
+.add-courses .teacher-info .doctor-email,
+.add-courses .teacher-info .collage-name,
+.add-courses .teacher-info .university-name{
+    width: 200px;
+    margin: 0 5px;
+    display: inline-block;
+}
+.add-courses .teacher-info .doctor-name{
+    width: 150px;
+}
+.add-courses .teacher-info .doctor-email a{color: var(--link-color);}
+.add-courses .teacher-info .doctor-email a:hover{color: var(--logo-color);}
+.add-courses .teacher-info .collage-name{width: 285px;}
+.add-courses i{
+    transition: 0.45s ease;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.add-courses i.remove:hover{color: var(--red-color);}
+.teacher{
+    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+}
+/**** End Add Teacher ****/
+
+/*************************************/
+
+/**** Start Add Teacher ****/
+.add-admin-model .admin-name,
+.add-admin-model .admin-email,
+.add-admin-model .admin-password{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border:0;
+    border-bottom: 1px solid var(--border-color);
+    transition: 0.4s ease;
+}
+.add-admin-model .admin-name:focus,
+.add-admin-model .admin-email:focus,
+.add-admin-model .admin-password:focus{
+    border:0;
+    border-bottom: 1px solid var(--nav-hover-color);
+    outline: 0 none;
+}
+.add-admin-model label >  span{
+    width: 200px;
+    display: inline-block;
+}
+.add-admin .page-header{
+    width: 150px;
+    display: inline-block;
+}
+.add-admin{padding-top: 90px;overflow: hidden;}
+.add-admin input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+    width: 135px;
+}
+.add-admin-button{
+    border-radius: 24px;
+    padding: 6px;
+    width: 130px;
+    background-color: var(--section-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-admin-button:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.add-admin .admin-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+.add-admin .admin-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.add-admin .admin-info .admin-email,
+.add-admin .admin-info .admin-password{
+    width: 200px;
+    margin: 0 5px;
+    display: inline-block;
+}
+.add-admin .admin-info .admin-email a{color: var(--link-color);}
+.add-admin .admin-info .admin-email a:hover{color: var(--logo-color);}
+.add-admin i{
+    transition: 0.45s ease;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.add-admin i.remove:hover{color: var(--red-color);}
+.admin{
+    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+}
+/**** End Add Teacher ****/
+
+/*************************************/
