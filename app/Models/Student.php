@@ -21,8 +21,8 @@ class Student extends Model
         return $this -> belongsToMany('App\Models\Admin','admin_student','student_id','admin_id');
     }
 
-    public function professors(){
-        return $this -> belongsToMany('App\Models\Professor','student_professor','student_id','professor_id');
+    public function teachers(){
+        return $this -> belongsToMany('App\Models\Teacher','student_teacher','student_id','teacher_id');
     }
 
     public function questions(){

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Professor extends Model
+class Teacher extends Model
 {
-    protected $table = "professors";
+    protected $table = "teachers";
     protected $fillable = ['name','email','password',
     'university_name','collage_name','phone','created_at','updated_at'];
     protected $hidden = ['created_at','updated_at'];
@@ -14,18 +14,18 @@ class Professor extends Model
 
 ###################################### Relations ##########################################
     public function courses(){
-        return $this -> hasMany('App\Models\Course','professor_id','id');
+        return $this -> hasMany('App\Models\Course','teacher_id','id');
     }
 
     public function questions(){
-        return $this -> hasMany('App\Models\Question','professor_id','id');
+        return $this -> hasMany('App\Models\Question','teacher_id','id');
     }
 
     public function admins(){
-        return $this -> belongsToMany('App\Models\Admin','admin_professor','professor_id','admin_id');
+        return $this -> belongsToMany('App\Models\Admin','admin_teacher','teacher_id','admin_id');
     }
 
     public function students(){
-        return $this -> belongsToMany('App\Models\Student','student_professor','professor_id','student_id');
+        return $this -> belongsToMany('App\Models\Student','student_teacher','teacher_id','student_id');
     }
 }

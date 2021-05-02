@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentProfessorTable extends Migration
+class CreateAdminTeacherTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateStudentProfessorTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_professor', function (Blueprint $table) {
-            $table->integer('student_id')->unsigned();
-            $table->integer('professor_id')->unsigned();
+        Schema::create('admin_teacher', function (Blueprint $table) {
+            $table->integer('teacher_id')->unsigned();
+            $table->integer('admin_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateStudentProfessorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_professor');
+        Schema::dropIfExists('admin_teacher');
     }
 }

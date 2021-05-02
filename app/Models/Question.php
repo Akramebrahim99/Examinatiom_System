@@ -8,13 +8,13 @@ class Question extends Model
 {
     protected $table = "questions";
     protected $fillable = ['description','degree','answer1','answer2',
-    'answer3','answer4','professor_id','course_id','correct_answer','created_at','updated_at'];
+    'answer3','answer4','teacher_id','course_id','correct_answer','created_at','updated_at'];
     protected $hidden = ['created_at','updated_at'];
     public $timestamps = true;
 
     ###################################### Relations ##########################################
-    public function professor(){
-        return $this -> belongsTo('App\Models\Professor','professor_id','id');
+    public function teachers(){
+        return $this -> belongsTo('App\Models\Teacher','teacher_id','id');
     }
 
     public function course(){

@@ -22,7 +22,7 @@ class CreateQuestionsTable extends Migration
             $table->text('answer3')->nullable();
             $table->text('answer4')->nullable();
             $table->text('correct_answer')->nullable();
-            $table->integer('professor_id')->unsigned();
+            $table->integer('teacher_id')->unsigned();
             $table->integer('course_id')->unsigned();
             $table->timestamps();
         });

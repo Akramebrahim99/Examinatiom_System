@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->integer('course_degree');
             $table->dateTime('date_of_exam');
             $table->integer('duration');
-            $table->integer('professor_id')->unsigned();
+            $table->integer('teacher_id')->unsigned();
             $table->timestamps();
         });
     }
