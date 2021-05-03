@@ -11,18 +11,6 @@ class Admin extends Model
     protected $hidden = ['created_at','updated_at'];
     public $timestamps = true;
 
-###################################### Relations ##########################################
-    public function courses(){
-        return $this -> belongsToMany('App\Models\Course','admin_course','admin_id','course_id');
-    }
-
-    public function teachers(){
-        return $this -> belongsToMany('App\Models\Teacher','admin_teacher','admin_id','teacher_id');
-    }
-    
-    public function students(){
-        return $this -> belongsToMany('App\Models\Student','admin_student','admin_id','student_id');
-    }
 
 }
 

@@ -21,9 +21,6 @@ class Course extends Model
         return $this -> hasMany('App\Models\Question','course_id','id');
     }
 
-    public function admins(){
-        return $this -> belongsToMany('App\Models\Admin','admin_course','course_id','admin_id');
-    }
 
     public function students(){
         return $this -> belongsToMany('App\Models\Student','student_course','course_id','student_id');

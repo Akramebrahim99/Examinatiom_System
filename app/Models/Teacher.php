@@ -21,9 +21,6 @@ class Teacher extends Model
         return $this -> hasMany('App\Models\Question','teacher_id','id');
     }
 
-    public function admins(){
-        return $this -> belongsToMany('App\Models\Admin','admin_teacher','teacher_id','admin_id');
-    }
 
     public function students(){
         return $this -> belongsToMany('App\Models\Student','student_teacher','teacher_id','student_id');

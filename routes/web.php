@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 
+Route::get('/result',function(){
+    return view('pages.student.result');
+})->name('result');
+
+

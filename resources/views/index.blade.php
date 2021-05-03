@@ -40,7 +40,7 @@
                         <a class="nav-link" href="./pages/student/student-courses.html">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/student/result.html">Results</a>
+                        <a class="nav-link" href="{{route('result')}}">Results</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>

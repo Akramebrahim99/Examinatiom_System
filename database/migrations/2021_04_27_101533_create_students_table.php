@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('university_name');
             $table->string('collage_name');
             $table->integer('phone');
+            $table->boolean('student_status');
             $table->timestamps();
         });
     }
