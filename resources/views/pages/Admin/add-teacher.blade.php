@@ -89,7 +89,8 @@
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
 
-                    <form action="" method="" class="add-teacher-model">
+                    <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
+                        @csrf
                         <label for="teacher-name"><span>Teacher Name</span>
                             <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="Teacher name" />
                         </label>
@@ -110,7 +111,7 @@
                         </label>
 
                         <div class="modal-footer">
-                            <button type="button" class="add-button">Add</button>
+                            <button type="submit" class="add-button">Add</button>
                             <button type="button" class="close-button" data-dismiss="modal">Close</button>
                         </div>
                     </form>
@@ -133,30 +134,17 @@
                         <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add teacher</button>
                     </div>
                 </div>
-
-                <span class="teacher-info text-md-center col-8" id="teacher-link">
-                    <span class="teacher doctor-name">Ahmed Radi</span><!-- Name of Course will print from database -->
-                    <span class="teacher doctor-email"><a href="mailto:AhmedRadi@gmail.com"> AhmedRadi@gmail.com</a></span>
-                    <span class="teacher collage-name">Faculty of computer and information</span>
-                    <span class="teacher university-name">Helwan University</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
-                <span class="teacher-info text-md-center col-8" id="teacher-link">
-                    <span class="teacher doctor-name">Ahmed Radi</span><!-- Name of Course will print from database -->
-                    <span class="teacher doctor-email"><a href="mailto:AhmedRadi@gmail.com"> AhmedRadi@gmail.com</a></span>
-                    <span class="teacher collage-name">Faculty of computer and information</span>
-                    <span class="teacher university-name">Helwan University</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
-                <span class="teacher-info text-md-center col-8" id="teacher-link">
-                    <span class="teacher doctor-name">Ahmed Radi</span><!-- Name of Course will print from database -->
-                    <span class="teacher doctor-email"><a href="mailto:AhmedRadi@gmail.com">AhmedRadi@gmail.com</a></span>
-                    <span class="teacher collage-name">Faculty of computer and information</span>
-                    <span class="teacher university-name">Helwan University</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
+                @if(isset($teachers) && $teachers -> count() > 0)
+                    @foreach($teachers as $teacher)
+                        <span class="teacher-info text-md-center col-8" id="teacher-link">
+                            <span class="teacher doctor-name">{{$teacher -> name}}</span><!-- Name of Course will print from database -->
+                            <span class="teacher doctor-email"><a href="{{$teacher -> email}}"> {{$teacher -> email}}</a></span>
+                            <span class="teacher collage-name">{{$teacher -> collage_name}}</span>
+                            <span class="teacher university-name">{{$teacher -> university_name}}</span>
+                            <i class="fa fa-times remove" value="remove"></i>
+                        </span>
+                    @endforeach
+                @endif
 
             </div>
 

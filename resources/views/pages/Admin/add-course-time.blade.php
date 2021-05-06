@@ -89,23 +89,22 @@
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
 
-                    <form action="" method="" class="add-course-time">
-
+                    <form action="{{route('add.course')}}" method="post" class="add-course-time">
+                        @csrf
                         <label for="course-name"><span class="span-with-width">Course Name</span>
                             <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
                         </label>
                         <label for="course-date"><span class="span-with-width">Course Date</span>
-                            <input type="datetime-local" class="course-date" id="course-date" />
+                            <input type="datetime-local" name="courseDate" class="course-date" id="course-date" />
                         </label>
                         <label for="exam-degree"><span class="span-with-width">Exam Degree</span>
-                            <input type="text" class="exam-degree" id="exam-degree" placeholder="Exam Degree">
+                            <input type="text" name="courseDegree" class="exam-degree" id="exam-degree" placeholder="Exam Degree">
                         </label>
                         <label for="duration-time"><span class="span-with-width">Duration time for Exam</span>
-
-                            <input type="text" name="" class="duration-time" id="duration-time" placeholder="Number of hours" />
+                            <input type="text" name="duration" class="duration-time" id="duration-time" placeholder="Number of hours" />
                         </label>
                         <div class="modal-footer">
-                            <button type="button" class="add-button">Add</button>
+                            <button type="submit" class="add-button">Add</button>
                             <button type="button" class="close-button" data-dismiss="modal">Close</button>
                         </div>
                     </form>
@@ -127,32 +126,17 @@
                     <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add course</button>
                 </div>
 
-                <span class="course-info text-md-center col-8" id="teacher-link">
-                    <span class="subject-name">Computer Scinse</span><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/12/2</span>
-                    <span class="subject subject-time">9:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <span class="subject subject-degree">50</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
-                <span class="course-info text-md-center col-8" id="teacher-link">
-                    <span class="subject-name">Computer Scinse</span><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/12/2</span>
-                    <span class="subject subject-time">9:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <span class="subject subject-degree">50</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
-                <span class="course-info text-md-center col-8" id="teacher-link">
-                    <span class="subject-name">Computer Scinse</span><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/12/2</span>
-                    <span class="subject subject-time">9:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <span class="subject subject-degree">50</span>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <span class="course-info text-md-center col-8" id="teacher-link">
+                            <span class="subject-name">{{$course -> name}}</span><!-- Name of Course will print from database -->
+                            <span class="subject subject-date">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-duration">{{$course -> duration}}</span>
+                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                            <i class="fa fa-times remove" value="remove"></i>
+                        </span>
+                    @endforeach
+                @endif
 
             </div>
         </div>
