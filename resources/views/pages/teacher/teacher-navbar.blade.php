@@ -31,13 +31,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">Exam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('teacher.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
@@ -46,8 +46,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                         </div>
                     </li>
                     <li class="nav-item">

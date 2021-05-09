@@ -32,23 +32,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">Exam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('teacher.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -65,7 +64,7 @@
                         </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">singout</a>
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">sing out</a>
                     </li>
                 </ul>
             </div>
@@ -116,27 +115,27 @@
                 <div class="teacher-courses-info text-md-center col-8">
                     <span class="teacher-subject-name">Computer Science</span>
                     <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="./students-registered-in-course.html">Students Registered in course</a>
+                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
                 </div>
                 <div class="teacher-courses-info text-md-center col-8">
                     <span class="teacher-subject-name">Computer Science</span>
                     <span class="number-student-register-course">635</span>
-                    <a class="student-register-course" href="./students-registered-in-course.html">Students Registered in course</a>
+                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
                 </div>
                 <div class="teacher-courses-info text-md-center col-8">
                     <span class="teacher-subject-name">Computer Science</span>
                     <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="./students-registered-in-course.html">Students Registered in course</a>
+                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
                 </div>
                 <div class="teacher-courses-info text-md-center col-8">
                     <span class="teacher-subject-name">Computer Science</span>
                     <span class="number-student-register-course">322</span>
-                    <a class="student-register-course" href="./students-registered-in-course.html">Students Registered in course</a>
+                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
                 </div>
                 <div class="teacher-courses-info text-md-center col-8">
                     <span class="teacher-subject-name">Computer Science</span>
                     <span class="number-student-register-course">123</span>
-                    <a class="student-register-course" href="./students-registered-in-course.html">Students Registered in course</a>
+                    <a class="student-register-course" href=".{{route('teacher.studentreg')}}">Students Registered in course</a>
                 </div>
             </div>
         </div>

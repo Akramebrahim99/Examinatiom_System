@@ -34,23 +34,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">Exam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('teacher.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -83,7 +82,7 @@
                 <h4 class="exam-header col-12">Schedule of exams dates</h4>
 
                 <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
-                    <a class="subject subject-name" href="./exam-screen.html">Computer Science</a><!-- Name of Course will print from database -->
+                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
                     <span class="subject subject-date">2021/12/2</span>
                     <span class="subject subject-time">9:00 AM</span>
                     <span class="subject subject-duration">2 h</span>
@@ -91,23 +90,23 @@
                     <i class="fa fa-times remove" value="remove"></i>
                 </span>
                 <span class="exam-info teacher-link text-md-center col-8">
-                    <a class="subject subject-name" href="./exam-screen.html">Computer Science</a><!-- Name of Course will print from database -->
+                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
                     <span class="subject subject-date">2021/11/2</span>
                     <span class="subject subject-time">12:00 PM</span>
                     <span class="subject subject-duration">30 min</span>
                     <i class="fa fa-edit edit" value="edit"></i>
                     <i class="fa fa-times remove" value="remove"></i>
                 </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="./exam-screen.html">
-                    <a class="subject subject-name" href="./exam-screen.html">Computer Science</a><!-- Name of Course will print from database -->
+                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
+                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
                     <span class="subject subject-date">2021/11/2</span>
                     <span class="subject subject-time">1:00 PM</span>
                     <span class="subject subject-duration">2 h</span>
                     <i class="fa fa-edit edit" value="edit"></i>
                     <i class="fa fa-times remove" value="remove"></i>
                 </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="./exam-screen.html">
-                    <a class="subject subject-name" href="./exam-screen.html">Computer Science</a><!-- Name of Course will print from database -->
+                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
+                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
                     <span class="subject subject-date">2021/11/2</span>
                     <span class="subject subject-time">10:00 AM</span>
                     <span class="subject subject-duration">2 h</span>

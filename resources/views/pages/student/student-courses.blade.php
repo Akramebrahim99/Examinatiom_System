@@ -32,16 +32,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./student-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./result.html">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
@@ -57,7 +57,7 @@
                         </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
                     </li>
                 </ul>
             </div>

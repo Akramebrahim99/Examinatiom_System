@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="./css/library/hover.css">
+    <link rel="stylesheet" href="../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,11 +16,11 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <title>ONLINEexam</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Student Page</title>
 </head>
 <body>
-    <!-- Start navbar -->
+       <!-- Start navbar -->
 
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/student/exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/student/student-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('result')}}">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
@@ -56,7 +56,7 @@
                         </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
                     </li>
                 </ul>
             </div>
@@ -79,7 +79,7 @@
                 </div>
                 <!-- <div class="clearfix"></div> -->
                 <div class="f-img col-sm-7 order-lg-2 order-md-2 order-sm-2 order-1">
-                    <img src="./img/Student.svg" alt="Student" />
+                    <img src="../../img/Student.svg" alt="Student" />
                 </div>
             </div>
         </div>
@@ -360,7 +360,7 @@
                 <div class="footer-community mb-3 col-md-6 col-lg-3 col-sm-6">
                     <h4>Community</h4>
                     <a class="footer-par" href="http://safcai.helwan.edu.eg/index.php/ar/login">College site</a>
-                    <a class="footer-par" href="">Techers</a>
+                    <a class="footer-par" href="">Teachers</a>
                 </div>
                 <div class="footer-contact mb-3 col-md-6 col-lg-3 col-sm-6">
                     <h4>Contact</h4>
@@ -377,8 +377,8 @@
 
     <!-- Scripts -->
         <!-- Bootstrap -->
-        <script src="./JQuery/JQuery.js"></script>
-        <script src="./javascript/bootstrap.js"></script>
+        <script src="../../JQuery/JQuery.js"></script>
+        <script src="../../javascript/bootstrap.js"></script>
         <!-- Bootstrap -->
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -387,7 +387,7 @@
         </script>
         <!-- AOS -->
         <script src="../../JQuery/jq.js"></script>
-        <script src="./javascript/javascript.js"></script>
+        <script src="../.././javascript/javascript.js"></script>
     <!-- Scripts -->
 </body>
 </html>
