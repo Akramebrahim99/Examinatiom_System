@@ -1,3 +1,4 @@
+<?php use App\Models\Teacher; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +24,10 @@
     <title>Assign Course For Teachers</title>
 </head>
 <body>
+    
+       <!-- Start navbar -->
 
-    <!-- Start navbar -->
-
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+       <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
@@ -49,9 +50,7 @@
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -89,25 +88,32 @@
                 </div>
 
                 <div class="modal-body"><!--contain only the input fileds-->
-                    <form action="" method="" class="assign-course">
+                    <form action="{{route('add.course.teacher')}}" method="post" class="assign-course">
+                            @csrf
                         <label for="doctor-name">Doctor Name
-                            <select class="doctor-name" id="doctor-name" name = "dropdown">
+                            <select class="doctor-name" id="doctor-name" name = "teacher_id">
                                 <option value = "" selected></option>
-                                <option value = "Ahmed Radi">Ahmed Radi</option>
-                                <option value = "Akram Ebrahim">Akram Ebrahim</option>
-                                <option value = "Eslam Amgad">Eslam Amgad</option>
+                                @if(isset($teachers) && $teachers -> count() > 0)
+                                    @foreach($teachers as $teacher)
+                                        <option value = "{{$teacher -> id}}">{{$teacher -> name}}</option>
+                                    @endforeach
+                                @endif
                             </select>
                         </label>
                         <label for="course-name">Course Name
-                            <select class="course-name" id="course-name" name = "dropdown">
+                            <select class="course-name" id="course-name" name = "course_id">
                                 <option value = "" selected></option>
-                                <option value = "Computer Architecture">Computer Architecture</option>
-                                <option value = "Java">Java</option>
-                                <option value = "Discrete Mathematics">Discrete Mathematics</option>
+                                @if(isset($courses) && $courses -> count() > 0)
+                                    @foreach($courses as $course)
+                                        @if($course->teacher_id == NULL)
+                                            <option name="course_name" value = "{{$course -> id}}">{{$course -> name}}</option>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </select>
                         </label>
                         <div class="modal-footer">
-                            <button type="button" class="add-button">Add</button>
+                            <button type="submit" class="add-button">Add</button>
                             <button type="button" class="close-button" data-dismiss="modal">Close</button>
                         </div>
 
@@ -128,22 +134,20 @@
                     <h4 class="teacher-courses-header">Yor courses</h4>
                     <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button>
                 </div>
-
-                <span class="teacher-info teacher-link text-md-center col-8">
-                    <span class="subject-doctor-name">Ahmed Radi</span>
-                    <pan class="subject-name">Computer Scinse</pan><!-- Name of Course will print from database -->
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="teacher-info teacher-link text-md-center col-8">
-                    <span class="subject-doctor-name">Ahmed Radi</span>
-                    <pan class="subject-name">Computer Scinse</pan><!-- Name of Course will print from database -->
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="teacher-info teacher-link text-md-center col-8">
-                    <span class="subject-doctor-name">Ahmed Radi</span>
-                    <pan class="subject-name">Computer Scinse</pan><!-- Name of Course will print from database -->
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        @if($course->teacher_id != NULL)
+                        <?php
+                        $teacher1 = Teacher::find($course->teacher_id);
+                        ?>
+                            <span class="teacher-info teacher-link text-md-center col-8">
+                                <span class="subject-doctor-name">{{$teacher1->name}}</span>
+                                <pan class="subject-name">{{$course->name}}</pan><!-- Name of Course will print from database -->
+                                <a href="{{route('delete.course.teacher',$course->id)}}"><i class="fa fa-times remove" value="remove"></i></a>
+                            </span>
+                        @endif    
+                    @endforeach
+                @endif
 
 
     <!-- End Student Courses Section -->

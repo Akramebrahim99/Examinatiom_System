@@ -24,6 +24,8 @@ Route::get('/result',function(){
 
 
 Route::group(['prefix' => 'admin'],function(){
+    Route::get('index','Admin\AdminController@index')->name('admin.index');
+
     Route::get('show_teachers','Admin\ManageTeacherController@index')->name('show.teachers');
     Route::post('add_teacher','Admin\ManageTeacherController@store')->name('add.teacher');
     Route::get('delete_teacher/{id}','Admin\ManageTeacherController@destroy')->name('delete.teacher');
@@ -31,5 +33,9 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('show_courses','Admin\ManageCourseController@index')->name('show.courses');
     Route::post('add_course','Admin\ManageCourseController@store')->name('add.course');
     Route::get('delete_course/{id}','Admin\ManageCourseController@destroy')->name('delete.course');
+
+    Route::get('show_courseToteacher','Admin\ManageCourseController@showTeacher')->name('show.course.teacher');
+    Route::post('add_courseToteacher','Admin\ManageCourseController@addteacher')->name('add.course.teacher');
+    Route::get('delete_courseToteacher/{course_id}','Admin\ManageCourseController@destorycourseToteacher')->name('delete.course.teacher');
 });
 

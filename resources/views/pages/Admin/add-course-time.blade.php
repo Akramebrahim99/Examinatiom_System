@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
@@ -49,9 +49,7 @@
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -133,7 +131,7 @@
                             <span class="subject subject-date">{{$course -> date_of_exam}}</span>
                             <span class="subject subject-duration">{{$course -> duration}}</span>
                             <span class="subject subject-degree">{{$course -> course_degree}}</span>
-                            <i class="fa fa-times remove" value="remove"></i>
+                            <a href="{{route('delete.course',$course -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                         </span>
                     @endforeach
                 @endif

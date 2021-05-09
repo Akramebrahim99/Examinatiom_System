@@ -24,9 +24,9 @@
 </head>
 <body>
 
-    <!-- Start navbar -->
+   <!-- Start navbar -->
 
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+   <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-navbar.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./exam-links.html">Exam</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./teacher-courses.html">Courses</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
@@ -49,9 +49,7 @@
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="./exam-links.html">Monitor Exam</a>
-                            <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -141,7 +139,7 @@
                             <span class="teacher doctor-email"><a href="{{$teacher -> email}}"> {{$teacher -> email}}</a></span>
                             <span class="teacher collage-name">{{$teacher -> collage_name}}</span>
                             <span class="teacher university-name">{{$teacher -> university_name}}</span>
-                            <i class="fa fa-times remove" value="remove"></i>
+                            <a href="{{route('delete.teacher',$teacher -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                         </span>
                     @endforeach
                 @endif

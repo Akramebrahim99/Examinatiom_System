@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Course;
 use Validator;
 
 class ManageTeacherController extends Controller
@@ -97,6 +98,14 @@ class ManageTeacherController extends Controller
     public function destroy($id)
     {
         $teacher = Teacher::find($id);
+        $courses = Course::where('teacher_id',$id)->get();
+
+        if(isset($courses) && $courses -> count() > 0){
+            foreach($courses as $course){
+                $course->teacher_id = NULL;
+                $course ->save();
+            } 
+        }
         $teacher -> delete();
         return redirect()->route('show.teachers');
     }

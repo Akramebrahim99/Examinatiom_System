@@ -452,15 +452,24 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 .exam-link-teacher-main .exam-info .subject-name,
 .exam-link-teacher-main .exam-info .subject-date,
 .exam-link-teacher-main .exam-info .subject-time,
-.exam-link-teacher-main .exam-info .subject-duration{
-    width: 110px;
-    margin: 0 10px;
+.exam-link-teacher-main .exam-info .subject-duration,
+.exam-link-teacher-main .exam-info .article-question{
+    width: 100px;
+    margin: 0 8px;
     display: inline-block;
 }
 .exam-link-teacher-main .exam-info .subject-name{
+    width: 180px;
     color: var(--link-color);
-    width: 175px;
 }
+.exam-link-teacher-main .exam-info .subject-duration{
+    width:55px;
+}
+.exam-link-teacher-main .exam-info .article-question{
+    width: 130px;
+    color: var(--link-color);
+}
+.exam-link-teacher-main .exam-info .article-question:hover,
 .exam-link-teacher-main .exam-info a.subject-name:hover{color: var(--nav-hover-color);}
 .exam-link-teacher-main i{
     transition: 0.45s ease;
@@ -761,24 +770,24 @@ input[type=checkbox]{/** this for select all*/
 /*************************************/
 
 /**** Start Add Teacher ****/
-.teacher-name,
-.teacher-email,
-.teacher-password,
-.collage-name,
-.university-name,
-.teacher-phone{
+.modal-body .teacher-name,
+.modal-body .teacher-email,
+.modal-body .teacher-password,
+.modal-body .collage-name,
+.modal-body .university-name,
+.modal-body .teacher-phone{
     margin-left: 10px;
     margin-bottom: 10px;
     border:0;
     border-bottom: 1px solid var(--border-color);
     transition: 0.4s ease;
 }
-.teacher-name:focus,
-.teacher-email:focus,
-.teacher-password:focus,
-.collage-name:focus,
-.university-name:focus,
-.teacher-phone:focus{
+.modal-body .teacher-name:focus,
+.modal-body .teacher-email:focus,
+.modal-body .teacher-password:focus,
+.modal-body .collage-name:focus,
+.modal-body .university-name:focus,
+.modal-body .teacher-phone:focus{
     border:0;
     border-bottom: 1px solid var(--nav-hover-color);
     outline: 0 none;

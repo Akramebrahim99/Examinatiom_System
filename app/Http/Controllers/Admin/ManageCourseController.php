@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Teacher;
 use Validator;
 
 class ManageCourseController extends Controller
@@ -99,6 +100,31 @@ class ManageCourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        $course -> delete();
+        return redirect()->route('show.courses');
     }
+
+    public function showTeacher(){
+        $courses = Course::select('id','name','teacher_id')->get();
+        $teachers = Teacher::select('id','name')->get();
+        return view('pages.Admin.assign-course-for-teachers',compact('courses','teachers'));
+    }
+
+    public function addteacher(Request $request)
+    {
+        $course = Course::find($request->course_id);
+        $course->teacher_id = $request->teacher_id;
+        $course->save();
+        return redirect()->route('show.course.teacher');
+    }
+
+    public function destorycourseToteacher($id)
+    {
+        $course = Course::find($id);
+        $course->teacher_id = NULL;
+        $course -> save();
+        return redirect()->route('show.course.teacher');
+    }
+
 }
