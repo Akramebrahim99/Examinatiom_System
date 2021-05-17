@@ -55,15 +55,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <span class="nav-switch" href="#">
-                            <span class="language" id="ar">EG</span>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span  class="language" id="eg">AR</span>
-                        </span>
+                    <li class="nav-item dropdown">
+                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                           {{__('massages.Languages')}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
+                        @endforeach
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>

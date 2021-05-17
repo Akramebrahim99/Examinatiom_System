@@ -22,7 +22,6 @@ Route::get('register', 'Auth\RegisterController@index')->name('register');
 Route::post('storedata', 'Auth\RegisterController@store')->name('store.data');
 
 
-
 Route::group(['prefix' => 'admin'],function(){
     Route::get('index','Admin\AdminController@index')->name('admin.index');
 

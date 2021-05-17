@@ -26,5 +26,9 @@ return [
     "We Provide The Best Exam Attempt" => 'نحن نقدم أفضل محاولة للامتحان',
     "An explanatory explanation of what the exam site contains, and some details that may need clarification." => 'شرح توضيحي لما يحتويه موقع الاختبار ، وبعض التفاصيل التي قد تحتاج إلى توضيح',
     "Get Started" => 'لنبدء',
+    "Languages" => 'اللغات',
+    "Register" => 'التسجيل',
+    "Sign In" => 'تسجيل الدخول',
+    
    
 ];

@@ -7,10 +7,10 @@
     <title>Register</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../../fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/Logreg/style.css">
+    <link rel="stylesheet" href="../../css/Logreg/style.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Register</h2>
+                        <h2 class="form-title">{{__('massages.Register')}}</h2>
                         <form method="POST" class="register-form" id="register-form" action="{{route('store.data')}}">
                         @csrf
                             <div class="form-group">
@@ -61,7 +61,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="img/signup-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="../../img/signup-image.jpg" alt="sing up image"></figure>
                         <a href="{{route('login')}}" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
