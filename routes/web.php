@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']],function(){
 
 Route::get('/', 'Auth\LoginController@index')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('auth.login');
@@ -54,4 +55,4 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('studentreq','Teacher\TeacherController@studentreq')->name('teacher.studentreq');
     Route::get('studentreg','Teacher\TeacherController@studentreg')->name('teacher.studentreg');
 });
-
+});

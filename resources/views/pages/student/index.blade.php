@@ -31,32 +31,32 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item">
                         <span class="nav-switch" href="#">
-                            <span class="language" id="eg">EG</span>
+                       <span class="language" id="eg">EG</span>
                             <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                             </label>
-                            <span  class="language" id="ar">AR</span>
+                           <span  class="language" id="ar">AR</span>
                         </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -72,9 +72,9 @@
             <div class="row">
                 <div class="f-info col-sm-5 order-lg-1 order-md-1 order-sm-1 order-2">
                     <div class="inner-info">
-                        <h2>Provide To You<br /> Best Service</h2>
-                        <p>Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save</p>
-                        <button class="hvr-float">get started</button>
+                        <h2>{{__('massages.Provide To You')}}<br />{{__('massages.Best Service')}}</h2>
+                        <p>{{__('massages.Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save')}}</p>
+                        <button class="hvr-float">{{__('massages.Get Started')}}</button>
                     </div>
                 </div>
                 <!-- <div class="clearfix"></div> -->
