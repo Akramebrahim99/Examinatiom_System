@@ -29,6 +29,11 @@ return [
     "Languages" => 'Languages',
     "Register" => 'Register',
     "Sign In" => 'Sign In',
+    "Student Page" => 'Student Page',
+    "OUR SERVICES" => 'OUR SERVICES',
+    "We Provide The Best Exam Attempt" => 'We Provide The Best Exam Attempt',
+    "An explanatory explanation of what the exam site contains, and some details that may need clarification." => 'An explanatory explanation of what the exam site contains, and some details that may need clarification.',
+    
   
 
 

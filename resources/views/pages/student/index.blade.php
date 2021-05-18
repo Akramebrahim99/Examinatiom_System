@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Student Page</title>
+    <title>{{__('massages.Student Page')}}</title>
 </head>
 <body>
        <!-- Start navbar -->
@@ -93,9 +93,9 @@
         <div class="container">
             <div class="row">
                 <div class="services-text text-center col-12">
-                    <p class="services-par">OUR SERVICES</p>
-                    <h2 class="services-header">We Provide The Best Exam Attempt </h2>
-                    <p class="services-info">An explanatory explanation of what the exam site contains, and some details that may need clarification.</p>
+                    <p class="services-par">{{__('massages.OUR SERVICES')}}</p>
+                    <h2 class="services-header">{{__('massages.We Provide The Best Exam Attempt')}}</h2>
+                    <p class="services-info">{{__('massages.An explanatory explanation of what the exam site contains, and some details that may need clarification.')}}</p>
                 </div>
                 <div class="services-cards text-center">
                     <div class="row justify-content-center align-items-center">
