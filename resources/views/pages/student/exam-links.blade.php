@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Exam</title>
+    <title>{{__('massages.Exam')}}</title>
 </head>
 <body>
 
@@ -32,19 +32,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -58,7 +58,11 @@
                         </div>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">sing out</a>
+=======
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+>>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                     </li>
                 </ul>
             </div>

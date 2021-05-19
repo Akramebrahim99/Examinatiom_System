@@ -25,9 +25,22 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+<<<<<<< HEAD
         $admin = Admin::select('id','email','password')->where('email',$request->email)->first();
         $teacher = Teacher::select('id','email','password')->where('email',$request->email)->first();
         $student = Student::select('id','email','password')->where('email',$request->email)->first();
+=======
+        
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            ]);
+
+
+        $admin = Admin::select('email','password')->where('email',$request->email)->first();
+        $teacher = Teacher::select('email','password')->where('email',$request->email)->first();
+        $student = Student::select('email','password')->where('email',$request->email)->first();
+>>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
 
 
         if(isset($admin)){
@@ -50,4 +63,5 @@ class LoginController extends Controller
         }
         return redirect()->route('login');
     }
+    
 }
