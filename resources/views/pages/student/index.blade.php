@@ -107,8 +107,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Register Your Courses.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Register Your Courses</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h6>{{__('massages.Register Your Courses')}}</h6>
+                                <p class="card-text">{{__('massages.Some quick example text to build on the card title and make up the bulk of the cards content')}}</p>
                             </div>
                         </div>
                         <div class="card card-height col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow" data-aos="fade-up" data-aos-duration="2000">
@@ -119,8 +119,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Take your exam.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Take your exam</h6>
-                                <p class="card-text">Register for your subjects to take the exam.</p>
+                                <h6>{{__('massages.Take your exam')}}</h6>
+                                <p class="card-text">{{__('massages.Register for your subjects to take the exam')}}</p>
                             </div>
                         </div>
                         <div class="card card-height col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow" data-aos="flip-right" data-aos-duration="2000">
@@ -129,8 +129,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Highly Interactive Interface.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Highly Interactive Interface</h6>
-                                <p class="card-text">Simple registration, login, concurrent processing, the security of information, and more.</p>
+                                <h6>{{__('massages.Highly Interactive Interface')}}</h6>
+                                <p class="card-text">{{__('massages.Simple registration, login, concurrent processing, the security of information, and more')}}</p>
                             </div>
                         </div>
                         <!-- second row -->
@@ -143,8 +143,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Get the result.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Get the result</h6>
-                                <p class="card-text">The doctor publishes the result after according to the total score.</p>
+                                <h6>{{__('massages.Get the result')}}</h6>
+                                <p class="card-text">{{__('massages.The doctor publishes the result after according to the total score')}}</p>
                             </div>
                         </div>
                         <div class="card card-height col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
@@ -162,8 +162,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Exam system.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Exam system</h6>
-                                <p class="card-text">The exam date is predefined and each question has a specific time.</p>
+                                <h6>{{__('massages.Exam system')}}</h6>
+                                <p class="card-text">{{__('massages.The exam date is predefined and each question has a specific time')}}</p>
                             </div>
                         </div>
                         <div class="card card-height col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow" data-aos="zoom-out-down" data-aos-duration="2000">
@@ -173,8 +173,8 @@
                             </svg>
                             <!-- <img class="card-img" src="./img/services/Security.svg" alt="Card image cap"> -->
                             <div class="card-body">
-                                <h6>Security</h6>
-                                <p class="card-text">The site takes security measures to prevent attempts to cheat during exams.</p>
+                                <h6>{{__('massages.Security')}}</h6>
+                                <p class="card-text">{{__('massages.The site takes security measures to prevent attempts to cheat during exams')}}</p>
                             </div>
                         </div>
                     </div>
@@ -189,8 +189,8 @@
         <div class="container">
             <div class="row">
                 <div class="text-center col-12">
-                    <h2>Online Exam Software to Deliver Online Proctored Exams</h2>
-                    <p class="features-p">Security procedures for exams.</p>
+                    <h2>{{__('massages.Online Exam Software to Deliver Online Proctored Exams')}}</h2>
+                    <p class="features-p">{{__('massages.Security procedures for exams')}}</p>
                 </div>
                 <div class="text-center justify-content-center align-items-center">
                     <div class="card col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow"  data-aos="flip-left" data-aos-duration="2000">
@@ -246,8 +246,8 @@
                         </svg>
                         <!-- <img class="card-img" src="./img/features/Share Screen.svg" alt="Card image cap"> -->
                         <div class="card-body">
-                            <h6>Remote Exams with Webcam Video & Screen Recording</h6>
-                            <p class="card-text">Webcam video can be recorded during the exam.</p>
+                            <h6>{{__('massages.Remote Exams with Webcam Video & Screen Recording')}}</h6>
+                            <p class="card-text">{{__('massages.Webcam video can be recorded during the exam')}}</p>
                         </div>
                     </div>
                     <div class="card col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow" data-aos="fade-up" data-aos-duration="2000">
@@ -278,8 +278,8 @@
                         </svg>
                         <!-- <img class="card-img" src="./img/features/Tablet&phone.svg" alt="Card image cap"> -->
                         <div class="card-body">
-                            <h6>Safe Exam Browser that Locks Down the Screen</h6>
-                            <p class="card-text">Enforce full screen to prevent participants from opening new windows, tabs, apps, etc.</p>
+                            <h6>{{__('massages.Safe Exam Browser that Locks Down the Screen')}}</h6>
+                            <p class="card-text">{{__('massages.Enforce full screen to prevent participants from opening new windows, tabs, apps, etc')}}</p>
                         </div>
                     </div>
                     <div class="card col-md-4 col-lg-3 col-sm-5 m-2 hvr-glow"  data-aos="flip-right" data-aos-duration="2000">
@@ -318,8 +318,8 @@
                         </svg>
                         <!-- <img class="card-img" src="./img/features/Monitor.svg" alt="Card image cap"> -->
                         <div class="card-body">
-                            <h6>Remote Assessment Monitoring and Proctoring</h6>
-                            <p class="card-text">Monitor the on-going exams in real-time. Watch proctoring video streams in one screen.</p>
+                            <h6>{{__('massages.Remote Assessment Monitoring and Proctoring')}}</h6>
+                            <p class="card-text">{{__('massages.Monitor the on-going exams in real-time. Watch proctoring video streams in one screen')}}</p>
                         </div>
                     </div>
                 </div>
@@ -334,7 +334,7 @@
             <div class="row">
                 <div class="footer-logo col-md-6 col-lg-3 col-sm-6">
                     <h3 class="footer-text-logo"><span class="online-text">ONLINE</span>exam</h3>
-                    <p class="">A website for the Faculty of Computers and Information, Helwan University</p>
+                    <p class="">{{__('massages.A website for the Faculty of Computers and Information, Helwan University')}}</p>
                     <a class="svg-link-f" href="http://">
                         <svg enable-background="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                             <circle class="facebook-svg" cx="56.098" cy="56.098" r="56.098" fill="#3B5998"/>
@@ -354,19 +354,19 @@
                     </a>
                 </div>
                 <div class="footer-about mb-3 col-md-6 col-lg-3 col-sm-6">
-                    <h4>About Us</h4>
-                    <a class="footer-par" href="">Our Customer</a>
-                    <a class="footer-par" href="">Help & Support</a>
+                    <h4>{{__('massages.About Us')}}</h4>
+                    <a class="footer-par" href="">{{__('massages.Our Customer')}}</a>
+                    <a class="footer-par" href="">{{__('massages.Help & Support')}}</a>
                 </div>
                 <div class="footer-community mb-3 col-md-6 col-lg-3 col-sm-6">
-                    <h4>Community</h4>
-                    <a class="footer-par" href="http://safcai.helwan.edu.eg/index.php/ar/login">College site</a>
-                    <a class="footer-par" href="">Teachers</a>
+                    <h4>{{__('massages.Community')}}</h4>
+                    <a class="footer-par" href="http://safcai.helwan.edu.eg/index.php/ar/login">{{__('massages.College site')}}</a>
+                    <a class="footer-par" href="">{{__('massages.Teachers')}}</a>
                 </div>
                 <div class="footer-contact mb-3 col-md-6 col-lg-3 col-sm-6">
-                    <h4>Contact</h4>
+                    <h4>{{__('massages.Contact')}}</h4>
                     <a class="footer-par" href="mailto:ahmedradi743@gmail.com">FCAI-H@gmail.com</a>
-                    <p class="">Location: Helwan University</p>
+                    <p class="">{{__('massages.Location: Helwan University')}}</p>
                 </div>
                 <div class="copy-right col-12">
                     FCAI - H &copy; 2021

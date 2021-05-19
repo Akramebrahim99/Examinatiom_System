@@ -71,7 +71,7 @@
     <section class="exam-main">
         <div class="container">
             <div class="row last">
-                <h4 class="exam-header col-12">Schedule of exams dates</h4>
+                <h4 class="exam-header col-12">{{__('massages.Schedule of exams dates')}}</h4>
                 <a class="exam-info text-md-center col-8" href="#">
                     <span class="subject-name">Computer Science</span>
                     <span class="subject-date">2021/12/2</span>

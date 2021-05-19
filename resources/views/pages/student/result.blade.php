@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Result</title>
+    <title> {{__('massages.Result')}}</title>
 </head>
 <body>
 
@@ -32,19 +32,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}} </a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -58,7 +58,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}} </a>
                     </li>
                 </ul>
             </div>
@@ -71,26 +71,26 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">Yor result</h4>
+                <h4 class="result-header col-12">{{__('massages.Yor result')}} </h4>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
+                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
                     <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">D</span>
+                    <span class="subject-date">{{__('massages.D')}}</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
+                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
                     <span class="subject-doctor">100 - 90</span>
-                    <span class="subject-date">A+</span>
+                    <span class="subject-date">{{__('massages.A+')}}</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
+                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
                     <span class="subject-doctor">100 - 60</span>
-                    <span class="subject-date">D+</span>
+                    <span class="subject-date">{{__('massages.D+')}}</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
+                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
                     <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">D</span>
+                    <span class="subject-date">{{__('massages.D')}}</span>
                 </div>
             </div>
         </div>
