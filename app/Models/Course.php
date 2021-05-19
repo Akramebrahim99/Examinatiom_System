@@ -23,7 +23,8 @@ class Course extends Model
 
 
     public function students(){
-        return $this -> belongsToMany('App\Models\Student','student_course','course_id','student_id');
+        return $this -> belongsToMany('App\Models\Student','student_course','course_id','student_id')
+        ->withPivot(['course_degree','course_status']);
     }
 
 }

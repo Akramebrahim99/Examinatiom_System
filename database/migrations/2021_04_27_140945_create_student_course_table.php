@@ -16,7 +16,8 @@ class CreateStudentCourseTable extends Migration
         Schema::create('student_course', function (Blueprint $table) {
             $table->integer('student_id')->unsigned();
             $table->integer('course_id')->unsigned();
-            $table->integer('course_degree');
+            $table->integer('course_degree')->nullable();
+            $table->boolean('course_status')->default(FALSE);
             $table->timestamps();
         });
     }

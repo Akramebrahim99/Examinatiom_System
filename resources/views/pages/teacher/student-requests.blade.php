@@ -65,7 +65,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">sing out</a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +78,19 @@
     <section class="student-request">
         <div class="container">
             <div class="row last" id="page-content">
-                <h4 class="courses-header col-12">Yor courses</h4>
+            <form action="{{route('teacher.studentreq.course')}}" method="post" class="assign-course">
+                @csrf
+                <h4 class="courses-header col-12">Choos Course: 
+                    <select class="course-name" id="course-name" name = "course_id">
+                        @if(isset($courses) && $courses -> count() > 0)
+                            @foreach($courses as $course)
+                            <option name="course_name" value = "{{$course -> id}}">{{$course -> name}}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                    <button type="submit" class="add-button">Select</button>
+                </h4>
+            </form>
                 <div class="select-all col-12">
                     <label for="select-all">
                         <input type="checkbox" name="" value="Select All" id="select-all">Select All
@@ -87,64 +99,30 @@
                     <input type="submit" name="" value="Remove All" class="remove-all">
                 </div>
                 <!-- Cards -->
-
-                <div class="student-info text-md-center col-8">
-                    <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
-                    <!-- <label for="student-card-request" class="label-student-card">
-                    </label> -->
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Accept" class="accept">
-                    </span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
-                    <!-- <label for="student-card" class="label-student-card">
-                    </label> -->
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Accept" class="accept">
-                    </span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
-                    <!-- <label for="student-card" class="label-student-card">
-                    </label> -->
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Accept" class="accept">
-                    </span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
-                    <!-- <label for="student-card" class="label-student-card">
-                    </label> -->
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Accept" class="accept">
-                    </span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-
+                @if(isset($students) && $students -> count() > 0)
+                    @foreach($students as $student)
+                        @if($student->pivot->course_status == FALSE)
+                            <div class="student-info text-md-center col-8">
+                                <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
+                                <!-- <label for="student-card-request" class="label-student-card">
+                                </label> -->
+                                <input type="checkbox" name="" value="" class="select"/>
+                                <span class="student-name">{{$student->name}}</span>
+                                <span class="student-id">{{$student->id}}</span>
+                                <span class="request-input">
+                                    <a href="www.google.com" >
+                                        <input type="submit" value="Accept" class="accept">
+                                    </a>
+                                </span>
+                                <span class="request-input">
+                                    <a>
+                                        <input type="submit" value="Remove" class="remove">
+                                    </a>
+                                </span>
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
                 <!-- Cards -->
             </div>
         </div>

@@ -32,11 +32,6 @@ class TeacherController extends Controller
         return view('pages.teacher.exam-screen');
     }
 
-    public function studentreq()
-    {
-        return view('pages.teacher.student-requests');
-    }
-
     public function studentreg()
     {
         return view('pages.teacher.students-registered-in-course');

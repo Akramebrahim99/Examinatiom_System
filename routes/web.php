@@ -43,6 +43,7 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('exam','Student\StudentController@exam')->name('student.exam');
     Route::get('result','Student\StudentController@result')->name('student.result');
     Route::get('courses','Student\StudentController@course')->name('student.courses');
+    Route::get('courserequest/{course_id}','Student\StudentController@addcourse')->name('student.request');
 });
 
 
@@ -51,7 +52,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('exam','Teacher\TeacherController@exam')->name('teacher.exam');
     Route::get('addscreen','Teacher\TeacherController@examscreen')->name('teacher.exam.screen');
     Route::get('courses','Teacher\TeacherController@course')->name('teacher.courses');
-    Route::get('studentreq','Teacher\TeacherController@studentreq')->name('teacher.studentreq');
+    Route::get('studentreq','Teacher\ManageStudentController@studentsrequest')->name('teacher.studentreq');
+    Route::post('studentreqcourse','Teacher\ManageStudentController@studentsrequestCourse')->name('teacher.studentreq.course');
     Route::get('studentreg','Teacher\TeacherController@studentreg')->name('teacher.studentreg');
 });
 });

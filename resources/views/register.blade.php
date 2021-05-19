@@ -52,34 +52,34 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="name"><i class="zmdi zmdi-account-circle material-icons-name"></i></label>
                                 <input type="text" name="id" id="name" placeholder="Id"/>
                                 @error('id')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="name"><i class="zmdi zmdi-pin-account material-icons-name"></i></label>
                                 <input type="text" name="ssn" id="name" placeholder="SSN"/>
                                 @error('ssn')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
                                 <input type="text" name="university" id="name" placeholder="University"/>
                                 @error('university')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div><div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
                                 <input type="text" name="collage" id="name" placeholder="Collage"/>
                                 @error('collage')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="name"><i class="zmdi zmdi-phone material-icons-name"></i></label>
                                 <input type="text" name="phone-num" id="name" placeholder="Phone Number"/>
                                 @error('phone-num')
                                 <small class="form-text text-danger">{{$message}}</small>

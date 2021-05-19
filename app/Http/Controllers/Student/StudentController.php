@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Student;
+use App\Models\course;
+
 
 class StudentController extends Controller
 {
@@ -29,7 +32,17 @@ class StudentController extends Controller
 
     public function course()
     {
-        return view('pages.student.student-courses');
+        $student = Student::find(session('user_id'));
+        $studendCourses = $student -> courses;
+        $courses = Course::select('id','name','course_degree','date_of_exam','duration')->get();
+        return view('pages.student.student-courses',compact('courses','studendCourses'));
+    }
+
+    public function addcourse($courseId)
+    {
+        $student = Student::find(session('user_id'));
+        $student ->courses()->syncWithoutDetaching($courseId);
+        return redirect()->route('student.exam');
     }
     
 }
