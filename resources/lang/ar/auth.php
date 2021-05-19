@@ -15,5 +15,18 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+     "Name" => "اسم الطالب",
+     "Email" => 'ايميل الطالب',
+     "Password" => 'الرقم السري',
+     "Id" => 'الرقم التعريفي',
+     "SSN" => 'الرقم القومي',
+     "University" => 'اسم الجامعة', 
+     "Collage" => 'اسم الكلية',
+     "Phone Number" => 'رقم التليفون',
+     "I am already member" => 'لدي حساب بالفعل',
+     "Register" => 'التسجيل',
+     "Create an account" => 'عمل حساب جديد',
+     "Your Email" => 'ايميل المستخدم',
+     "Remember me" => 'تذكرني',
+     "Log in" => 'دخول',
 ];

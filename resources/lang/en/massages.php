@@ -27,7 +27,6 @@ return [
     "An explanatory explanation of what the exam site contains, and some details that may need clarification." => 'An explanatory explanation of what the exam site contains, and some details that may need clarification.',
     "Get Started" => 'Get Started',
     "Languages" => 'Languages',
-    "Register" => 'Register',
     "Sign In" => 'Sign In',
     "Student Page" => 'Student Page',
     "OUR SERVICES" => 'OUR SERVICES',

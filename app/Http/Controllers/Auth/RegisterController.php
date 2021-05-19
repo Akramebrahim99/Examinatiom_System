@@ -18,13 +18,13 @@ class RegisterController extends Controller
         
         $rules= [
             'name' => 'required|max:191|string',
-            'email' => 'required',
+            'email' => 'required|email',
             'pass' => 'required',
             'id' => 'required|numeric|unique:students,id',
-            'ssn' => 'required|numeric|unique:students,ssn',
+            'ssn' => 'required|numeric|size:14|unique:students,ssn',
             'university' => 'required|string',
             'collage' => 'required|string',
-            'phone-num' => 'required|numeric|unique:students,phone'
+            'phone-num' => 'required|numeric|size:11|unique:students,phone'
         ];
 
         $messages = $this->getMessages();
@@ -59,10 +59,15 @@ class RegisterController extends Controller
             'email.required' => 'your email is required please',
             'pass.required' => 'your password is required please',
             'id.required' => 'your id is required please',
+            'id.numeric' => 'your id must be numbers please',
             'ssn.required' => 'your ssn is required please',
+            'ssn.size' => 'your ssn size is must be 14 number please',
+            'ssn.numeric' => 'your ssn must be numbers please',
             'university.required' => 'your university name is required please',
             'collage.required' => 'your collage name is required please',
             'phone-num.required' => 'your phone number is required please',
+            'phone-num.size' => 'your phone number size is must be 11 number please',
+            'phone-num.numeric' => 'your phone number must be numbers please',
         ];
     }
 }

@@ -19,6 +19,13 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+        
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            ]);
+
+
         $admin = Admin::select('email','password')->where('email',$request->email)->first();
         $teacher = Teacher::select('email','password')->where('email',$request->email)->first();
         $student = Student::select('email','password')->where('email',$request->email)->first();
@@ -38,4 +45,5 @@ class LoginController extends Controller
         }
         return redirect()->route('login');
     }
+    
 }
