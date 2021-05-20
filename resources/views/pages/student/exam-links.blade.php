@@ -58,11 +58,9 @@
                         </div>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">sing out</a>
-=======
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
+
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+
                     </li>
                 </ul>
             </div>

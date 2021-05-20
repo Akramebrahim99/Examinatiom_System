@@ -90,60 +90,35 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-<<<<<<< HEAD
                                 <label for="name"><i class="zmdi zmdi-account-circle material-icons-name"></i></label>
-                                <input type="text" name="id" id="name" placeholder="Id"/>
-=======
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="id" id="name" placeholder="{{__('auth.Id')}}"/>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                                 @error('id')
                                 <p style="color: red">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-<<<<<<< HEAD
                                 <label for="name"><i class="zmdi zmdi-pin-account material-icons-name"></i></label>
-                                <input type="text" name="ssn" id="name" placeholder="SSN"/>
-=======
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="ssn" id="name" placeholder="{{__('auth.SSN')}}"/>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                                 @error('ssn')
                                 <p style="color: red">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-<<<<<<< HEAD
                                 <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
-                                <input type="text" name="university" id="name" placeholder="University"/>
-=======
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="university" id="name" placeholder="{{__('auth.University')}}"/>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                                 @error('university')
                                 <p style="color: red">{{$message}}</p>
                                 @enderror
                             </div><div class="form-group">
-<<<<<<< HEAD
                                 <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
-                                <input type="text" name="collage" id="name" placeholder="Collage"/>
-=======
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="collage" id="name" placeholder="{{__('auth.Collage')}}"/>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                                 @error('collage')
                                 <p style="color: red">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-<<<<<<< HEAD
                                 <label for="name"><i class="zmdi zmdi-phone material-icons-name"></i></label>
-                                <input type="text" name="phone-num" id="name" placeholder="Phone Number"/>
-=======
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="phone-num" id="name" placeholder="{{__('auth.Phone Number')}}"/>
->>>>>>> 6e9b484302021f2a69db6bafba85a64c06246180
                                 @error('phone-num')
                                 <p style="color: red">{{$message}}</p>
                                 @enderror
