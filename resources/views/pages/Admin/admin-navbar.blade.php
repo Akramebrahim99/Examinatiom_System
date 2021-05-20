@@ -17,12 +17,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>{{__('massages.Student Page')}}</title>
+    <title>Admin Page</title>
 </head>
 <body>
        <!-- Start navbar -->
 
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+       <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,33 +31,38 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
-                        @endforeach
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-switch" href="#">
+                            <span class="language" id="ar">EG</span>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span  class="language" id="eg">AR</span>
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">sing out</a>
                     </li>
                 </ul>
             </div>
@@ -65,7 +70,7 @@
     </nav>
 
     <!-- End navbar -->
-
+    
     <!-- Start First Section -->
 
     <section class="first-section">
@@ -73,9 +78,9 @@
             <div class="row">
                 <div class="f-info col-sm-5 order-lg-1 order-md-1 order-sm-1 order-2">
                     <div class="inner-info">
-                        <h2>{{__('massages.Provide To You')}}<br />{{__('massages.Best Service')}}</h2>
-                        <p>{{__('massages.Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save')}}</p>
-                        <button class="hvr-float">{{__('massages.Get Started')}}</button>
+                        <h2>Provide To You<br /> Best Service</h2>
+                        <p>Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save</p>
+                        <button class="hvr-float">get started</button>
                     </div>
                 </div>
                 <!-- <div class="clearfix"></div> -->
@@ -93,9 +98,9 @@
         <div class="container">
             <div class="row">
                 <div class="services-text text-center col-12">
-                    <p class="services-par">{{__('massages.OUR SERVICES')}}</p>
-                    <h2 class="services-header">{{__('massages.We Provide The Best Exam Attempt')}}</h2>
-                    <p class="services-info">{{__('massages.An explanatory explanation of what the exam site contains, and some details that may need clarification.')}}</p>
+                    <p class="services-par">OUR SERVICES</p>
+                    <h2 class="services-header">We Provide The Best Exam Attempt </h2>
+                    <p class="services-info">An explanatory explanation of what the exam site contains, and some details that may need clarification.</p>
                 </div>
                 <div class="services-cards text-center">
                     <div class="row justify-content-center align-items-center">

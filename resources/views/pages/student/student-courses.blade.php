@@ -71,30 +71,33 @@
         <div class="container">
             <div class="row last">
                 <h4 class="courses-header col-12">Yor courses</h4>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Mohamed Reda</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">3h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
+                @if(isset($studendCourses) && $studendCourses -> count() > 0)
+                    @if(isset($courses) && $courses -> count() > 0)
+                        @foreach($courses as $course)
+                                @foreach($studendCourses as $studentCourse)
+                                    @if($studentCourse->pivot->course_id != $course->id)
+                                        <div class="courses-info text-md-center col-8">
+                                            <span class="subject-name">{{$course -> name}}</span>
+                                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
+                                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                                            <span class="subject-date"><a href="{{route('student.request',$course -> id)}}">Request</a></span>
+                                            <!-- <span class="subject-duration">2h</span> -->
+                                        </div>
+                                    @endif
+                                @endforeach
+                        @endforeach
+                    @endif
+                @elseif(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <div class="courses-info text-md-center col-8">
+                            <span class="subject-name">{{$course -> name}}</span>
+                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                            <span class="subject-date"><a href="{{route('student.request',$course -> id)}}">Request</a></span>
+                            <!-- <span class="subject-duration">2h</span> -->
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

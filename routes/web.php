@@ -44,6 +44,7 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('courses','Student\StudentController@course')->name('student.courses');
     Route::get('profile','Student\StudentController@profile')->name('student.profile');
     Route::get('editprofile','Student\StudentController@editprofile')->name('student.editprofile');
+    Route::get('courserequest/{course_id}','Student\StudentController@addcourse')->name('student.request');
 });
 
 
@@ -52,7 +53,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('exam','Teacher\TeacherController@exam')->name('teacher.exam');
     Route::get('addscreen','Teacher\TeacherController@examscreen')->name('teacher.exam.screen');
     Route::get('courses','Teacher\TeacherController@course')->name('teacher.courses');
-    Route::get('studentreq','Teacher\TeacherController@studentreq')->name('teacher.studentreq');
+    Route::get('studentreq','Teacher\ManageStudentController@studentsrequest')->name('teacher.studentreq');
+    Route::post('studentreqcourse','Teacher\ManageStudentController@studentsrequestCourse')->name('teacher.studentreq.course');
     Route::get('studentreg','Teacher\TeacherController@studentreg')->name('teacher.studentreg');
     Route::get('profile','Teacher\TeacherController@profile')->name('teacher.profile');
     Route::get('editprofile','Teacher\TeacherController@editprofile')->name('teacher.editprofile');
