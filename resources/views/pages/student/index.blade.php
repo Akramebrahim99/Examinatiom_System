@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->

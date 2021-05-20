@@ -41,4 +41,16 @@ class TeacherController extends Controller
     {
         return view('pages.teacher.students-registered-in-course');
     }
+    public function profile()
+    {
+        return view('pages.teacher.Teacher Profile');
+    }
+    public function editprofile()
+    {
+        return view('pages.teacher.Edit Teacher Profile');
+    }
+    public function addexam()
+    {
+        return view('pages.teacher.CreateExam English and Arabic');
+    }
 }

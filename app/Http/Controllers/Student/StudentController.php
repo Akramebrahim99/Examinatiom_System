@@ -31,5 +31,13 @@ class StudentController extends Controller
     {
         return view('pages.student.student-courses');
     }
+    public function profile()
+    {
+        return view('pages.Student.Student Profile');
+    }
+    public function editprofile()
+    {
+        return view('pages.Student.Edit Student Profile');
+    }
     
 }

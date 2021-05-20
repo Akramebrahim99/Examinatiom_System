@@ -1,0 +1,136 @@
+﻿@media(max-width:767px) {
+    .t1 {
+        position: relative;
+        top: 20px;
+        right: -10px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .t1 {
+        position: relative;
+        top: 10px;
+        right: -50px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .t1 {
+        position: relative;
+        top: 10px;
+        right: -70px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:1200px) {
+    .t1 {
+        position: relative;
+        top: 10px;
+        right: -100px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .a1 {
+        position: relative;
+        top: 35px;
+        right:35px;
+        direction: rtl;
+    }
+}
+
+@media(max-width:767px) {
+    .form-check1 {
+        position: relative;
+        top: 60px;
+        right: 5px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .a1 {
+        position: relative;
+        top: 25px;
+        right: -20px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .form-check1 {
+        position: relative;
+        top: 50px;
+        right: -40px;
+        direction: rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .a1 {
+        position: relative;
+        top: 20px;
+        right: -35px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .form-check1 {
+        position: relative;
+        top: 45px;
+        right: -60px;
+        direction: rtl;
+    }
+}
+@media(min-width:1200px) {
+    .a1ARTF {
+        position: relative;
+        top: 30px;
+        right: -70px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:1200px) {
+    .form-check1 {
+        position: relative;
+        top: 68px;
+        right: -135px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .s1 {
+        position: relative;
+        top: 60px;
+        right: 20px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .s1 {
+        position: relative;
+        top: 60px;
+        right: -40px;
+        direction: rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .s1 {
+        position: relative;
+        top: 75px;
+        right: -60px;
+        direction: rtl;
+    }
+}
+
+@media(min-width:1200px) {
+    .s1 {
+        position: relative;
+        top: 50px;
+        right: -90px;
+        direction: rtl;
+    }
+}

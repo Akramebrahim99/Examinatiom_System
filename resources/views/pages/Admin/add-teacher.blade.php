@@ -23,10 +23,8 @@
     <title>Add Teacher</title>
 </head>
 <body>
-
-   <!-- Start navbar -->
-
-   <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+<!-- Start navbar -->
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,25 +33,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
-                        </div>
-                    </li>
+                            </div>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -67,14 +65,14 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
+
 
     <!-- Model Form Add Courses -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

@@ -22,7 +22,7 @@
 <body>
 
     <!-- Start navbar -->
-
+    <div class="container">
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>

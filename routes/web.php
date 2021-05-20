@@ -17,7 +17,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
 Route::get('/', 'Auth\LoginController@index')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('auth.login');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-
 Route::get('register', 'Auth\RegisterController@index')->name('register');
 Route::post('storedata', 'Auth\RegisterController@store')->name('store.data');
 
@@ -43,6 +42,8 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('exam','Student\StudentController@exam')->name('student.exam');
     Route::get('result','Student\StudentController@result')->name('student.result');
     Route::get('courses','Student\StudentController@course')->name('student.courses');
+    Route::get('profile','Student\StudentController@profile')->name('student.profile');
+    Route::get('editprofile','Student\StudentController@editprofile')->name('student.editprofile');
 });
 
 
@@ -53,5 +54,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('courses','Teacher\TeacherController@course')->name('teacher.courses');
     Route::get('studentreq','Teacher\TeacherController@studentreq')->name('teacher.studentreq');
     Route::get('studentreg','Teacher\TeacherController@studentreg')->name('teacher.studentreg');
+    Route::get('profile','Teacher\TeacherController@profile')->name('teacher.profile');
+    Route::get('editprofile','Teacher\TeacherController@editprofile')->name('teacher.editprofile');
+    Route::get('addexam','Teacher\TeacherController@addexam')->name('teacher.addexam');
 });
 });
