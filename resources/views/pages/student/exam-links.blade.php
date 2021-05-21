@@ -74,30 +74,18 @@
         <div class="container">
             <div class="row last">
                 <h4 class="exam-header col-12">Schedule of exams dates</h4>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/11/2</span>
-                    <span class="subject-time">1:00 PM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">3h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
+                @if(isset($studendCourses) && $studendCourses -> count() > 0)
+                    @foreach($studendCourses as $course)
+                        @if($course->pivot->course_status == True)
+                            <a class="exam-info text-md-center col-8" href="#">
+                                <span class="subject-name">{{$course -> name}}</span>
+                                <span class="subject-date">{{$course -> date_of_exam}}</span>
+                                <span class="subject-time">{{$course -> duration}} H</span>
+                                <span class="subject-duration">{{$course -> course_degree}}</span>
+                            </a>
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

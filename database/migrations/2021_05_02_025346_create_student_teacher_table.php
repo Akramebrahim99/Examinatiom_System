@@ -14,6 +14,7 @@ class CreateStudentTeacherTable extends Migration
     public function up()
     {
         Schema::create('student_teacher', function (Blueprint $table) {
+            $table->id();
             $table->integer('student_id')->unsigned();
             $table->integer('teacher_id')->unsigned();
             $table->timestamps();

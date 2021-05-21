@@ -75,8 +75,12 @@
     <!-- Start Student Requests Section -->
     <section class="student-request">
         <div class="container">
+            @if(session('course_name'))
+                <h3><center>{{session('course_name')}} Course</center></h3>
+            @endif
+
             <div class="row last" id="page-content">
-            <form action="{{route('teacher.studentreq.course')}}" method="post" class="assign-course">
+            <form action="{{route('teacher.studentreq.course')}}" method="get" class="assign-course">
                 @csrf
                 <h4 class="courses-header col-12">Choos Course: 
                     <select class="course-name" id="course-name" name = "course_id">
@@ -89,31 +93,26 @@
                     <button type="submit" class="add-button">Select</button>
                 </h4>
             </form>
-                <div class="select-all col-12">
-                    <label for="select-all">
-                        <input type="checkbox" name="" value="Select All" id="select-all">Select All
-                    </label>
-                    <input type="submit" name="" value="Accept All" class="accept-all">
-                    <input type="submit" name="" value="Remove All" class="remove-all">
-                </div>
+                
                 <!-- Cards -->
                 @if(isset($students) && $students -> count() > 0)
                     @foreach($students as $student)
                         @if($student->pivot->course_status == FALSE)
+                            
                             <div class="student-info text-md-center col-8">
                                 <!-- Must add student name in 'for' attribute and 'id' for the input to make it unique and select the target card only -->
                                 <!-- <label for="student-card-request" class="label-student-card">
                                 </label> -->
-                                <input type="checkbox" name="" value="" class="select"/>
+                               
                                 <span class="student-name">{{$student->name}}</span>
                                 <span class="student-id">{{$student->id}}</span>
                                 <span class="request-input">
-                                    <a href="www.google.com" >
+                                    <a href="{{route('teacher.studentreq.accept',$student->id)}}" >
                                         <input type="submit" value="Accept" class="accept">
                                     </a>
                                 </span>
                                 <span class="request-input">
-                                    <a>
+                                    <a href="{{route('teacher.studentreq.reject',$student->id)}}">
                                         <input type="submit" value="Remove" class="remove">
                                     </a>
                                 </span>

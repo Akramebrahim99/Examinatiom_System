@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="../../css/library/hover.css">
+    <link rel="stylesheet" href="../../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,7 +16,7 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <title>Students registered in course</title>
 </head>
 <body>
@@ -79,48 +79,23 @@
     <section class="student-request">
         <div class="container">
             <div class="row last" id="page-content">
-                <h4 class="courses-header col-12">Students registered the course</h4>
-                <div class="select-all col-12">
-                    <label for="select-all">
-                        <input type="checkbox" name="" value="Select All" id="select-all">Select All
-                    </label>
-                    <input type="submit" name="" value="Remove All" class="remove-all">
-                </div>
+                <h4 class="courses-header col-12">Students Registered At <span style="color: red">{{$courseName}}</span> Course</h4>
                 <!-- Cards -->
-
-                <div class="student-info text-md-center col-8">
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-                <div class="student-info text-md-center col-8">
-                    <input type="checkbox" name="" value="" class="select"/>
-                    <span class="student-name">Ahmed Radi Abdelqader</span>
-                    <span class="student-id">20170024</span>
-                    <span class="request-input">
-                        <input type="submit" value="Remove" class="remove">
-                    </span>
-                </div>
-
+                @if(isset($studentsofcourse) && $studentsofcourse -> count() > 0)
+                    @foreach($studentsofcourse as $student)
+                        @if($student->pivot->course_status == True)
+                            <div class="student-info text-md-center col-8">
+                                <span class="student-name">{{$student->name}}</span>
+                                <span class="student-id">{{$student->id}}</span>
+                                <span class="request-input">
+                                    <a href="{{route('teacher.deletestd',['course_id' => $courseId,'student_id'=>$student->id])}}">
+                                    <input type="submit" value="Remove" class="remove">
+                                    </a>
+                                </span>
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
                 <!-- Cards -->
             </div>
         </div>
@@ -129,8 +104,8 @@
 
     <!-- Scripts -->
         <!-- Bootstrap -->
-        <script src="../../JQuery/JQuery.js"></script>
-        <script src="../../javascript/bootstrap.js"></script>
+        <script src="../../../JQuery/JQuery.js"></script>
+        <script src="../../../javascript/bootstrap.js"></script>
         <!-- Bootstrap -->
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

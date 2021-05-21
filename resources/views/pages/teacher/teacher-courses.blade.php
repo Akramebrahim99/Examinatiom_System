@@ -73,70 +73,22 @@
 
     <!-- End navbar -->
 
-    <!-- Model Form Add Courses -->
-
-    <!-- Remove -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model ceneter in the page-->
-            <div class="modal-content" id="box-body"><!--contain the model contact-->
-                <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add Courses</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span><!--the 'X' shape-->
-                    </button>
-                </div>
-                <div class="modal-body"><!--contain only the input fileds-->
-                    <label for="course-name">Course name
-                        <input type="text" id="course-name" placeholder="Course name">
-                    </label>
-                    <!-- <label for="course">Doctor name
-                        <input type="text" id="course">
-                    </label> -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="add-botton">Add</button>
-                    <button type="button" class="close-botton" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Remove -->
-
-    <!-- Model Form Add Courses -->
-
     <!-- Start Student Courses Section -->
     <section class="teacher-courses-main">
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">Yor courses</h4>
+                    <h4 class="teacher-courses-header">Your Courses</h4>
                     <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
                 </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">635</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">322</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">123</span>
-                    <a class="student-register-course" href=".{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <div class="teacher-courses-info text-md-center col-8">
+                            <span class="teacher-subject-name">{{$course->name}}</span>
+                            <a class="student-register-course" href="{{route('teacher.studentreg',$course->id)}}">Students Registered in course</a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
