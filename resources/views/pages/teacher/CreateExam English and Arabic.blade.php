@@ -76,52 +76,75 @@
 
     <!-- End navbar -->
 
-
-    <!-- Model Form Add Courses -->
+    <!-- Model Form Add Questions -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add Question</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Add New Question</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
-
-                    <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
+                <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
                         @csrf
-                        <label for="teacher-name"><span>Teacher Name</span>
-                            <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="Teacher name" />
-                        </label>
-                        <label for="teacher-email"><span>Email</span>
-                            <input type="email" name="teacherEmail" class="teacher-email" id="teacher-email" placeholder="example@gmail.com" />
-                        </label>
-                        <label for="teacher-password"><span>Password</span>
-                            <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="Password" />
-                        </label>
-                        <label for="collage-name"><span>Collage Name</span>
-                            <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder="Collage name" />
-                        </label>
-                        <label for="university-name"><span>University Name</span>
-                            <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="University name" />
-                        </label>
-                        <label for="teacher-phone"><span>Phone</span>
-                            <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="phone" />
-                        </label>
+                       <div class="row">
+                       <div class="col-sm-12">
+                      <div class="form-group">
+                       <label>Enter Question</label>
+                       <input type="text" required="required" name="question" placeholder="Enter Question" class="form-control">
+                       </div>
+                       </div>
 
-                        <div class="modal-footer">
-                            <button type="submit" class="add-button">Add</button>
-                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                         <div class="col-sm-6">
+                         <div class="form-group">
+                        <label>Enter Option 1</label>
+                        <input type="text" required="required" name="option1" placeholder="Enter Option 1" class="form-control">
                         </div>
-                    </form>
+                        </div>
 
-                </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Enter Option 2</label>
+                        <input type="text" required="required" name="option2" placeholder="Enter Option 2" class="form-control">
+                        </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Enter Option 3</label>
+                        <input type="text" required="required" name="option3" placeholder="Enter Option 3" class="form-control">
+                        </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Enter Option 4</label>
+                        <input type="text" required="required" name="option4" placeholder="Enter Option 4" class="form-control">
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                        <div class="form-group">
+                        <label>Enter Right Ans</label>
+                        <input type="text" required="required" name="RightAns" placeholder="Enter Right Ans" class="form-control">
+                        </div>
+                        </div>
+                    
+                        <div class="modal-footer">
+                        <button type="submit" class="add-button">Add</button>
+                        </div>
+                        </div>
+                 </form>
+              </div>
             </div>
         </div>
     </div>
-    <!-- Model Form Add Courses -->
-
+    <!-- Model Form Add Questions -->
+      
     <!-- Start Student Courses Section -->
 
     <section class="add-courses">
