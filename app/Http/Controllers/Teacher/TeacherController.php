@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class TeacherController extends Controller
 {
@@ -12,9 +13,10 @@ class TeacherController extends Controller
         return view('pages.teacher.teacher-navbar');
     }
 
-    public function exam()
+    public function exams()
     {
-        return view('pages.teacher.exam-links');
+        $courses = Course::where('teacher_id',session('user_id'))->get();
+        return view('pages.teacher.exam-links',compact('courses'));
     }
 
     public function result()
@@ -24,7 +26,8 @@ class TeacherController extends Controller
 
     public function course()
     {
-        return view('pages.teacher.teacher-courses');
+        $courses = Course::where('teacher_id',session('user_id'))->get();
+        return view('pages.teacher.teacher-courses',compact('courses'));
     }
 
     public function examscreen()
@@ -32,10 +35,6 @@ class TeacherController extends Controller
         return view('pages.teacher.exam-screen');
     }
 
-    public function studentreg()
-    {
-        return view('pages.teacher.students-registered-in-course');
-    }
     public function profile()
     {
         return view('pages.teacher.Teacher Profile');
@@ -47,5 +46,10 @@ class TeacherController extends Controller
     public function addexam()
     {
         return view('pages.teacher.CreateExam English and Arabic');
+    }
+
+    public function showexams(){
+        $courses = Course::where('teacher_id',session('user_id'))->get();
+        return view('pages.teacher.examspage',compact('courses'));
     }
 }

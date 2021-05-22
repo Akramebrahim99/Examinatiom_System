@@ -42,6 +42,8 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('exam','Student\StudentController@exam')->name('student.exam');
     Route::get('result','Student\StudentController@result')->name('student.result');
     Route::get('courses','Student\StudentController@course')->name('student.courses');
+    Route::get('requestedcourses','Student\StudentController@requestedcourses')->name('student.requstedcourses');
+    Route::get('deletestudentreq/{course_id}','Student\StudentController@deletereq')->name('studentreq.delete');
     Route::get('profile','Student\StudentController@profile')->name('student.profile');
     Route::get('editprofile','Student\StudentController@editprofile')->name('student.editprofile');
     Route::get('courserequest/{course_id}','Student\StudentController@addcourse')->name('student.request');
@@ -50,14 +52,18 @@ Route::group(['prefix' => 'student'],function(){
 
 Route::group(['prefix' => 'teacher'],function(){
     Route::get('index','Teacher\TeacherController@index')->name('teacher.index');
-    Route::get('exam','Teacher\TeacherController@exam')->name('teacher.exam');
+    Route::get('exam','Teacher\TeacherController@exams')->name('teacher.exam');
     Route::get('addscreen','Teacher\TeacherController@examscreen')->name('teacher.exam.screen');
     Route::get('courses','Teacher\TeacherController@course')->name('teacher.courses');
     Route::get('studentreq','Teacher\ManageStudentController@studentsrequest')->name('teacher.studentreq');
-    Route::post('studentreqcourse','Teacher\ManageStudentController@studentsrequestCourse')->name('teacher.studentreq.course');
-    Route::get('studentreg','Teacher\TeacherController@studentreg')->name('teacher.studentreg');
+    Route::get('studentreqcourse','Teacher\ManageStudentController@studentsrequestCourse')->name('teacher.studentreq.course');
+    Route::get('acceptstudentreq/{student_id}','Teacher\ManageStudentController@acceptstudent')->name('teacher.studentreq.accept');
+    Route::get('rejectstudentreq/{student_id}','Teacher\ManageStudentController@rejectstuudednt')->name('teacher.studentreq.reject');
+    Route::get('studentreg/{course_id}','Teacher\ManageStudentController@studentreg')->name('teacher.studentreg');
+    Route::get('deletstd/[twoid]','Teacher\ManageStudentController@deletestd')->name('teacher.deletestd');
     Route::get('profile','Teacher\TeacherController@profile')->name('teacher.profile');
     Route::get('editprofile','Teacher\TeacherController@editprofile')->name('teacher.editprofile');
     Route::get('addexam','Teacher\TeacherController@addexam')->name('teacher.addexam');
+    Route::get('showexams','Teacher\TeacherController@showexams')->name('teacher.showexams');
 });
 });

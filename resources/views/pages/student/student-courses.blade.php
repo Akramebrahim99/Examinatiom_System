@@ -37,8 +37,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
+                    <li class="nav-item dropdown">
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            {{__('massages.Courses')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Student Requests</a>
+                            </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
@@ -70,24 +77,8 @@
     <section class="courses-main">
         <div class="container">
             <div class="row last">
-                <h4 class="courses-header col-12">Yor courses</h4>
-                @if(isset($studendCourses) && $studendCourses -> count() > 0)
-                    @if(isset($courses) && $courses -> count() > 0)
-                        @foreach($courses as $course)
-                                @foreach($studendCourses as $studentCourse)
-                                    @if($studentCourse->pivot->course_id != $course->id)
-                                        <div class="courses-info text-md-center col-8">
-                                            <span class="subject-name">{{$course -> name}}</span>
-                                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
-                                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
-                                            <span class="subject-date"><a href="{{route('student.request',$course -> id)}}">Request</a></span>
-                                            <!-- <span class="subject-duration">2h</span> -->
-                                        </div>
-                                    @endif
-                                @endforeach
-                        @endforeach
-                    @endif
-                @elseif(isset($courses) && $courses -> count() > 0)
+                <h4 class="courses-header col-12">Your courses</h4>
+                @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <div class="courses-info text-md-center col-8">
                             <span class="subject-name">{{$course -> name}}</span>

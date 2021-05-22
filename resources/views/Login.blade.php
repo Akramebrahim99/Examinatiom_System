@@ -70,20 +70,20 @@
                 <h2 class="form-title">{{__('massages.Sign In')}}</h2>
                 <form method="POST" action="{{route('auth.login')}}" class="register-form" id="login-form">
                 @csrf
-                <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="{{__('auth.Your Email')}}"/>
-                                @error('email')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
-                            </div>
+                    <div class="form-group">
+                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                        <input type="email" name="email" id="email" placeholder="{{__('auth.Your Email')}}"/>
+                    </div>
+                    @error('email')
+                        <p style="color: red">{{$message}}</p>
+                    @enderror
                     <div class="form-group">
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="pass" id="your_pass" placeholder="{{__('auth.Password')}}"/>
-                               @error('password')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                     </div>
+                    @error('password')
+                        <p style="color: red">{{$message}}</p>
+                    @enderror
                     <div class="form-group">
                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>{{__('auth.Remember me')}}</label>

@@ -70,59 +70,59 @@
                         @csrf
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="{{__('auth.Name')}}"/>
-                                @error('name')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
+                                <input type="text" name="name" id="name" placeholder="{{__('auth.Name')}}"/> 
                             </div>
+                            @error('name')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="{{__('auth.Email')}}"/>
-                                @error('email')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
+                                <input type="email" name="email" id="email" placeholder="{{__('auth.Email')}}"/>             
                             </div>
+                            @error('email')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="pass" id="pass" placeholder="{{__('auth.Password')}}"/>
-                                @error('pass')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div>
+                            @error('pass')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account-circle material-icons-name"></i></label>
                                 <input type="text" name="id" id="name" placeholder="{{__('auth.Id')}}"/>
-                                @error('id')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div>
+                            @error('id')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-pin-account material-icons-name"></i></label>
                                 <input type="text" name="ssn" id="name" placeholder="{{__('auth.SSN')}}"/>
-                                @error('ssn')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div>
+                            @error('ssn')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
                                 <input type="text" name="university" id="name" placeholder="{{__('auth.University')}}"/>
-                                @error('university')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div><div class="form-group">
+                            @error('university')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                                 <label for="name"><i class="zmdi zmdi-book material-icons-name"></i></label>
                                 <input type="text" name="collage" id="name" placeholder="{{__('auth.Collage')}}"/>
-                                @error('collage')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div>
+                            @error('collage')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-phone material-icons-name"></i></label>
                                 <input type="text" name="phone-num" id="name" placeholder="{{__('auth.Phone Number')}}"/>
-                                @error('phone-num')
-                                <p style="color: red">{{$message}}</p>
-                                @enderror
                             </div>
+                            @error('phone-num')
+                                <p style="color: red">{{$message}}</p>
+                            @enderror
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="{{__('auth.Register')}}"/>
                             </div>

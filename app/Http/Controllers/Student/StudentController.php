@@ -22,7 +22,9 @@ class StudentController extends Controller
 
     public function exam()
     {
-        return view('pages.student.exam-links');
+        $student = Student::find(session('user_id'));
+        $studendCourses = $student -> courses;
+        return view('pages.student.exam-links',compact('studendCourses'));
     }
 
     public function result()
@@ -31,19 +33,51 @@ class StudentController extends Controller
     }
 
     public function course()
-    {
+    {   
         $student = Student::find(session('user_id'));
         $studendCourses = $student -> courses;
         $courses = Course::select('id','name','course_degree','date_of_exam','duration')->get();
-        return view('pages.student.student-courses',compact('courses','studendCourses'));
+        foreach($studendCourses as $studendCourse)
+        {
+            foreach($courses as $key => $course){
+                if($course -> id == $studendCourse->pivot->course_id){
+                    unset($courses[$key]);
+                }
+            }
+        }
+        return view('pages.student.student-courses',compact('courses'));
     }
 
     public function addcourse($courseId)
     {
         $student = Student::find(session('user_id'));
         $student ->courses()->syncWithoutDetaching($courseId);
-        return redirect()->route('student.exam');
+        return redirect()->back();
     }
+
+    public function requestedcourses(){
+        $student = Student::find(session('user_id'));
+        $studentCourses = $student -> courses;
+        foreach($studentCourses as   $key => $student){
+            if($student->pivot->course_status == True)
+                unset($studentCourses[$key]);
+        }
+        return view('pages.student.student-requestedcourses',compact('studentCourses'));
+    }
+
+    public function deletereq($courseid)
+    {
+        //delete student request
+        $course = Course::find($courseid);
+        $students = $course->students;
+        foreach($students as $student){
+            if($student->id == session('user_id'))
+                $student->pivot-> delete();
+        }
+        return back()->withInput();
+    }
+
+
     public function profile()
     {
         return view('pages.Student.Student Profile');

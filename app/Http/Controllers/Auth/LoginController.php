@@ -10,7 +10,20 @@ use App\Models\Student;
 
 class LoginController extends Controller
 {
+    
+    
     public function index(){
+
+        $admin = Admin::find(1);
+        if(!isset($admin)){
+            $admin = new Admin([
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'password' => 'admin',
+            ]);
+            $admin->save();
+        }
+
         if(session()->has('user_id'))
             return Redirect()->back();
 
@@ -19,8 +32,7 @@ class LoginController extends Controller
 
     public function logout(){
         if(session()->has('user_id'))
-            session()->pull('user_id');
-        
+            session()->flush();
         return redirect()->route('login');
     }
 

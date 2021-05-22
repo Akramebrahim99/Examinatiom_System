@@ -21,10 +21,10 @@ class RegisterController extends Controller
             'email' => 'required|email',
             'pass' => 'required',
             'id' => 'required|numeric|unique:students,id',
-            'ssn' => 'required|numeric|size:14|unique:students,ssn',
+            'ssn' => 'required|numeric|digits:14|unique:students,ssn',
             'university' => 'required|string',
             'collage' => 'required|string',
-            'phone-num' => 'required|numeric|size:11|unique:students,phone'
+            'phone-num' => 'required|numeric|digits:11|unique:students,phone'
         ];
 
         $messages = $this->getMessages();
@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'university.required' => 'your university name is required please',
             'collage.required' => 'your collage name is required please',
             'phone-num.required' => 'your phone number is required please',
-            'phone-num.size' => 'your phone number size is must be 11 number please',
+            'phone-num.digits' => 'your phone number size is must be 11 number please',
             'phone-num.numeric' => 'your phone number must be numbers please',
         ];
     }

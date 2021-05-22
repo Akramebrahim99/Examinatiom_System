@@ -48,7 +48,7 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.addexam')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
                                 <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                             </div>
                         </li>
@@ -82,40 +82,16 @@
         <div class="container">
             <div class="row last" id="page-body">
                 <h4 class="exam-header col-12">Schedule of exams dates</h4>
-
-                <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/12/2</span>
-                    <span class="subject subject-time">9:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">12:00 PM</span>
-                    <span class="subject subject-duration">30 min</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">1:00 PM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">10:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
+                            <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">{{$course -> name}}</a><!-- Name of Course will print from database -->
+                            <span class="subject subject-date">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-time">{{$course -> duration}} H</span>
+                            <span class="subject subject-duration">{{$course -> course_degree}}</span>
+                        </span>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
