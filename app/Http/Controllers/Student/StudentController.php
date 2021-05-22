@@ -55,6 +55,28 @@ class StudentController extends Controller
         return redirect()->back();
     }
 
+    public function requestedcourses(){
+        $student = Student::find(session('user_id'));
+        $studentCourses = $student -> courses;
+        foreach($studentCourses as   $key => $student){
+            if($student->pivot->course_status == True)
+                unset($studentCourses[$key]);
+        }
+        return view('pages.student.student-requestedcourses',compact('studentCourses'));
+    }
+
+    public function deletereq($courseid)
+    {
+        //delete student request
+        $course = Course::find($courseid);
+        $students = $course->students;
+        foreach($students as $student){
+            if($student->id == session('user_id'))
+                $student->pivot-> delete();
+        }
+        return back()->withInput();
+    }
+
 
     public function profile()
     {

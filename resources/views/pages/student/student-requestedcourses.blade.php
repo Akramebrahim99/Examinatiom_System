@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>{{__('massages.Exam')}}</title>
+    <title>Student Courses</title>
 </head>
 <body>
 
@@ -51,7 +51,7 @@
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -65,38 +65,34 @@
                         </div>
                     </li>
                     <li class="nav-item">
-
-                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
-
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
 
-    <!-- Start Exam Section -->
-    <section class="exam-main">
+    <!-- Start Student Courses Section -->
+    <section class="courses-main">
         <div class="container">
             <div class="row last">
-                <h4 class="exam-header col-12">Schedule of exams dates</h4>
-                @if(isset($studendCourses) && $studendCourses -> count() > 0)
-                    @foreach($studendCourses as $course)
-                        @if($course->pivot->course_status == True)
-                            <a class="exam-info text-md-center col-8" href="#">
-                                <span class="subject-name">{{$course -> name}}</span>
-                                <span class="subject-date">{{$course -> date_of_exam}}</span>
-                                <span class="subject-time">{{$course -> duration}} H</span>
-                                <span class="subject-duration">{{$course -> course_degree}}</span>
-                            </a>
-                        @endif
+                <h4 class="courses-header col-12">Your courses</h4>
+                @if(isset($studentCourses) && $studentCourses -> count() > 0)
+                    @foreach($studentCourses as $course)
+                        <div class="courses-info text-md-center col-8">
+                            <span class="subject-name">{{$course -> name}}</span>
+                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                            <span class="subject-date"><a href="{{route('studentreq.delete',$course -> id)}}">Remove</a></span>
+                            <!-- <span class="subject-duration">2h</span> -->
+                        </div>
                     @endforeach
                 @endif
             </div>
         </div>
     </section>
-    <!-- End Exam Section -->
+    <!-- End Student Courses Section -->
 
     <!-- Scripts -->
         <!-- Bootstrap -->

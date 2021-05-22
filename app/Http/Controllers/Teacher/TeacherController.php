@@ -47,4 +47,9 @@ class TeacherController extends Controller
     {
         return view('pages.teacher.CreateExam English and Arabic');
     }
+
+    public function showexams(){
+        $courses = Course::where('teacher_id',session('user_id'))->get();
+        return view('pages.teacher.examspage',compact('courses'));
+    }
 }
