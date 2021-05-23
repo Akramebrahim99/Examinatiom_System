@@ -85,8 +85,7 @@
                     @foreach($courses as $course)
                         <div class="teacher-courses-info text-md-center col-8">
                             <span class="teacher-subject-name">{{$course->name}}</span>
-                            <span class="number-student-register-course"><a class="student-register-course" href="{{route('teacher.studentreg',$course->id)}}">Remove Exam</a></span>
-                            <a class="student-register-course" href="{{route('teacher.addexam')}}">Edit Exam</a>
+                            <a class="student-register-course" href="{{route('teacher.addexam',$course->id)}}">ٍShow Exam</a>
                         </div>
                     @endforeach
                 @endif

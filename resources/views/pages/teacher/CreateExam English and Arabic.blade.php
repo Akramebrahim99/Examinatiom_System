@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="../../css/library/hover.css">
+    <link rel="stylesheet" href="../../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,7 +19,8 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/create_question.css">
     <title>Create Exam</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
-                                <a class="dropdown-item" href="./student-requests.html">Student Requests</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -87,7 +88,7 @@
                     </button>
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
-                <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
+                <form method="POST" action="{{route('teacher.addquestion',[$course->id])}}" class="add-teacher-model">
                         @csrf
                        <div class="row">
                        <div class="col-sm-12">
@@ -100,14 +101,14 @@
                          <div class="col-sm-6">
                          <div class="form-group">
                         <label>Enter Option 1</label>
-                        <input type="text" required="required" name="option1" placeholder="Enter Option 1" class="form-control">
+                        <input type="text" name="option1" placeholder="Enter Option 1" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
                         <label>Enter Option 2</label>
-                        <input type="text" required="required" name="option2" placeholder="Enter Option 2" class="form-control">
+                        <input type="text" name="option2" placeholder="Enter Option 2" class="form-control">
                         </div>
                         </div>
 
@@ -115,7 +116,7 @@
                         <div class="col-sm-6">
                         <div class="form-group">
                         <label>Enter Option 3</label>
-                        <input type="text" required="required" name="option3" placeholder="Enter Option 3" class="form-control">
+                        <input type="text" name="option3" placeholder="Enter Option 3" class="form-control">
                         </div>
                         </div>
 
@@ -123,14 +124,27 @@
                         <div class="col-sm-6">
                         <div class="form-group">
                         <label>Enter Option 4</label>
-                        <input type="text" required="required" name="option4" placeholder="Enter Option 4" class="form-control">
+                        <input type="text" name="option4" placeholder="Enter Option 4" class="form-control">
                         </div>
                         </div>
 
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Enter Right Ans</label>
-                        <input type="text" required="required" name="RightAns" placeholder="Enter Right Ans" class="form-control">
+                        <label>Enter Right Answer</label>
+                        <select  name = "RightAns">
+                            <option name="option1" value = "option1">Option 1</option>
+                            <option name="option2" value = "option2">Option 2</option>
+                            <option name="option3" value = "option3">Option 3</option>
+                            <option name="option4" value = "option4">Option 4</option>
+                            <option name="Essay Question" value = "Essay Question">Essay Question</option>
+                        </select>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Enter Question Degree</label>
+                        <input type="text" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
                         </div>
                         </div>
                     
@@ -150,24 +164,47 @@
     <section class="add-courses">
 
             <div class="row content" id="page-body">
-
                 <div class="container">
                     <div  class="col-12">
-                        <h4 class="page-header">Course Name</h4>
+                        <h4 class="page-header">{{$course->name}}</h4>
                         <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add Question</button>
                     </div>
                 </div>
-                
-
             </div>
+            @if(isset($questions) && $questions -> count() > 0)
+                    @foreach($questions as $question)
+                        <div class="teacher-courses-info text-md-center col-20" style="background-color: #ddd;border-radius: 10px;font-family: 'Montserrat', sans-serif;">
+                            <div class="container mt-sm-5 my-1">
+                                <div class="question ml-sm-5 pl-sm-5 pt-2">
+                                    <div class="py-2 h5">
+                                        <b>Q. {{$question->description}}</b>
+                                    </div>
+                                    <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options"> 
+                                        <label class="options">{{$question->answer1}}  </label>
+                                        <label class="options">{{$question->answer2}}  </label>
+                                        <label class="options">{{$question->answer3}}  </label>
+                                        <label class="options">{{$question->answer4}}  </label> 
+                                        <label class="options" style="color: green">Correct Answer Is: <span style="color: red">{{$question->correct_answer}}</span> </label>
+                                        <label class="options" style="color: green">Degree Is: <span style="color: red">{{$question->degree}}</span> </label>  
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center pt-3">
+                                    <div id="prev"> <button class="btn btn-success">Edit</button> </div>
+                                    <div class="ml-auto mr-sm-5"> <button class="btn btn-danger">Delete</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+            @endif
+
 
     </section>
     <!-- End Student Courses Section -->
 
     <!-- Scripts -->
         <!-- Bootstrap -->
-        <script src="../../JQuery/JQuery.js"></script>
-        <script src="../../javascript/bootstrap.js"></script>
+        <script src="../../../JQuery/JQuery.js"></script>
+        <script src="../../../javascript/bootstrap.js"></script>
         <!-- Bootstrap -->
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -175,8 +212,8 @@
             AOS.init();
         </script>
         <!-- AOS -->
-        <script src="../../JQuery/jq.js"></script>
-        <script src="../../javascript/javascript.js" defer></script>
+        <script src="../../../JQuery/jq.js"></script>
+        <script src="../../../javascript/javascript.js" defer></script>
     <!-- Scripts -->
 </body>
 </html>

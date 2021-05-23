@@ -63,7 +63,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('deletstd/[twoid]','Teacher\ManageStudentController@deletestd')->name('teacher.deletestd');
     Route::get('profile','Teacher\TeacherController@profile')->name('teacher.profile');
     Route::get('editprofile','Teacher\TeacherController@editprofile')->name('teacher.editprofile');
-    Route::get('addexam','Teacher\TeacherController@addexam')->name('teacher.addexam');
+    Route::get('addexam/{course_id}','Teacher\TeacherController@addexam')->name('teacher.addexam');
     Route::get('showexams','Teacher\TeacherController@showexams')->name('teacher.showexams');
+    Route::post('addquestion/{course_id}','Teacher\TeacherController@addquestion')->name('teacher.addquestion');
 });
 });

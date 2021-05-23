@@ -19,12 +19,9 @@ class Student extends Model
     }
 
 
-    public function teachers(){
-        return $this -> belongsToMany('App\Models\Teacher','student_teacher','student_id','teacher_id');
-    }
-
     public function questions(){
-        return $this -> belongsToMany('App\Models\Question','student_question','student_id','question_id');
+        return $this -> belongsToMany('App\Models\Question','student_question','student_id','question_id')
+        ->withPivot(['question_degree','student_answer']);
     }
 
 }
