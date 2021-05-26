@@ -89,5 +89,49 @@ class TeacherController extends Controller
         return view('pages.teacher.examspage',compact('courses'));
     }
 
+    public function deletequestion($questionId){
+        $question = Question::find($questionId);
+        $question ->delete();
+        return back()->withInput();
+    }
+
+    public function editquestion($questionId)
+    {
+        $question = Question::find($questionId);
+        return view('pages.teacher.edit question',compact('question'));
+    }
+
+    public function editquestioninfo(Request $request)
+    {
+        $question = Question::find($request->question_id);
+
+        $this->validate($request,[
+            'question' => 'required',
+            'RightAns' => 'required',
+            'degree' => 'required'
+        ]);
+        
+        $rightAns = $request->get('RightAns');
+        if($rightAns == 'Essay Question'){
+            $rightAns = NULL;
+        }
+        else
+        {
+            $rightAns = $request->get($request->get('RightAns'));
+        }
+
+        $question->description = $request->get('question');
+        $question->answer1 = $request->get('option1');
+        $question->answer2 = $request->get('option2');
+        $question->answer3 = $request->get('option3');
+        $question->answer4 = $request->get('option4');
+        $question->correct_answer = $rightAns;
+        $question->degree = $request->get('degree');
+        $question->save();
+
+
+        return $this->addexam($question->course_id);
+
+    }
 
 }

@@ -84,7 +84,7 @@
                 @if(isset($studendCourses) && $studendCourses -> count() > 0)
                     @foreach($studendCourses as $course)
                         @if($course->pivot->course_status == True)
-                            <a class="exam-info text-md-center col-8" href="#">
+                            <a class="exam-info text-md-center col-8" href="{{route('student.getexam',$course->id)}}">
                                 <span class="subject-name">{{$course -> name}}</span>
                                 <span class="subject-date">{{$course -> date_of_exam}}</span>
                                 <span class="subject-time">{{$course -> duration}} H</span>

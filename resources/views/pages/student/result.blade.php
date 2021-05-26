@@ -77,27 +77,21 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">Yor result</h4>
+                <h4 class="result-header col-12">Your Results</h4>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">D</span>
+                            <span class="subject-name">Course Name</span>
+                            <span class="subject-doctor">Course Degree</span>
+                            <span style="color: red" class="subject-date">Your Degree</span>
                 </div>
-                <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">100 - 90</span>
-                    <span class="subject-date">A+</span>
-                </div>
-                <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">100 - 60</span>
-                    <span class="subject-date">D+</span>
-                </div>
-                <div class="result-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">D</span>
-                </div>
+                @if(isset($courses) && count($courses) > 0)
+                    @foreach($courses as $course)
+                        <div class="result-info text-md-center col-8">
+                            <span class="subject-name">{{$course->name}}</span>
+                            <span class="subject-doctor">{{$course->course_degree}}</span>
+                            <span style="color: red" class="subject-date">{{$course->pivot->course_degree}}</span>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

@@ -47,6 +47,8 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('profile','Student\StudentController@profile')->name('student.profile');
     Route::get('editprofile','Student\StudentController@editprofile')->name('student.editprofile');
     Route::get('courserequest/{course_id}','Student\StudentController@addcourse')->name('student.request');
+    Route::get('getexam/{course_id}','Student\StudentController@getexam')->name('student.getexam');
+    Route::post('correctexam','Student\StudentController@correectexam')->name('student.correectexam');
 });
 
 
@@ -66,5 +68,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('addexam/{course_id}','Teacher\TeacherController@addexam')->name('teacher.addexam');
     Route::get('showexams','Teacher\TeacherController@showexams')->name('teacher.showexams');
     Route::post('addquestion/{course_id}','Teacher\TeacherController@addquestion')->name('teacher.addquestion');
+    Route::get('deletequestion/{question_id}','Teacher\TeacherController@deletequestion')->name('teacher.deletequestion');
+    Route::get('editquestion/{question_id}','Teacher\TeacherController@editquestion')->name('teacher.editquestion');
+    Route::post('editquestioninfo/{question_id}','Teacher\TeacherController@editquestioninfo')->name('teacher.editquestioninfo');
 });
 });
