@@ -1,24 +1,27 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" href="../../css/bootstrap11.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
+    <!-- Bootstrap -->
+    <!-- Hover CSS library -->
+    <link rel="stylesheet" href="../../../css/library/hover.css">
+    <!-- Hover CSS library -->
+    <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Mark Essay question English and Arabic.css" />
-    <script src="../../Javascript/html5shiv.min.js"></script>
-    <script src="../../Javascript/respond.min.js"></script>
-    <script type="text/javascript"></script>
-    
+    <!-- Google fonts -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <title>Essay Question</title>
 </head>
 <body>
-    <!-- Start navbar -->
-    <div class="container">
+ <!-- Start navbar -->
+ <div class="container">
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -28,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}}</a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('teacher.exam')}}">{{__('massages.Exam')}}</a>
@@ -61,7 +64,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <<a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -69,22 +72,41 @@
     </nav>
 
     <!-- End navbar -->
-        <div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="headeng">
-                <p class="text-primary">Mark Essay question</p>
-            </div>
-            <div class="englink">
-                <a href="Mark Essay English.html" target="blank" title="Mark essay questions">Go to Essay questions</a>
+
+    <!-- Start Student Courses Section -->
+    <section class="teacher-courses-main">
+        <div class="container">
+            <div class="row last" id="page-body">
+                <div  class="col-12">
+                    <h4 class="col-12 exam-screen-header">Eassy Questions</h4>
+                    <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
+                </div>
+                @if(isset($questions) && $questions -> count() > 0)
+                    @foreach($questions as $question)
+                        <div class="teacher-courses-info text-md-center col-8">
+                            <span class="teacher-subject-name">{{$question->description}}</span>
+                            <a class="student-register-course" href="{{route('teacher.markessayquestion',$question->id)}}"><span>Mark This Question</span></a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
-    </div>
- 
-    <script src="../../jquery/query.js"></script>
-    <script src="../../Javascript/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../../jquery/jqq.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    </section>
+    <!-- End Student Courses Section -->
+
+    <!-- Scripts -->
+        <!-- Bootstrap -->
+        <script src="../../../JQuery/JQuery.js"></script>
+        <script src="../../../javascript/bootstrap.js"></script>
+        <!-- Bootstrap -->
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <!-- AOS -->
+        <script src="../../../JQuery/jq.js"></script>
+        <script src="../../../javascript/javascript.js" defer></script>
+    <!-- Scripts -->
 </body>
 </html>

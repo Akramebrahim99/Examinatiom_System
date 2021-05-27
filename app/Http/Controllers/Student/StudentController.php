@@ -112,6 +112,7 @@ class StudentController extends Controller
         $studentDegree = 0;
         $student = Student::find(session('user_id'));
         $questionsIds = session('questionsid');
+        session()->forget('questionsid');
         $question = Question::find($questionsIds[0]);
         $course = Course::find($question->course_id);
         $students = $course->students;

@@ -131,7 +131,44 @@ class TeacherController extends Controller
 
 
         return $this->addexam($question->course_id);
+    }
 
+    public function getessay($courseId)
+    {
+        $course = Course::find($courseId);
+        $questions = $course->questions;
+
+        foreach($questions as $key => $question){
+            if($question->answer1 != Null || $question->answer2 != Null || $question->answer3 != Null || $question->answer4 != Null )
+                unset($questions[$key]);
+        }
+
+        return view('pages.teacher.essayquestion',compact('questions'));
+    }
+
+    public function markessayquestion($questionId)
+    {
+        $count = 0;
+        $question = Question::find($questionId);
+        $students = $question->students;
+        return view('pages.teacher.markessayquestion',compact('students','question','count'));
+    }
+
+    public function addmarkessayquestion(Request $request)
+    {
+        $question = Question::find($request->question_id);
+        $studentsIds = session('studentsid');
+        $course = Course::find($question->course_id);
+        session()->forget('questionsid');
+
+        for($i=0; $i<count($studentsIds); $i++)
+        {
+            $question->students()->updateExistingPivot($studentsIds[$i], ['question_degree' => $request->get('degree'.$i)]);
+            $course->students->find($studentsIds[$i])->pivot->course_degree += $request->get('degree'.$i);
+            $course->students->find($studentsIds[$i])->pivot->save();
+        }
+
+        return $this->getessay($question->course_id);
     }
 
 }

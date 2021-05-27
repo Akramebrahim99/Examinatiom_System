@@ -71,5 +71,8 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('deletequestion/{question_id}','Teacher\TeacherController@deletequestion')->name('teacher.deletequestion');
     Route::get('editquestion/{question_id}','Teacher\TeacherController@editquestion')->name('teacher.editquestion');
     Route::post('editquestioninfo/{question_id}','Teacher\TeacherController@editquestioninfo')->name('teacher.editquestioninfo');
+    Route::get('getessay/{course_id}','Teacher\TeacherController@getessay')->name('teacher.getessay'); 
+    Route::get('markessayquestion/{question_id}','Teacher\TeacherController@markessayquestion')->name('teacher.markessayquestion');
+    Route::post('addmarkessayquestion/{question_id}','Teacher\TeacherController@addmarkessayquestion')->name('teacher.addmarkessayquestion');
 });
 });
