@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Teacher;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -18,13 +20,13 @@ class RegisterController extends Controller
         
         $rules= [
             'name' => 'required|max:191|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:students,email|unique:teachers,email|unique:admins,email',
             'pass' => 'required',
             'id' => 'required|numeric|unique:students,id',
-            'ssn' => 'required|numeric|digits:14|unique:students,ssn',
+            'ssn' => 'required|numeric|digits:14|unique:students,ssn|unique:teachers,ssn',
             'university' => 'required|string',
             'collage' => 'required|string',
-            'phone-num' => 'required|numeric|digits:11|unique:students,phone'
+            'phone-num' => 'required|numeric|digits:11|unique:students,phone|unique:teachers,phone'
         ];
 
         $messages = $this->getMessages();
@@ -68,6 +70,7 @@ class RegisterController extends Controller
             'phone-num.required' => 'your phone number is required please',
             'phone-num.digits' => 'your phone number size is must be 11 number please',
             'phone-num.numeric' => 'your phone number must be numbers please',
+            'phone-num.unique' => 'The phone number has already been taken',
         ];
     }
 }

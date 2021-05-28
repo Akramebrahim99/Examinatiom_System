@@ -6,7 +6,7 @@
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" href="../../css/bootstrap11.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -67,49 +67,94 @@
         </div>
     </nav>
 <!-- End navbar -->
-        <div class="row" id="EnglishRow" style="display:block" ;>
+   <div class="row" id="EnglishRow" style="display:block" ;>
             
+            <div class="EdtStdName">
             @if(isset($student))
-            <div class="StdName">
-                <label style="font-weight:700">
-                    Name :
-                </label>
-                    <label id="lblStdName" style="font-weight:700">{{$student->name}}</label>
-            </div>
-            <div class="StdSsR">
-                <label style="font-weight:700">SSN :</label>
-                <label id="lblStdSSR" style="font-weight:700">{{$student->ssn}}</label>
-            </div>
-            <div class="StdUni">
-                <label style="font-weight:700">University : </label>
-                <label id="lblStdUni" style="font-weight:700">{{$student->university_name}}</label>
-            </div>
-            <div class="Stdcoll">
-                <label style="font-weight:700">College :</label>
-                <label id="lblStdColl" style="font-weight:700">{{$student->collage_name}}</label>
-            </div>
-            <div class="Stdcoll">
-                <label style="font-weight:700">Phone :</label>
-                <label id="lblStdColl" style="font-weight:700">{{$student->phone}}</label>
-            </div>
-            <div class="StdEmail">
-                <label style="font-weight:700">Email :</label>
-                <label id="lblStdEmail" style="font-weight:700">{{$student->email}}</label>
-            </div>
-            <div class="StdPass">
-                <label style="font-weight:700">Password :</label>
-                <label id="lblStdPass" style="font-weight:700">{{$student->password}}</label>
-            </div>
-            <div class="StdID">
-                <label style="font-weight:700">Id :</label>
-                <label id="lblStdID" style="font-weight:700">{{$student->id}}</label>
-            </div>
+             <table>
+                    <tr> 
+                        <td style="padding:10px;text-align:right;">
+                            <label style="font-weight:700">Name :</label>
+                        </td>
+                        <td>
+                            <label id="lblStdName" style="font-weight:700">{{$student->name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+                            <label style="font-weight:700">SSN :</label>
+                        </td>
+                        <td>
+                            <label id="lblStdSSR" style="font-weight:700">{{$student->ssn}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+                            <label style="font-weight:700">University : </label>
+                        </td>
+                        <td>
+                            <label id="lblStdUni" style="font-weight:700">{{$student->university_name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">College :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblStdColl" style="font-weight:700">{{$student->collage_name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">Email :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblStdEmail" style="font-weight:700">{{$student->email}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">Password :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblStdPass" style="font-weight:700">{{$student->password}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">Id :</label>
+                        </td>
+                        <td>
+
+                           <label id="lblStdID" style="font-weight:700">{{$student->id}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;"> 
+
+                            <label style="font-weight:700">Phone :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblStdColl" style="font-weight:700">{{$student->phone}}</label>
+                        </td>
+                    </tr>
+
+                </table>
+        </div>
             
-            <div style="text-align: center;" class="StdEdit">
+             <div class="btnsvStd">
                 <a href="{{route('student.editprofile')}}">
-                    <button id="btn12" class="btn btn-primary" type="submit">Edit</button>
+                    <button id="btn13" class="btn btn-primary" type="submit">Edit</button>
                 </a>
-            </div>
+              </div>
             @endif
         </div>
     </div>

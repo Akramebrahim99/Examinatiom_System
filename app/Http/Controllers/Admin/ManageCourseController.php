@@ -40,12 +40,19 @@ class ManageCourseController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'courseName' => 'required',
+        $rules= [
+            'courseName' => 'required|unique:courses,name',
             'courseDate' => 'required',
             'courseDegree' => 'required',
             'duration' => 'required',
-        ]);
+        ];
+        $messages = $this->getMessages();
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        if($validator -> fails()){
+            return redirect()->route('show.courses')->withErrors($validator)->withInputs($request->all())->with(['faild' => 'You Should Open The Form Again To Add Course Correct']);
+        }
 
         $course = new Course([
             'name' => $request->get('courseName'),
@@ -56,9 +63,17 @@ class ManageCourseController extends Controller
 
         $course->save();
 
-        return redirect()->route('show.courses');
+        return redirect()->route('show.courses')->with(['success' => 'Course Added Successfully']);
     }
-
+    protected function getMessages(){
+        return $messages = [
+            'courseName.required' => 'course name is required please',
+            'courseDate.required' => 'course date is required please',
+            'courseDegree.required' => 'course degree is required please',
+            'duration.required' => 'duration is required please',
+            'courseName.unique' => 'The course has already been taken',
+        ];
+    }
     /**
      * Display the specified resource.
      *

@@ -91,21 +91,39 @@
                         <label for="teacher-name"><span>Teacher Name</span>
                             <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="Teacher name" />
                         </label>
+                        @error('teacherName')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="teacher-email"><span>Email</span>
                             <input type="email" name="teacherEmail" class="teacher-email" id="teacher-email" placeholder="example@gmail.com" />
                         </label>
+                        @error('teacherEmail')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="teacher-password"><span>Password</span>
                             <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="Password" />
                         </label>
+                        @error('teacherPassword')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="collage-name"><span>Collage Name</span>
                             <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder="Collage name" />
                         </label>
+                        @error('teacherCollage')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="university-name"><span>University Name</span>
                             <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="University name" />
                         </label>
+                        @error('teacherUniversity')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="teacher-phone"><span>Phone</span>
                             <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="phone" />
                         </label>
+                        @error('teacherPhone')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
 
                         <div class="modal-footer">
                             <button type="submit" class="add-button">Add</button>
@@ -130,6 +148,16 @@
                         <h4 class="page-header">Teachers</h4>
                         <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add teacher</button>
                     </div>
+                    @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('success')}}
+                            </div>
+                    @elseif (Session::has('faild'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('faild')}}
+                            </div>
+                    @endif
+                <br>
                 </div>
                 @if(isset($teachers) && $teachers -> count() > 0)
                     @foreach($teachers as $teacher)
