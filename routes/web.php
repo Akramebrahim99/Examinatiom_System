@@ -49,6 +49,7 @@ Route::group(['prefix' => 'student'],function(){
     Route::get('courserequest/{course_id}','Student\StudentController@addcourse')->name('student.request');
     Route::get('getexam/{course_id}','Student\StudentController@getexam')->name('student.getexam');
     Route::post('correctexam','Student\StudentController@correectexam')->name('student.correectexam');
+    Route::post('editstudentprofile','Student\StudentController@editstudentprofile')->name('student.editstudentprofile');
 });
 
 
@@ -74,5 +75,6 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::get('getessay/{course_id}','Teacher\TeacherController@getessay')->name('teacher.getessay'); 
     Route::get('markessayquestion/{question_id}','Teacher\TeacherController@markessayquestion')->name('teacher.markessayquestion');
     Route::post('addmarkessayquestion/{question_id}','Teacher\TeacherController@addmarkessayquestion')->name('teacher.addmarkessayquestion');
+    Route::post('editteacherprofile','Teacher\TeacherController@editteacherprofile')->name('teacher.editteacherprofile');
 });
 });

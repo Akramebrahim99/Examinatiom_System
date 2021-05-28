@@ -70,9 +70,7 @@
     <!-- End navbar -->
 
         <div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="img11">
-                <img src="../../img/Teach.jpg" width="200" height="150" />
-            </div>
+            @if(isset($teacher))
             <div class="TeachEdit">
                 <a href="{{route('teacher.editprofile')}}">
                     <button id="btn11" class="btn btn-primary" type="submit">Edit</button>
@@ -82,30 +80,28 @@
                 <label style="font-weight:700">
                     Name :
                 </label>
-                <label id="lblTeachName" style="font-weight:700">Mohamed Ahmed Mahmoud</label>
+                <label id="lblTeachName" style="font-weight:700">{{$teacher->name}}</label>
             </div>
-            <div class="teachSsR">
-                <label style="font-weight:700">SSN :</label>
-                <label id="lblTeachSSR" style="font-weight:700">255697578678</label>
-            </div>
+            
             <div class="teachUni">
                 <label style="font-weight:700">University : </label>
-                <label id="lblTeachUni" style="font-weight:700">Helwan</label>
+                <label id="lblTeachUni" style="font-weight:700">{{$teacher->university_name}}</label>
             </div>
             <div class="teachcoll">
                 <label style="font-weight:700">College :</label>
-                <label id="lblTeachColl" style="font-weight:700"> computer and information</label>
+                <label id="lblTeachColl" style="font-weight:700">{{$teacher->collage_name}}</label>
             </div>
             <div class="teachEmail">
                 <label style="font-weight:700">Email :</label>
-                <label id="lblTeachEmail" style="font-weight:700"> MA@gmail.com</label>
+                <label id="lblTeachEmail" style="font-weight:700">{{$teacher->email}}</label>
             </div>
             <div class="teachPass">
                 <label style="font-weight:700">Password :</label>
-                <label id="lblTeachPass" style="font-weight:700"> *******</label>
+                <label id="lblTeachPass" style="font-weight:700">{{$teacher->password}}</label>
             </div>
         </div>
         </div>
+        @endif
         <script src="../../jquery/query.js"></script>
     <script src="../../Javascript/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

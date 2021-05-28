@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Question;
+use App\Models\Teacher;
 
 class TeacherController extends Controller
 {
@@ -38,11 +39,36 @@ class TeacherController extends Controller
 
     public function profile()
     {
-        return view('pages.teacher.Teacher Profile');
+        $teacher = Teacher::find(session('user_id'));
+        return view('pages.teacher.Teacher Profile',compact('teacher'));
     }
     public function editprofile()
     {
-        return view('pages.teacher.Edit Teacher Profile');
+        $teacher = Teacher::find(session('user_id'));
+        return view('pages.teacher.Edit Teacher Profile',compact('teacher'));
+    }
+
+    public  function editteacherprofile(Request $request)
+    {
+        $teacher = Teacher::find(session('user_id'));
+        $this->validate($request,[
+            'teacherName' => 'required',
+            'teacherEmail' => 'required',
+            'teacherPassword' => 'required',
+            'teacherCollage' => 'required',
+            'teacherUniversity' => 'required',
+            'teacherPhone' => 'required'
+        ]);
+
+        $teacher->name = $request->get('teacherName');
+        $teacher->university_name = $request->get('teacherUniversity');
+        $teacher->collage_name = $request->get('teacherCollage');
+        $teacher->email = $request->get('teacherEmail');
+        $teacher->password = $request->get('teacherPassword');
+        $teacher->phone = $request->get('teacherPhone');
+
+        $teacher->save();
+        return $this->profile();
     }
 
     public function addexam($courseId)
@@ -170,5 +196,7 @@ class TeacherController extends Controller
 
         return $this->getessay($question->course_id);
     }
+
+    
 
 }

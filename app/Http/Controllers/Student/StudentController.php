@@ -100,11 +100,40 @@ class StudentController extends Controller
 
     public function profile()
     {
-        return view('pages.Student.Student Profile');
+        $student = Student::find(session('user_id'));
+        return view('pages.Student.Student Profile',compact('student'));
     }
     public function editprofile()
     {
-        return view('pages.Student.Edit Student Profile');
+        $student = Student::find(session('user_id'));
+        return view('pages.Student.Edit Student Profile',compact('student'));
+    }
+
+    public  function editstudentprofile(Request $request)
+    {
+        $student = Student::find(session('user_id'));
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'pass' => 'required',
+            'id' => 'required',
+            'ssn' => 'required',
+            'university' => 'required',
+            'collage' => 'required',
+            'phone-num' => 'required'
+        ]);
+
+        $student->name = $request->get('name');
+        $student->university_name = $request->get('university');
+        $student->collage_name = $request->get('collage');
+        $student->email = $request->get('email');
+        $student->password = $request->get('pass');
+        $student->phone = $request->get('phone-num');
+        $student->id = $request->get('id');
+        $student->ssn = $request->get('ssn');
+
+        $student->save();
+        return $this->profile();
     }
 
     public function correectexam(Request $request)
