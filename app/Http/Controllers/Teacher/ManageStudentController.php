@@ -59,6 +59,14 @@ class ManageStudentController extends Controller
         return view('pages.teacher.students-registered-in-course',compact('studentsofcourse','courseName','courseId'));
     }
 
+    public function showstudentsresults($courseId)
+    {
+        $course = Course::find($courseId);
+        $courseName = $course->name;
+        $studentsofcourse = $course->students;
+        return view('pages.teacher.students results',compact('studentsofcourse','courseName'));
+    }
+
     public function deletestd(Request $request){
         $course = Course::find($request->course_id);
         $studentsofcourse = $course->students;

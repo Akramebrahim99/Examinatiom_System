@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="../../css/library/hover.css">
+    <link rel="stylesheet" href="../../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <!-- Google fonts -->
+    <!-- fonts Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <!-- fonts Awesome -->
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>Teacher Courses</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <title>Exam links</title>
 </head>
 <body>
- <!-- Start navbar -->
- <div class="container">
+
+   <!-- Start navbar -->
+<div class="container">
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -45,7 +48,7 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
                                 <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                             </div>
                         </li>
@@ -70,35 +73,38 @@
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
 
-    <!-- Start Student Courses Section -->
-    <section class="teacher-courses-main">
+        <!-- Start Result Section -->
+    <section class="result-main">
         <div class="container">
-            <div class="row last" id="page-body">
-                <div  class="col-12">
-                    <h4 class="teacher-courses-header">Your Courses</h4>
-                    <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
+            <div class="row last">
+                <h4 class="result-header col-12">{{$courseName}}</h4>
+                <div class="result-info text-md-center col-8">
+                            <span class="subject-name">Student Name</span>
+                            <span class="subject-doctor">Student ID</span>
+                            <span style="color: red" class="subject-date">Student Degree</span>
                 </div>
-                @if(isset($courses) && $courses -> count() > 0)
-                    @foreach($courses as $course)
-                        <div class="teacher-courses-info text-md-center col-8">
-                            <span class="teacher-subject-name">{{$course->name}}</span>
-                            <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
-                            <a class="student-register-course" href="{{route('teacher.studentreg',$course->id)}}">Students Registered in course</a>
-                        </div> 
+                @if(isset($studentsofcourse) && count($studentsofcourse) > 0)
+                    @foreach($studentsofcourse as $studentofcourse)
+                        <div class="result-info text-md-center col-8">
+                            <span class="subject-name">{{$studentofcourse->name}}</span>
+                            <span class="subject-doctor">{{$studentofcourse->id}}</span>
+                            <span style="color: red" class="subject-date">{{$studentofcourse->pivot->course_degree}}</span>
+                        </div>
                     @endforeach
                 @endif
             </div>
         </div>
     </section>
-    <!-- End Student Courses Section -->
+    <!-- End Result Section -->
 
-    <!-- Scripts -->
+
+
+     <!-- Scripts -->
         <!-- Bootstrap -->
-        <script src="../../JQuery/JQuery.js"></script>
-        <script src="../../javascript/bootstrap.js"></script>
+        <script src="../../../JQuery/JQuery.js"></script>
+        <script src="../../../javascript/bootstrap.js"></script>
         <!-- Bootstrap -->
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -106,8 +112,8 @@
             AOS.init();
         </script>
         <!-- AOS -->
-        <script src="../../JQuery/jq.js"></script>
-        <script src="../../javascript/javascript.js" defer></script>
+        <script src="../../../JQuery/jq.js"></script>
+        <script src="../../.././javascript/javascript.js"></script>
     <!-- Scripts -->
 </body>
 </html>
