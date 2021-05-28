@@ -6,7 +6,7 @@
     <title>My Profile</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" href="../../css/bootstrap11.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -68,41 +68,81 @@
     </nav>
 
     <!-- End navbar -->
-
-        <div class="row" id="EnglishRow" style="display:block" ;>
-            @if(isset($teacher))
-            <div class="TeachEdit">
-                <a href="{{route('teacher.editprofile')}}">
-                    <button id="btn11" class="btn btn-primary" type="submit">Edit</button>
-                    </a>
-            </div>
-            <div class="teachName">
-                <label style="font-weight:700">
-                    Name :
-                </label>
-                <label id="lblTeachName" style="font-weight:700">{{$teacher->name}}</label>
-            </div>
+    <div class="row" id="EnglishRow" style="display:block" ;>
             
-            <div class="teachUni">
-                <label style="font-weight:700">University : </label>
-                <label id="lblTeachUni" style="font-weight:700">{{$teacher->university_name}}</label>
-            </div>
-            <div class="teachcoll">
-                <label style="font-weight:700">College :</label>
-                <label id="lblTeachColl" style="font-weight:700">{{$teacher->collage_name}}</label>
-            </div>
-            <div class="teachEmail">
-                <label style="font-weight:700">Email :</label>
-                <label id="lblTeachEmail" style="font-weight:700">{{$teacher->email}}</label>
-            </div>
-            <div class="teachPass">
-                <label style="font-weight:700">Password :</label>
-                <label id="lblTeachPass" style="font-weight:700">{{$teacher->password}}</label>
-            </div>
+            <div class="teachName">
+            @if(isset($teacher))
+             <table>
+                    <tr> 
+                        <td style="padding:10px;text-align:right;">
+                            <label style="font-weight:700">Name :</label>
+                        </td>
+                        <td>
+                            <label id="lblTeachName" style="font-weight:700">{{$teacher->name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+                            <label style="font-weight:700">University : </label>
+                        </td>
+                        <td>
+                            <label id="lblTeachUni" style="font-weight:700">{{$teacher->university_name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">College :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblTeachColl" style="font-weight:700">{{$teacher->collage_name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">Email :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblTeachEmail" style="font-weight:700">{{$teacher->email}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
+
+                            <label style="font-weight:700">Password :</label>
+                        </td>
+                        <td>
+
+                            <label id="lblTeachPass" style="font-weight:700">{{$teacher->password}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;"> 
+
+                            <label style="font-weight:700">Phone :</label>
+                        </td>
+                        <td>
+
+                            <label id="InpTeachPhone" style="font-weight:700">{{$teacher->phone}}</label>
+                        </td>
+                    </tr>
+
+                </table>
         </div>
+            
+             <div class="btnsvTeach">
+                <a href="{{route('teacher.editprofile')}}">
+                    <button id="btn14" class="btn btn-primary" type="submit">Edit</button>
+                </a>
+              </div>
+            @endif
         </div>
-        @endif
-        <script src="../../jquery/query.js"></script>
+    </div>
+
+    <script src="../../jquery/query.js"></script>
     <script src="../../Javascript/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../../jquery/jqq.js"></script>
