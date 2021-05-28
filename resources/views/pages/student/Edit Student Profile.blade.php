@@ -39,7 +39,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Student Requests</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -69,17 +69,18 @@
 
  <!-- End navbar -->
         <div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="img44">
-                <img src="../../img/std.jpg" width="200" height="150" />
-            </div>
+            
             <div class="EdtStdName">
+            @if(isset($student))
+            <form method="POST" action="{{route('student.editstudentprofile')}}">
+            @csrf
                 <table>
-                    <tr>
+                    <tr> 
                         <td style="padding:10px;text-align:right;">
                             <label style="font-weight:700">Name :</label>
                         </td>
                         <td>
-                            <input id="InpStdName" type="text" />
+                            <input name="name" id="InpStdName" type="text" value="{{$student->name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -87,7 +88,7 @@
                             <label style="font-weight:700">SSN :</label>
                         </td>
                         <td>
-                            <input id="InpStdSsr" type="number" />
+                            <input name="ssn" id="InpStdSsr" type="number" value="{{$student->ssn}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +96,7 @@
                             <label style="font-weight:700">University : </label>
                         </td>
                         <td>
-                            <input id="InpStdUni" type="text" />
+                            <input name="university" id="InpStdUni" type="text" value="{{$student->university_name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -105,7 +106,7 @@
                         </td>
                         <td>
 
-                            <input id="InpStdColl" type="text" />
+                            <input name="collage" id="InpStdColl" type="text" value="{{$student->collage_name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -115,7 +116,7 @@
                         </td>
                         <td>
 
-                            <input id="InpStdColl" type="text" />
+                            <input name="email" id="InpStdColl" type="text" value="{{$student->email}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -125,7 +126,7 @@
                         </td>
                         <td>
 
-                            <input id="InpStdPass" type="password" />
+                            <input name="pass" id="InpStdPass" type="password" value="{{$student->password}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -135,7 +136,17 @@
                         </td>
                         <td>
 
-                            <input id="InpStdPass" type="number" />
+                            <input name="id" id="InpStdPass" type="number" value="{{$student->id}}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;text-align:right;"> 
+
+                            <label style="font-weight:700">Phone :</label>
+                        </td>
+                        <td>
+
+                            <input name="phone-num" id="InpStdPass" type="number" value="{{$student->phone}}"/>
                         </td>
                     </tr>
 
@@ -146,6 +157,8 @@
             <div class="btnsvStd">
                 <button id="btn13" class="btn btn-primary" type="submit">Save</button>
             </div>
+            </form>
+            @endif
         </div>
     </div>
     <script src="../../jquery/query.js"></script>

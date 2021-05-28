@@ -39,7 +39,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Student Requests</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -68,44 +68,49 @@
     </nav>
 <!-- End navbar -->
         <div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="img22">
-                <img src="../../img/std.jpg" width="200" height="150" />
-            </div>
-            <div class="StdEdit">
-                <a href="{{route('student.editprofile')}}">
-                    <button id="btn12" class="btn btn-primary" type="submit">Edit</button>
-                    </a>
-            </div>
+            
+            @if(isset($student))
             <div class="StdName">
                 <label style="font-weight:700">
                     Name :
                 </label>
-                    <label id="lblStdName" style="font-weight:700">Ahmed Mohamed Mahmoud</label>
-</div>
+                    <label id="lblStdName" style="font-weight:700">{{$student->name}}</label>
+            </div>
             <div class="StdSsR">
                 <label style="font-weight:700">SSN :</label>
-                <label id="lblStdSSR" style="font-weight:700">456457578678</label>
+                <label id="lblStdSSR" style="font-weight:700">{{$student->ssn}}</label>
             </div>
             <div class="StdUni">
                 <label style="font-weight:700">University : </label>
-                <label id="lblStdUni" style="font-weight:700">Helwan</label>
+                <label id="lblStdUni" style="font-weight:700">{{$student->university_name}}</label>
             </div>
             <div class="Stdcoll">
                 <label style="font-weight:700">College :</label>
-                <label id="lblStdColl" style="font-weight:700"> computer and information</label>
+                <label id="lblStdColl" style="font-weight:700">{{$student->collage_name}}</label>
+            </div>
+            <div class="Stdcoll">
+                <label style="font-weight:700">Phone :</label>
+                <label id="lblStdColl" style="font-weight:700">{{$student->phone}}</label>
             </div>
             <div class="StdEmail">
                 <label style="font-weight:700">Email :</label>
-                <label id="lblStdEmail" style="font-weight:700"> MA@gmail.com</label>
+                <label id="lblStdEmail" style="font-weight:700">{{$student->email}}</label>
             </div>
             <div class="StdPass">
                 <label style="font-weight:700">Password :</label>
-                <label id="lblStdPass" style="font-weight:700"> *******</label>
+                <label id="lblStdPass" style="font-weight:700">{{$student->password}}</label>
             </div>
             <div class="StdID">
                 <label style="font-weight:700">Id :</label>
-                <label id="lblStdID" style="font-weight:700"> 20170111</label>
+                <label id="lblStdID" style="font-weight:700">{{$student->id}}</label>
             </div>
+            
+            <div style="text-align: center;" class="StdEdit">
+                <a href="{{route('student.editprofile')}}">
+                    <button id="btn12" class="btn btn-primary" type="submit">Edit</button>
+                </a>
+            </div>
+            @endif
         </div>
     </div>
     <script src="../../jquery/query.js"></script>

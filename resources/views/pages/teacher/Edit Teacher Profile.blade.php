@@ -69,25 +69,17 @@
 
     <!-- End navbar -->
         <div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="img33">
-                <img src="../../img/Teach.jpg" width="200" height="150" />
-            </div>
             <div class="EdtteachName">
+            @if(isset($teacher))
+            <form method="POST" action="{{route('teacher.editteacherprofile')}}">
+            @csrf
                 <table>
                     <tr>
                         <td style="padding:10px;text-align:right;">
                             <label style="font-weight:700">Name :</label>
                         </td>
                         <td>
-                            <input id="InpTeachName" type="text" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">SSN :</label>
-                        </td>
-                        <td>
-                            <input id="InpTeachSsr" type="number" />
+                            <input name="teacherName" id="InpTeachName" type="text" value="{{$teacher->name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +87,7 @@
                             <label style="font-weight:700">University : </label>
                         </td>
                         <td>
-                            <input id="InpTeachUni" type="text" />
+                            <input name="teacherUniversity" id="InpTeachUni" type="text" value="{{$teacher->university_name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -105,7 +97,7 @@
                         </td>
                         <td>
 
-                            <input id="InpTeachColl" type="text" />
+                            <input name="teacherCollage" id="InpTeachColl" type="text" value="{{$teacher->collage_name}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -115,7 +107,7 @@
                         </td>
                         <td>
 
-                            <input id="InpTeachColl" type="text" />
+                            <input name="teacherEmail" id="InpTeachColl" type="text" value="{{$teacher->email}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -125,11 +117,19 @@
                         </td>
                         <td>
 
-                            <input id="InpTeachPass" type="password" />
+                            <input name="teacherPassword" id="InpTeachPass" type="password" value="{{$teacher->password}}"/>
                         </td>
                     </tr>
-                    
+                    <tr>
+                        <td style="padding:10px;text-align:right;">
 
+                            <label style="font-weight:700">Phone :</label>
+                        </td>
+                        <td>
+
+                            <input name="teacherPhone" id="InpTeachPass" type="phone" value="{{$teacher->phone}}"/>
+                        </td>
+                    </tr>
                 </table>
                 
                 
@@ -137,26 +137,9 @@
             <div class="btnsvTeach">
                 <button id="btn14" class="btn btn-primary" type="submit">Save</button>
             </div>
-
-
-            <!--<div class="EdtteachSsR">
-                
-                
-            </div>
-            <div class="EdtteachUni">
-                
-                
-            </div>
-            <div class="Edtteachcoll">
-            </div>
-            <div class="EdtteachEmail">
-                
-                
-            </div>
-            <div class="EdtteachPass">
-               
-                
-            </div>-->
+            </form>
+            @endif
+            
         </div>
     </div>
     <script src="../../jquery/query.js"></script>
