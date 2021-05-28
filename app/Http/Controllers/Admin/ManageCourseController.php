@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Teacher;
+use App\Models\Question;
 use Validator;
 
 class ManageCourseController extends Controller
@@ -101,6 +102,25 @@ class ManageCourseController extends Controller
     public function destroy($id)
     {
         $course = Course::find($id);
+        $studentsofcourse = $course->students; 
+        $questions = $course->questions;
+        
+        foreach($questions as $question)
+        {
+            $students = $question->students;
+            foreach($students as $student)
+            {
+                $student->pivot->delete();
+            }
+            $question ->delete();
+        }
+
+
+        foreach($studentsofcourse as $student)
+        {
+            $student->pivot->delete();
+        }
+
         $course -> delete();
         return redirect()->route('show.courses');
     }
