@@ -89,15 +89,27 @@
                         <label for="course-name"><span class="span-with-width">Course Name</span>
                             <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
                         </label>
+                        @error('courseName')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="course-date"><span class="span-with-width">Course Date</span>
                             <input type="datetime-local" name="courseDate" class="course-date" id="course-date" />
                         </label>
+                        @error('courseDate')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="exam-degree"><span class="span-with-width">Exam Degree</span>
                             <input type="text" name="courseDegree" class="exam-degree" id="exam-degree" placeholder="Exam Degree">
                         </label>
+                        @error('courseDegree')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="duration-time"><span class="span-with-width">Duration time for Exam</span>
                             <input type="text" name="duration" class="duration-time" id="duration-time" placeholder="Number of hours" />
                         </label>
+                        @error('duration')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
                         <div class="modal-footer">
                             <button type="submit" class="add-button">Add</button>
                             <button type="button" class="close-button" data-dismiss="modal">Close</button>
@@ -119,8 +131,17 @@
                 <div  class="col-12">
                     <h4 class="page-header">Courses</h4>
                     <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add course</button>
+                    @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('success')}}
+                            </div>
+                    @elseif (Session::has('faild'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('faild')}}
+                            </div>
+                    @endif
+                <br>
                 </div>
-
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="course-info text-md-center col-8" id="teacher-link">
