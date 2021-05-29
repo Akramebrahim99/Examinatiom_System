@@ -83,7 +83,7 @@
                 <h4 class="exam-header col-12">Schedule of exams dates</h4>
                 @if(isset($studendCourses) && $studendCourses -> count() > 0)
                     @foreach($studendCourses as $course)
-                        @if($course->pivot->course_status == True)
+                        @if($course->pivot->course_status == !(True && now()->greaterThan((Carbon\Carbon::parse($course->date_of_exam))->addHours($course->duration))))
                             <a class="exam-info text-md-center col-8" href="{{route('student.getexam',$course->id)}}">
                                 <span class="subject-name">{{$course -> name}}</span>
                                 <span class="subject-date">{{$course -> date_of_exam}}</span>

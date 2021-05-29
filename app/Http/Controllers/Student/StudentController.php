@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Course;
 use App\Models\Question;
+use Carbon\Carbon;
 
 
 class StudentController extends Controller
@@ -82,8 +83,13 @@ class StudentController extends Controller
 
     public function getexam($courseId)
     {
-        $count = 0;
         $course = Course::find($courseId);
+
+        if(now()->greaterThanOrEqualTo((Carbon::parse($course->date_of_exam))->addHours($course->duration)) || now()->lessThan(Carbon::parse($course->date_of_exam)))
+        {
+            return view('404');
+        }
+        $count = 0;
         $questions = $course->questions;
         $questions =  iterator_to_array($questions);
         shuffle($questions);
@@ -145,6 +151,11 @@ class StudentController extends Controller
         $question = Question::find($questionsIds[0]);
         $course = Course::find($question->course_id);
         $students = $course->students;
+
+        if(now()->greaterThanOrEqualTo((Carbon::parse($course->date_of_exam))->addHours($course->duration)) || now()->lessThan(Carbon::parse($course->date_of_exam)))
+        {
+            return view('404');
+        }
 
         for($i=0; $i<count($questionsIds); $i++)
         {

@@ -27,15 +27,16 @@
     <!-- Start Student Courses Section -->
     <div class="container">
     <section class="add-courses">
-
             <div class="row content" id="page-body">
                 <div class="container">
+                <h4 id="demo"></h4>
                     <div  class="col-12">
-                        <h4 style="text-align: center;color: red">{{$course->name}} Exam</h4>
+                        <h3 style="text-align: center;color: red">{{$course->name}} Exam</h3>
                     </div>
                 </div>
             </div>
             <form method="POST" action="{{route('student.correectexam')}}"> 
+            <div data-countdown="2021/01/01"></div>
             @csrf
                 <?php
                 $array1 = [];
@@ -92,5 +93,36 @@
     </section>
 </div>
     <!-- End Student Courses Section -->
+                    
+    <script type="text/javascript">
+        // Set the date we're counting down to
+        var countDownDate = new Date("{{(Carbon\Carbon::parse($course->date_of_exam))->addHours($course->duration)}}").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = /*days + " Day " +*/ hours + " Hour "
+        + minutes + " Minutes " + seconds + " Second ";
+            
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+        }, 1000);
+    </script>
 </body>
 </html>
