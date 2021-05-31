@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:students,email|unique:teachers,email|unique:admins,email',
             'pass' => 'required',
             'id' => 'required|numeric|unique:students,id',
-            'ssn' => 'required|numeric|digits:14|unique:students,ssn|unique:teachers,ssn',
+            'ssn' => 'required|numeric|digits:14|unique:students,ssn',
             'university' => 'required|string',
             'collage' => 'required|string',
             'phone-num' => 'required|numeric|digits:11|unique:students,phone|unique:teachers,phone'
