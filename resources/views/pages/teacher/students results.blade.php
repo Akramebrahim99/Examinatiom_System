@@ -79,7 +79,7 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">{{$courseName}}</h4>
+                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button>export excel</button></a></h4>
                 <div class="result-info text-md-center col-8">
                             <span class="subject-name">Student Name</span>
                             <span class="subject-doctor">Student ID</span>

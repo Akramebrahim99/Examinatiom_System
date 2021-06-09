@@ -77,5 +77,6 @@ Route::group(['prefix' => 'teacher'],function(){
     Route::post('addmarkessayquestion/{question_id}','Teacher\TeacherController@addmarkessayquestion')->name('teacher.addmarkessayquestion');
     Route::post('editteacherprofile','Teacher\TeacherController@editteacherprofile')->name('teacher.editteacherprofile');
     Route::get('showstudentsresults/{course_id}','Teacher\ManageStudentController@showstudentsresults')->name('teacher.showstudentsresults');
+    Route::get('showexportexcel/{course_id}','Teacher\ManageStudentController@exportexcel')->name('teacher.exportexcel');
 });
 });
