@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     protected $table = "questions";
-    protected $fillable = ['id','description','degree','answer1','answer2',
-    'answer3','answer4','course_id','correct_answer','created_at','updated_at'];
+    protected $fillable = ['id','description','degree','course_id','correct_answer','created_at','updated_at'];
     protected $hidden = ['created_at','updated_at'];
     public $timestamps = true;
 
@@ -20,6 +19,10 @@ class Question extends Model
     public function students(){
         return $this -> belongsToMany('App\Models\Student','student_question','question_id','student_id')
         ->withPivot(['question_degree','student_answer']);
+    }
+
+    public function answers(){
+        return $this -> hasMany('App\Models\Answer','question_id','id');
     }
 
 }

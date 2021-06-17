@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Edit Question</title>
+    <title>Edit Course</title>
 </head>
 <body>
 
@@ -80,78 +80,88 @@
     <section class="add-courses">
         <div class="container">
             <!-- Model Form Add Questions -->
+            <br>
+            <br>
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit Question</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Course</h5>
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
-                @if(isset($question))
-                <form method="POST" action="{{route('teacher.editquestioninfo',[$question->id])}}" class="add-teacher-model">
-                        @csrf
-                       <div class="row"> 
+                @if(isset($course))
+                <form method="POST" action="{{route('teacher.editcourseinfo',[$course->id])}}" class="add-teacher-model">
+                @csrf
+                <div class="row"> 
                        <div class="col-sm-12">
                        <div class="form-group">
-                       <label>Enter Question</label>
-                       <input style="width: 100%" type="text" required="required" name="question" placeholder="Enter Question" class="form-control" value="{{$question->description}}">
+                       <label>Course Name</label>
+                       <input style="width: 100%" value="{{$course->name}}" type="text" required="required" name="name" class="form-control" readonly>
                        </div>
                        </div>
 
-                         <div class="col-sm-6">
-                         <div class="form-group">
-                        <label>Enter Option 1</label>
-                        <input style="width: 100%;" type="text" name="option1" placeholder="Enter Option 1" class="form-control" value="{{$question->answer1}}">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Exam Date</label>
+                        <input style="width: 100%;" required="required" value="{{$course->date_of_exam}}" type="datetime-local" name="date_of_exam" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Enter Option 2</label>
-                        <input style="width: 100%;" type="text" name="option2" placeholder="Enter Option 2" class="form-control" value="{{$question->answer2}}">
-                        </div>
-                        </div>
-
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>Enter Option 3</label>
-                        <input style="width: 100%;" type="text" name="option3" placeholder="Enter Option 3" class="form-control" value="{{$question->answer3}}">
+                        <label>Course Degree</label>
+                        <input style="width: 100%;" type="number" min="1" required="required" value="{{$course->course_degree}}" type="text" name="course_degree" class="form-control">
                         </div>
                         </div>
 
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Enter Option 4</label>
-                        <input style="width: 100%;" type="text" name="option4" placeholder="Enter Option 4" class="form-control" value="{{$question->answer4}}">
+                        <label>Duration time for Exam</label>
+                        <input style="width: 100%;" type="number" min="1" required="required" value="{{$course->duration}}" type="text" name="duration" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Enter Right Answer</label>
-                        <select style="width: 50%;"  name = "RightAns">
-                            <option name="option1" value = "option1">Option 1</option>
-                            <option name="option2" value = "option2">Option 2</option>
-                            <option name="option3" value = "option3">Option 3</option>
-                            <option name="option4" value = "option4">Option 4</option>
-                            <option name="Essay Question" value = "Essay Question">Essay Question</option>
-                        </select>
+                        <label>Number of Submit</label>
+                        <input type="number" min="1" value="{{$course->no_of_submit}}" required="required" name="no_of_submit" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Enter Question Degree</label>
-                        <input type="text" required="required" name="degree" placeholder="Enter Question Degree" class="form-control" value="{{$question->degree}}">
+                        <p>One Page Exam Or Many Pages</p>
+                        @if($course->one_page)
+                        <label for="true"><input value="1" id="true" type="radio" name="pages" checked>All Question In One Page</label>
+                        <label for="false"><input value="0" id="false" type="radio" name="pages">All Question In Many Pages</label>
+                        <br>
+                        @else
+                        <label for="true"><input value="1" id="true" type="radio" name="pages">All Question In One Page</label>
+                        <label for="false"><input value="0" id="false" type="radio" name="pages" checked>All Question In Many Pages</label>
+                        <br>
+                        @endif
                         </div>
                         </div>
-                    
+
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <p>Allow Previous Button</p>
+                        @if($course->previous)
+                        <label for="yes"><input value="1" id="yes" type="radio" name="previous" checked>Allow</label><br>
+                        <label for="no"><input value="0" id="no" type="radio" name="previous">Not Allow</label>
+                        @else
+                        <label for="yes"><input value="1" id="yes" type="radio" name="previous">Allow</label><br>
+                        <label for="no"><input value="0" id="no" type="radio" name="previous" checked>Not Allow</label>
+                        @endif
+                        </div>
+                        </div>
+
                         <div class="modal-footer">
-                        <button type="submit" class="add-button">Edit</button>
+                        <button type="submit" class="add-button">Save</button>
                         </div>
                         </div>
-                 </form>
-                 @endif
+                </form>
+                @endif
               </div>
             </div>
     <!-- Model Form Add Questions -->

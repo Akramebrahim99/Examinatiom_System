@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Question;
 use App\Models\Teacher;
+use App\Models\Answer;
 
 class TeacherController extends Controller
 {
@@ -78,35 +79,86 @@ class TeacherController extends Controller
         return view('pages.teacher.CreateExam English and Arabic',compact('course','questions'));
     }
 
-    public function addquestion(Request $request)
+    public function addEssayQuestion(Request $request)
+    {
+        $this->validate($request,[
+            'question' => 'required',
+            'degree' => 'required'
+        ]);
+
+        $question = new Question([
+            'description' => $request->get('question'),
+            'degree' => $request->get('degree'),
+            'course_id' => $request->course_id
+        ]);
+
+        $question->save();
+        return back()->withInput();
+    }
+
+    public function addTFQuestion(Request $request)
     {
         $this->validate($request,[
             'question' => 'required',
             'RightAns' => 'required',
             'degree' => 'required'
         ]);
-        
-        $rightAns = $request->get('RightAns');
-        if($rightAns == 'Essay Question'){
-            $rightAns = NULL;
+        $rightAns;
+        if($request->get('RightAns') == "option1"){
+            $rightAns = "True"; 
         }
         else
         {
-            $rightAns = $request->get($request->get('RightAns'));
+            $rightAns = "False";
         }
 
         $question = new Question([
             'description' => $request->get('question'),
-            'answer1' => $request->get('option1'),
-            'answer2' => $request->get('option2'),
-            'answer3' => $request->get('option3'),
-            'answer4' => $request->get('option4'),
-            'correct_answer' => $rightAns,
             'degree' => $request->get('degree'),
+            'correct_answer' => $rightAns,
             'course_id' => $request->course_id
         ]);
 
         $question->save();
+
+        $answer1 = new Answer([
+            'question_id' => $question->id,
+            'answer' => "True"
+        ]);
+        $answer1->save();
+        $answer2 = new Answer([
+            'question_id' => $question->id,
+            'answer' => "False"
+        ]);
+        $answer2->save();
+        return back()->withInput();
+    }
+
+    public function addMcqQuestion(Request $request)
+    {
+        $this->validate($request,[
+            'question' => 'required',
+            'RightAns' => 'required',
+            'degree' => 'required'
+        ]);
+
+        $question = new Question([
+            'description' => $request->get('question'),
+            'correct_answer' => $request->get($request->get('RightAns')),
+            'degree' => $request->get('degree'),
+            'course_id' => $request->course_id
+        ]);
+        $question->save();
+        
+        for($i = 1;$i <= (count($request->all()) - 4);$i++)
+        {
+            $answer = new Answer([
+                'question_id' => $question->id,
+                'answer' => $request->get('option'.$i),
+            ]);
+            $answer->save();
+        }
+
         return back()->withInput();
     }
 
@@ -117,6 +169,12 @@ class TeacherController extends Controller
 
     public function deletequestion($questionId){
         $question = Question::find($questionId);
+        $answers = Answer::where('question_id',$questionId)->get();
+        if(isset($answers))
+        {
+            foreach($answers as $answer)
+                $answer->delete();
+        }
         $question ->delete();
         return back()->withInput();
     }
@@ -197,6 +255,35 @@ class TeacherController extends Controller
         return $this->getessay($question->course_id);
     }
 
+    public function editcourse($courseId)
+    {
+        $course = Course::find($courseId);
+        return view('pages.teacher.edit course',compact('course'));
+    }
     
+    public function editcourseinfo(Request $request)
+    {
+        $course = Course::find($request->course_id);
+
+        $this->validate($request,[
+            'date_of_exam' => 'required',
+            'course_degree' => 'required',
+            'duration' => 'required',
+            'no_of_submit' => 'required',
+            'pages' => 'required',
+            'previous' => 'required'
+        ]);
+
+        $course->date_of_exam = $request->get('date_of_exam');
+        $course->course_degree = $request->get('course_degree');
+        $course->duration = $request->get('duration');
+        $course->no_of_submit = $request->get('no_of_submit');
+        $course->one_page = $request->get('pages');
+        $course->previous = $request->get('previous');
+        $course->save();
+
+        return back()->withInput();
+
+    }
 
 }

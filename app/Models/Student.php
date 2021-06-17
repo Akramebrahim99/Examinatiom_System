@@ -15,7 +15,7 @@ class Student extends Model
     ###################################### Relations ##########################################
     public function courses(){
         return $this -> belongsToMany('App\Models\Course','student_course','student_id','course_id')
-        ->withPivot(['course_degree','course_status']);
+        ->withPivot(['course_degree','course_status','no_of_std_submit']);
     }
 
 

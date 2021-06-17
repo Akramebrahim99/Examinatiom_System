@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Teacher;
 use App\Models\Question;
+use App\Models\Answer;
 use Validator;
 
 class ManageCourseController extends Controller
@@ -42,28 +43,22 @@ class ManageCourseController extends Controller
     {
         $rules= [
             'courseName' => 'required|unique:courses,name',
-            'courseDate' => 'required',
-            'courseDegree' => 'required',
-            'duration' => 'required',
         ];
         $messages = $this->getMessages();
 
         $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator -> fails()){
-            return redirect()->route('show.courses')->withErrors($validator)->withInputs($request->all())->with(['faild' => 'You Should Open The Form Again To Add Course Correct']);
+            return redirect()->route('show.courses')->withErrors($validator)->withInputs($request->all());
         }
 
         $course = new Course([
-            'name' => $request->get('courseName'),
-            'date_of_exam' => $request->get('courseDate'),
-            'course_degree' => $request->get('courseDegree'),
-            'duration' => $request->get('duration'),
+            'name' => $request->get('courseName')
         ]);
 
         $course->save();
 
-        return redirect()->route('show.courses')->with(['success' => 'Course Added Successfully']);
+        return redirect()->route('show.courses');
     }
     protected function getMessages(){
         return $messages = [
@@ -126,6 +121,12 @@ class ManageCourseController extends Controller
             foreach($students as $student)
             {
                 $student->pivot->delete();
+            }
+            $answers = $question->answers;
+            if(isset($answers))
+            {
+                foreach($answers as $answer)
+                    $answer->delete();
             }
             $question ->delete();
         }

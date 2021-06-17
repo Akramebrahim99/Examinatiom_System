@@ -50,7 +50,6 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
-                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                             </div>
                         </li>
                     <li class="nav-item">

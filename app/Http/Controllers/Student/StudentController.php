@@ -93,14 +93,6 @@ class StudentController extends Controller
         $questions = $course->questions;
         $questions =  iterator_to_array($questions);
         shuffle($questions);
-        foreach($questions as $question){
-            $answers =array($question->answer1,$question->answer2,$question->answer3,$question->answer4);
-            shuffle($answers);
-            $question->answer1 = $answers[0];
-            $question->answer2 = $answers[1];
-            $question->answer3 = $answers[2];
-            $question->answer4 = $answers[3];
-        }
         return view('pages.student.exam',compact('course','questions','count'));
     }
 

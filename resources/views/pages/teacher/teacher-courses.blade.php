@@ -46,7 +46,6 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
-                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -86,7 +85,7 @@
                         <div class="teacher-courses-info text-md-center col-8">
                             <span class="teacher-subject-name">{{$course->name}}</span>
                             <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
-                            <a class="student-register-course" href="{{route('teacher.studentreg',$course->id)}}">Students Registered in course</a>
+                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">Manage Course</a>
                         </div> 
                     @endforeach
                 @endif

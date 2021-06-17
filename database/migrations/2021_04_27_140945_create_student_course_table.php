@@ -19,6 +19,7 @@ class CreateStudentCourseTable extends Migration
             $table->integer('course_id')->unsigned();
             $table->integer('course_degree')->nullable();
             $table->boolean('course_status')->default(FALSE);
+            $table->integer('no_of_std_submit')->default(0);
             $table->timestamps();
         });
     }

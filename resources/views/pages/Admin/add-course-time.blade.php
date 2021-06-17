@@ -72,55 +72,7 @@
         </div>
     </nav>
     <!-- End navbar -->
-    <!-- Model Form Add Courses -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
-            <div class="modal-content" id="box-body"><!--contain the model contact-->
-                <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add courses time</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span><!--the 'X' shape-->
-                    </button>
-                </div>
-                <div class="modal-body"><!--contain only the input fields-->
-
-                    <form action="{{route('add.course')}}" method="post" class="add-course-time">
-                        @csrf
-                        <label for="course-name"><span class="span-with-width">Course Name</span>
-                            <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
-                        </label>
-                        @error('courseName')
-                                <p style="color: red">{{$message}}</p>
-                        @enderror
-                        <label for="course-date"><span class="span-with-width">Course Date</span>
-                            <input type="datetime-local" name="courseDate" class="course-date" id="course-date" />
-                        </label>
-                        @error('courseDate')
-                                <p style="color: red">{{$message}}</p>
-                        @enderror
-                        <label for="exam-degree"><span class="span-with-width">Exam Degree</span>
-                            <input type="text" name="courseDegree" class="exam-degree" id="exam-degree" placeholder="Exam Degree">
-                        </label>
-                        @error('courseDegree')
-                                <p style="color: red">{{$message}}</p>
-                        @enderror
-                        <label for="duration-time"><span class="span-with-width">Duration time for Exam</span>
-                            <input type="text" name="duration" class="duration-time" id="duration-time" placeholder="Number of hours" />
-                        </label>
-                        @error('duration')
-                                <p style="color: red">{{$message}}</p>
-                        @enderror
-                        <div class="modal-footer">
-                            <button type="submit" class="add-button">Add</button>
-                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Model Form Add Courses -->
+    
 
     <!-- Start Student Courses Section -->
 
@@ -130,25 +82,23 @@
 
                 <div  class="col-12">
                     <h4 class="page-header">Courses</h4>
-                    <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">Add course</button>
-                    @if (Session::has('success'))
-                            <div class="alert alert-success" role="alert">
-                             {{Session::get('success')}}
-                            </div>
-                    @elseif (Session::has('faild'))
-                            <div class="alert alert-success" role="alert">
-                             {{Session::get('faild')}}
-                            </div>
-                    @endif
-                <br>
-                </div>
+                    <form action="{{route('add.course')}}" method="post" class="add-course-time">
+                        @csrf
+                        <label for="course-name"><span class="span-with-width">Course Name</span>
+                            <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
+                        </label>
+                        <button type="submit" class="add-button">Add</button>
+                        @error('courseName')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                    </form>
+                </div> 
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="course-info text-md-center col-8" id="teacher-link">
                             <span class="subject-name">{{$course -> name}}</span><!-- Name of Course will print from database -->
-                            <span class="subject subject-date">{{$course -> date_of_exam}}</span>
-                            <span class="subject subject-duration">{{$course -> duration}}</span>
-                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                            <a href="{{route('admin.studentreg',$course->id)}}">Students Registered in course</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{route('admin.studentreq.course',$course->id)}}">Student Request</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="{{route('delete.course',$course -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                         </span>
                     @endforeach
@@ -156,6 +106,8 @@
 
             </div>
         </div>
+        <br>
+        <br>
     </section>
     <!-- End Student Courses Section -->
 
