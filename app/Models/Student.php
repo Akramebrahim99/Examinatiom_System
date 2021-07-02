@@ -14,16 +14,14 @@ class Student extends Model
 
     ###################################### Relations ##########################################
     public function courses(){
-        return $this -> belongsToMany('App\Models\Course','student_course','student_id','course_id');
+        return $this -> belongsToMany('App\Models\Course','student_course','student_id','course_id')
+        ->withPivot(['course_degree','course_status','no_of_std_submit']);
     }
 
-
-    public function teachers(){
-        return $this -> belongsToMany('App\Models\Teacher','student_teacher','student_id','teacher_id');
-    }
 
     public function questions(){
-        return $this -> belongsToMany('App\Models\Question','student_question','student_id','question_id');
+        return $this -> belongsToMany('App\Models\Question','student_question','student_id','question_id')
+        ->withPivot(['question_degree','student_answer']);
     }
 
 }

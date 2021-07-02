@@ -17,12 +17,4 @@ class Teacher extends Model
         return $this -> hasMany('App\Models\Course','teacher_id','id');
     }
 
-    public function questions(){
-        return $this -> hasMany('App\Models\Question','teacher_id','id');
-    }
-
-
-    public function students(){
-        return $this -> belongsToMany('App\Models\Student','student_teacher','teacher_id','student_id');
-    }
 }

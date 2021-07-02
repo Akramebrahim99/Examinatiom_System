@@ -25,8 +25,8 @@
 <body>
 
     <!-- Start navbar -->
-
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+<div class="container">
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,17 +44,16 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        {{__('massages.Services')}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">{{__('massages.Add Exam')}}</a>
-                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
-                        </div>
-                    </li>
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            </div>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -67,16 +66,13 @@
                         @endforeach
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
-                    </li>
+                    <<a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- End navbar -->
-
     <!-- Start Exam Screen Section -->
     <section class="exam-screen">
         <div class="container">

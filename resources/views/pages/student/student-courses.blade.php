@@ -22,7 +22,7 @@
 <body>
 
     <!-- Start navbar -->
-
+    <div class="container">
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -35,16 +35,23 @@
                         <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}} </a>
+                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
+                    <li class="nav-item dropdown">
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            {{__('massages.Courses')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                            </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -58,44 +65,30 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
 
     <!-- Start Student Courses Section -->
     <section class="courses-main">
         <div class="container">
             <div class="row last">
-                <h4 class="courses-header col-12">{{__('massages.Yor Courses ')}}</h4>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Mohamed Reda</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Mohamed Reda</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Mohamed Reda</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">3h</span> -->
-                </div>
-                <div class="courses-info text-md-center col-8">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Mohamed Reda</span>
-                    <span class="subject-date"><a href="">Request</a></span>
-                    <!-- <span class="subject-duration">2h</span> -->
-                </div>
+                <h4 class="courses-header col-12">Your courses</h4>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <div class="courses-info text-md-center col-8">
+                            <span class="subject-name">{{$course -> name}}</span>
+                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
+                            <span class="subject-date"><a href="{{route('student.request',$course -> id)}}">Request</a></span>
+                            <!-- <span class="subject-duration">2h</span> -->
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

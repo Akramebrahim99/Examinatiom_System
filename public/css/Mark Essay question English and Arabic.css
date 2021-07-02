@@ -1,0 +1,1900 @@
+﻿body {
+    background: #F5F5F5 !important;
+}
+textarea {
+    resize: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+@media(min-width:1200px) {
+    .qen {
+        position: relative;
+        top: 120px;
+        left: -80px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .qen {
+        position: relative;
+        top: 143px;
+        left: -70px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .qen {
+        position: relative;
+        top: 86px;
+        left: -40px;
+    }
+}
+@media(max-width:767px) {
+    .qen {
+        position: relative;
+        top: 75px;
+        left: -10px;
+    }
+}
+@media(min-width:1200px) {
+    .aqen1 {
+        position: relative;
+        top: 140px;
+        left: -62px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .aqen1 {
+        position: relative;
+        top: 160px;
+        left: -50px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .aqen1 {
+        position: relative;
+        top: 110px;
+        left: -24px;
+    }
+}
+@media(max-width:767px) {
+    .aqen1 {
+        position: relative;
+        top: 87px;
+        left: 1px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .enmark1 {
+        position: relative;
+        top: 143px;
+        left: -62px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .enmark1 {
+        position: relative;
+        top: 160px;
+        left: -50px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .enmark1 {
+        position: relative;
+        top: 112px;
+        left: -24px;
+    }
+}
+@media(max-width:767px) {
+    .enmark1 {
+        position: relative;
+        top: 88px;
+        left: -2px;
+    }
+}
+@media(min-width:1200px) {
+    .aqen2 {
+        position: relative;
+        top: 156px;
+        left: -62px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .aqen2 {
+        position: relative;
+        top: 171px;
+        left: -50px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .aqen2 {
+        position: relative;
+        top: 131px;
+        left: -24px;
+    }
+}
+@media(max-width:767px) {
+    .aqen2 {
+        position: relative;
+        top: 114px;
+        left: -2px;
+    }
+}
+@media(min-width:1200px) {
+    .enmark2 {
+        position: relative;
+        top: 160px;
+        left: -62px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .enmark2 {
+        position: relative;
+        top: 176px;
+        left: -50px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .enmark2 {
+        position: relative;
+        top: 144px;
+        left: -24px;
+    }
+}
+@media(max-width:767px) {
+    .enmark2 {
+        position: relative;
+        top: 130px;
+        left: -2px;
+    }
+}
+@media(min-width:1200px) {
+    .ensub {
+        position: relative;
+        top: 180px;
+        left: 500px;
+        width:20px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .ensub {
+        position: relative;
+        top: 190px;
+        left: 470px;
+        width: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .ensub {
+        position: relative;
+        top: 195px;
+        left: 446px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .ensub {
+        position: relative;
+        top: 190px;
+        left: 160px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .qar {
+        position: relative;
+        top: 123px;
+        right: -80px;
+        direction:rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .qar {
+        position: relative;
+        top: 144px;
+        right: -70px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .qar {
+        position: relative;
+        top: 83px;
+        right: -40px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .qar {
+        position: relative;
+        top: 73px;
+        right: -475px;
+        direction: rtl;
+        width:20px;
+    }
+}
+@media(min-width:1200px) {
+    .aqar1 {
+        position: relative;
+        top: 142px;
+        left: 736px;
+        width: 20px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .aqar1 {
+        position: relative;
+        top: 162px;
+        left: 546px;
+        width: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .aqar1 {
+        position: relative;
+        top: 101px;
+        left: 271px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .aqar1 {
+        position: relative;
+        top: 91px;
+        left: 12px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .armark1 {
+        position: relative;
+        top: 144px;
+        left: 65px;
+        direction: rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .armark1 {
+        position: relative;
+        top: 167px;
+        left: 51px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .armark1 {
+        position: relative;
+        top: 105px;
+        left: 17px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .armark1 {
+        position: relative;
+        top: 95px;
+        left: -20px;
+        direction: rtl
+    }
+}
+@media(min-width:1200px) {
+    .aqar2 {
+        position: relative;
+        top: 160px;
+        left: 732px;
+        width: 20px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .aqar2 {
+        position: relative;
+        top: 182px;
+        left: 548px;
+        width: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .aqar2 {
+        position: relative;
+        top: 120px;
+        left: 269px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .aqar2 {
+        position: relative;
+        top: 110px;
+        left: 11px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .armark2 {
+        position: relative;
+        top: 173px;
+        left: 65px;
+        direction: rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .armark2 {
+        position: relative;
+        top: 187px;
+        left: 49px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .armark2 {
+        position: relative;
+        top: 128px;
+        left: 10px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .armark2 {
+        position: relative;
+        top: 125px;
+        left: -22px;
+        direction: rtl
+    }
+}
+@media(min-width:1200px) {
+    .arsub {
+        position: relative;
+        top: 197px;
+        left: 500px;
+        width: 20px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .arsub {
+        position: relative;
+        top: 221px;
+        left: 440px;
+        width: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .arsub {
+        position: relative;
+        top: 168px;
+        left: 290px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .arsub {
+        position: relative;
+        top: 175px;
+        left: 195px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .headeng {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top:130px;
+        left:-80px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .headeng {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top: 110px;
+        left: -80px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .headeng {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top: 80px;
+        left: -40px;
+    }
+}
+@media(max-width:767px) {
+    .headeng {
+        font-size: 30px;
+        font-weight: bold;
+        position: relative;
+        top: 80px;
+        left: 1px;
+        width:400px;
+    }
+}
+@media(min-width:1200px) {
+    .englink {
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        top: 196px;
+        left: -80px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .englink {
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        top: 142px;
+        left: -80px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .englink {
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        top: 120px;
+        left: -34px;
+    }
+}
+@media(max-width:767px) {
+    .englink {
+        font-size: 18px;
+        font-weight: bold;
+        position: fixed;
+        top:205px;
+        right:-20px;
+
+    }
+}
+@media(min-width:1200px) {
+    .headar {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top: 110px;
+        right: -80px;
+        direction:rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .headar {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top: 110px;
+        right: -65px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .headar {
+        font-size: 37px;
+        font-weight: bold;
+        position: relative;
+        top:100px;
+        right: -32px;
+        direction: rtl;
+    }
+}
+@media(max-width:767px) {
+    .headar {
+        font-size: 28px;
+        font-weight: bold;
+        position: relative;
+        top: 100px;
+        right: 16px;
+        direction: rtl;
+    }
+}
+@media(min-width:1200px) {
+    .Arlink {
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+        top: 210px;
+        right: -80px;
+        direction: rtl;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .Arlink {
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+        top: 224px;
+        right: -58px;
+        direction: rtl;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .Arlink {
+        font-size: 17px;
+        font-weight: bold;
+        position: relative;
+        top: 238px;
+        right: -17px;
+        direction: rtl;
+    }
+    }
+@media(max-width:767px) {
+    .Arlink {
+        font-size: 15px;
+        font-weight: bold;
+        position: relative;
+        top: 230px;
+        right: 28px;
+        direction: rtl;
+    }
+}
+@media(min-width:1200px) {
+    .img11 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .img11 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .img11 {
+        position: relative;
+        top: 73px;
+        left: 3px;
+    }
+}
+@media(max-width:767px) {
+    .img11 {
+        position: relative;
+        top: 59px;
+        left: -7px;
+    }
+}
+@media(min-width:1200px) {
+    .TeachEdit {
+        position: relative;
+        top: 136px;
+        left: 73px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .TeachEdit {
+        position: relative;
+        top: 129px;
+        left: 70px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .TeachEdit {
+        position: relative;
+        top: 83px;
+        left: 70px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .TeachEdit {
+        position: relative;
+        top: 60px;
+        left: 64px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .teachName {
+        position: relative;
+        top: 183px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachName {
+        position: relative;
+        top: 172px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachName {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(max-width:767px) {
+    .teachName {
+        position: relative;
+        top: 87px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .teachSsR {
+        position: relative;
+        top: 198px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachSsR {
+        position: relative;
+        top: 195px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachSsR {
+        position: relative;
+        top: 140px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(max-width:767px) {
+    .teachSsR {
+        position: relative;
+        top: 100px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .teachUni {
+        position: relative;
+        top: 210px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachUni {
+        position: relative;
+        top: 220px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachUni {
+        position: relative;
+        top: 160px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(max-width:767px) {
+    .teachUni {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .teachcoll {
+        position: relative;
+        top: 220px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachcoll {
+        position: relative;
+        top: 230px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachcoll {
+        position: relative;
+        top: 180px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+@media(max-width:767px) {
+    .teachcoll {
+        position: relative;
+        top: 120px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .teachEmail {
+        position: relative;
+        top: 58px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachEmail {
+        position: relative;
+        top: 48px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachEmail {
+        position: relative;
+        top: 21px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(max-width:767px) {
+    .teachEmail {
+        position: relative;
+        top: 131px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:1200px) {
+    .teachPass {
+        position: relative;
+        top: 69px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .teachPass {
+        position: relative;
+        top: 71px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .teachPass {
+        position: relative;
+        top: 44px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(max-width:767px) {
+    .teachPass {
+        position: relative;
+        top: 143px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:1200px) {
+    .img22{
+    position: relative;
+    top: 125px;
+    left: 3px;
+}
+
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .img22 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .img22 {
+        position: relative;
+        top: 73px;
+        left: 3px;
+    }
+}
+
+@media(max-width:767px) {
+    .img22 {
+        position: relative;
+        top: 59px;
+        left: -7px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdEdit {
+        position: relative;
+        top: 136px;
+        left: 73px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdEdit {
+        position: relative;
+        top: 129px;
+        left: 70px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdEdit {
+        position: relative;
+        top: 83px;
+        left: 70px;
+        width: 20px;
+    }
+}
+
+@media(max-width:767px) {
+    .StdEdit {
+        position: relative;
+        top: 60px;
+        left: 64px;
+        width: 20px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdName {
+        position: relative;
+        top: 183px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdName {
+        position: relative;
+        top: 172px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdName {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .StdName {
+        position: relative;
+        top: 87px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdSsR {
+        position: relative;
+        top: 198px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdSsR {
+        position: relative;
+        top: 195px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdSsR {
+        position: relative;
+        top: 140px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .StdSsR {
+        position: relative;
+        top: 100px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdUni {
+        position: relative;
+        top: 210px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdUni {
+        position: relative;
+        top: 213px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdUni {
+        position: relative;
+        top: 160px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .StdUni {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .Stdcoll {
+        position: relative;
+        top: 220px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .Stdcoll {
+        position: relative;
+        top: 230px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .Stdcoll {
+        position: relative;
+        top: 180px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .Stdcoll {
+        position: relative;
+        top: 120px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdEmail {
+        position: relative;
+        top: 58px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdEmail {
+        position: relative;
+        top: 48px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdEmail {
+        position: relative;
+        top: 21px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(max-width:767px) {
+    .StdEmail {
+        position: relative;
+        top: 131px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:1200px) {
+    .StdPass {
+        position: relative;
+        top: 69px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .StdPass {
+        position: relative;
+        top: 71px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .StdPass {
+        position: relative;
+        top: 44px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(max-width:767px) {
+    .StdPass {
+        position: relative;
+        top: 143px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:1200px) {
+    .StdID {
+        position: relative;
+        top: 85px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .StdID {
+        position: relative;
+        top: 96px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .StdID {
+        position: relative;
+        top: 70px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(max-width:767px) {
+    .StdID {
+        position: relative;
+        top: 151px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+@media(min-width:1200px) {
+    .img33 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .img33 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .img33 {
+        position: relative;
+        top: 73px;
+        left: 3px;
+    }
+}
+
+@media(max-width:767px) {
+    .img33{
+        position: relative;
+        top: 59px;
+        left: -7px;
+    }
+}
+@media(min-width:1200px) {
+    .EdtteachName {
+        position: relative;
+        top: 150px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+       
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtteachName {
+        position: relative;
+        top: 145px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtteachName {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtteachName {
+        position: relative;
+        top: 87px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .EdtteachSsR {
+        position: relative;
+        top: 198px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+       
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtteachSsR {
+        position: relative;
+        top: 195px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtteachSsR {
+        position: relative;
+        top: 140px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtteachSsR {
+        position: relative;
+        top: 100px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .EdtteachUni {
+        position: relative;
+        top: 210px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtteachUni {
+        position: relative;
+        top: 220px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtteachUni {
+        position: relative;
+        top: 160px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtteachUni {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .Edtteachcoll {
+        position: relative;
+        top: 220px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .Edtteachcoll {
+        position: relative;
+        top: 230px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .Edtteachcoll {
+        position: relative;
+        top: 180px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .Edtteachcoll {
+        position: relative;
+        top: 120px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+
+@media(min-width:1200px) {
+    .EdtteachEmail {
+        position: relative;
+        top: 42px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 335px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtteachEmail {
+        position: relative;
+        top: 48px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 330px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtteachEmail {
+        position: relative;
+        top: 9px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtteachEmail {
+        position: relative;
+        top: 131px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 245px;
+    }
+}
+
+@media(min-width:1200px) {
+    .EdtteachPass {
+        position: relative;
+        top: 69px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 370px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtteachPass {
+        position: relative;
+        top: 71px;
+        left: 644px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 370px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtteachPass {
+        position: relative;
+        top: 44px;
+        left: 476px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 280px;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtteachPass {
+        position: relative;
+        top: 143px;
+        left: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 275px;
+    }
+}
+@media(min-width:1200px) {
+    .btnsvTeach {
+        position: relative;
+        top: 120px;
+        left: 582px;
+        width: 20px;
+    }
+}
+@media(min-width:992px) and (max-width:1199px) {
+    .btnsvTeach {
+        position: relative;
+        top: 119px;
+        left: 500px;
+        width: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:991px) {
+    .btnsvTeach {
+        position: relative;
+        top: 136px;
+        left: 360px;
+        width: 20px;
+    }
+}
+@media(max-width:767px) {
+    .btnsvTeach {
+        position: relative;
+        top: 140px;
+        left: 212px;
+        width: 20px;
+    }
+}
+@media(min-width:1200px) {
+    .img44 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .img44 {
+        position: relative;
+        top: 125px;
+        left: 3px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .img44 {
+        position: relative;
+        top: 73px;
+        left: 3px;
+    }
+}
+
+@media(max-width:767px) {
+    .img44 {
+        position: relative;
+        top: 59px;
+        left: -7px;
+    }
+}
+@media(min-width:1200px) {
+    .EdtStdName {
+        position: relative;
+        top: 125px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .EdtStdName {
+        position: relative;
+        top: 130px;
+        left: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .EdtStdName {
+        position: relative;
+        top: 115px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+}
+
+@media(max-width:767px) {
+    .EdtStdName {
+        position: relative;
+        top: 87px;
+        left: 3px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 290px;
+    }
+}
+@media(min-width:1200px) {
+    .btnsvStd {
+        position: relative;
+        top: 67px;
+        left: 582px;
+        width: 20px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    .btnsvStd {
+        position: relative;
+        top: 83px;
+        left: 500px;
+        width: 20px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .btnsvStd {
+        position: relative;
+        top: 136px;
+        left: 360px;
+        width: 20px;
+    }
+}
+
+@media(max-width:767px) {
+    .btnsvStd {
+        position: relative;
+        top: 140px;
+        left: 212px;
+        width: 20px;
+    }
+}
+    /**Root*/
+    :root {
+        /*Fonts*/
+        --main-font: 'Roboto', sans-serif;
+        /*Fonts*/
+        /*navbar*/
+        /*logo*/
+        --logo-color: #3D37F1;
+        --logo-font: 'Permanent Marker', cursive;
+        /*logo*/
+        --switch-color: #2A85C9;
+        --nav-hover-color: #3D37F1; /* Not a repetition of color but an easy change of color */
+        --nav-text-color: #090909;
+        /*navbar*/
+        --section-background: #FBFCFD;
+        --white-text-color: #FBFCFD;
+        /*Footer*/
+        --footer-color: #4B647E;
+        --shadow-color: #0000003d;
+        --border-color: #9a9a9a38;
+        --red-color: #e74343; /*it for 'x' shap in link exam card*/
+        --green-color: #36e226;
+        --link-color: #007bff;
+    }
+
+    ::selection {
+        background-color: var(--nav-hover-color);
+        color: var(--white-text-color);
+    }
+    /**Root*/
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-family: var(--main-font);
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+    /** Start Navbar Scroll */
+    .smart-scroll {
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        position: fixed;
+    }
+
+    .scrolled-down {
+        transform: translateY(-100%);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .scrolled-up {
+        transform: translateY(0);
+        transition: all 0.5s ease-in-out;
+    }
+    /** End Navbar Scroll */
+
+    /** Strat Navbar */
+    .navbar {
+        width: 100%;
+        z-index: 1;
+        position: fixed;
+        -webkit-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+        -moz-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+        -ms-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+        -o-box-shadow: 0px -1px 29px 5px var(--shadow-color);
+        box-shadow: 0px -1px 29px 5px var(--shadow-color);
+    }
+
+    .bg-light {
+        background-color: #fff !important;
+    }
+    /*bootstrap class*/
+    .nav-link {
+        padding: 8px 60px;
+    }
+
+    .navbar-light .navbar-nav .show > .nav-link,
+    .navbar-light .navbar-nav .active > .nav-link,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .nav-link {
+        color: var(--nav-hover-color);
+    }
+
+    .navbar .navbar-brand {
+        color: var(--nav-second-color);
+        font-family: var(--logo-font);
+    }
+
+    .navbar .logo-nav {
+        color: var(--logo-color);
+        font-weight: bold;
+    }
+    /*Start NavBar Animation*/
+    .navbar-expand-lg .navbar-nav {
+        margin-right: 65px;
+    }
+
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: var(--nav-text-color);
+            padding: 23px;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: var(--main-font);
+            display: inline-block;
+            position: relative;
+        }
+
+            .navbar-expand-lg .navbar-nav .nav-link::after {
+                height: 2px;
+                width: 0px;
+                content: '';
+                display: block;
+                margin: auto;
+            }
+    /*Start DropDown list(Admin pages)*/
+    .nav-item .nav-link.dropdown-toggle::after {
+        margin-left: 0;
+        content: "";
+        border: none;
+    }
+
+    .dropdown-menu {
+        margin-top: -10px;
+        border: none;
+    }
+    /**Start DropDown for language*/
+    .dropdown-item img {
+        height: 20px;
+        width: 20px;
+        margin-right: 20px;
+    }
+    /**End DropDown for language*/
+    /*End DropDown list(Admin pages)*/
+    .navbar-expand-lg .navbar-nav .nav-link:hover::after {
+        width: 100%;
+        background: var(--nav-hover-color);
+        transform: translateX(0%) scaleX(1);
+        transition: 0.4s;
+        z-index: 1;
+    }
+
+    .navbar-collapse {
+        z-index: 1;
+        background-color: #fff;
+    }
+    /*Make navbar when collapsed have background color white*/
+    /*End NavBar Animation*/
+    .nav-switch {
+        display: block;
+        margin-top: 22px;
+    }
+    /***in small screnn top: 6px;*/
+    .language {
+        font-weight: 500;
+        font-family: var(--main-font);
+    }
+    /*Start Swith Button*/
+    .switch {
+        height: 27px;
+        width: 55px;
+        display: inline-block;
+        position: relative;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #fff;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px var(--switch-color);
+    }
+
+    input:checked + .slider {
+        background-color: var(--switch-color);
+    }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -moz-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            -o-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    /** End Swith Style */
+    /**End Navbar*/

@@ -15,14 +15,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->string('qestiontype');
             $table->text('description');
             $table->integer('degree');
-            $table->text('answer1')->nullable();
-            $table->text('answer2')->nullable();
-            $table->text('answer3')->nullable();
-            $table->text('answer4')->nullable();
             $table->text('correct_answer')->nullable();
-            $table->integer('teacher_id')->unsigned();
             $table->integer('course_id')->unsigned();
             $table->timestamps();
         });

@@ -36,14 +36,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
+                    <li class="nav-item dropdown">
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            {{__('massages.Courses')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                            </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -57,7 +64,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>

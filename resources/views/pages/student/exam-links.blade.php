@@ -22,7 +22,7 @@
 <body>
 
     <!-- Start navbar -->
-
+    <div class="container">
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -37,8 +37,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
+                    <li class="nav-item dropdown">
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            {{__('massages.Courses')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                            </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
@@ -58,7 +65,9 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+
                     </li>
                 </ul>
             </div>
@@ -71,31 +80,19 @@
     <section class="exam-main">
         <div class="container">
             <div class="row last">
-                <h4 class="exam-header col-12">{{__('massages.Schedule of exams dates')}}</h4>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/11/2</span>
-                    <span class="subject-time">1:00 PM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">3h</span>
-                </a>
-                <a class="exam-info text-md-center col-8" href="#">
-                    <span class="subject-name">Computer Science</span>
-                    <span class="subject-date">2021/12/2</span>
-                    <span class="subject-time">9:00 AM</span>
-                    <span class="subject-duration">2h</span>
-                </a>
+                <h4 class="exam-header col-12">Schedule of exams dates</h4>
+                @if(isset($studendCourses) && $studendCourses -> count() > 0)
+                    @foreach($studendCourses as $course)
+                        @if($course->pivot->course_status == True && !(now()->greaterThan((Carbon\Carbon::parse($course->date_of_exam))->addHours($course->duration))))
+                            <a class="exam-info text-md-center col-8" href="{{route('student.getexam',$course->id)}}">
+                                <span class="subject-name">{{$course -> name}}</span>
+                                <span class="subject-date">{{$course -> date_of_exam}}</span>
+                                <span class="subject-time">{{$course -> duration}} H</span>
+                                <span class="subject-duration">{{$course -> course_degree}}</span>
+                            </a>
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

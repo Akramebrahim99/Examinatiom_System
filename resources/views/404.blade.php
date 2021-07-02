@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- fonts Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <!-- fonts Awesome -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <title>404 Not Found</title>
 </head>
 <body>
@@ -30,7 +30,6 @@
                     </svg>
                     <!-- <img src="./img/404.jpg" alt="" srcset="" class="img-404"> -->
                 </div>
-                <a href="./index.html" role="button">Go to Home page</a>
             </div>
         </div>
     </section>

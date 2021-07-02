@@ -13,7 +13,7 @@ return [
     |
     */
 
-    "Home" => 'home',
+    "Home" => 'Home',
     "Provide To You" => 'Provide To You',
     "Best Service" => 'Best Service',
     "Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save" => 'Now You Can Get Your Exam Easy From any Place, Save Your Time And Be Save',
@@ -27,7 +27,6 @@ return [
     "An explanatory explanation of what the exam site contains, and some details that may need clarification." => 'An explanatory explanation of what the exam site contains, and some details that may need clarification.',
     "Get Started" => 'Get Started',
     "Languages" => 'Languages',
-    "Register" => 'Register',
     "Sign In" => 'Sign In',
     "Student Page" => 'Student Page',
     "OUR SERVICES" => 'OUR SERVICES',

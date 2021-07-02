@@ -14,9 +14,10 @@ class CreateStudentQuestionTable extends Migration
     public function up()
     {
         Schema::create('student_question', function (Blueprint $table) {
+            $table->id();
             $table->integer('student_id')->unsigned();
             $table->integer('question_id')->unsigned();
-            $table->integer('question_degree');
+            $table->integer('question_degree')->nullable();
             $table->text('student_answer')->nullable();
             $table->timestamps();
         });

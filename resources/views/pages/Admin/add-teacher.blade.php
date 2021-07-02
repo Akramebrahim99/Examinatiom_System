@@ -23,10 +23,8 @@
     <title> {{__('massages.Add Teacher')}}</title>
 </head>
 <body>
-
-   <!-- Start navbar -->
-
-   <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+<!-- Start navbar -->
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,14 +42,14 @@
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        {{__('massages.Services')}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
-                        </div>
-                    </li>
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            </div>
+                        </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
@@ -67,14 +65,14 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
+
 
     <!-- Model Form Add Courses -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -93,21 +91,39 @@
                         <label for="teacher-name"><span>{{__('massages.Teacher Name')}}</span>
                             <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="Teacher name" />
                         </label>
-                        <label for="teacher-email"><span>{{__('massages.Email')}}</span>
+                        @error('teacherName')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="teacher-email"><span>Email</span>
                             <input type="email" name="teacherEmail" class="teacher-email" id="teacher-email" placeholder="example@gmail.com" />
                         </label>
-                        <label for="teacher-password"><span>{{__('massages.Password')}}</span>
+                        @error('teacherEmail')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="teacher-password"><span>Password</span>
                             <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="Password" />
                         </label>
-                        <label for="collage-name"><span>{{__('massages.Collage Name')}}</span>
+                        @error('teacherPassword')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="collage-name"><span>Collage Name</span>
                             <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder="Collage name" />
                         </label>
-                        <label for="university-name"><span>{{__('massages.University Name')}}</span>
+                        @error('teacherCollage')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="university-name"><span>University Name</span>
                             <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="University name" />
                         </label>
-                        <label for="teacher-phone"><span>{{__('massages.Phone')}}</span>
+                        @error('teacherUniversity')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="teacher-phone"><span>Phone</span>
                             <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="phone" />
                         </label>
+                        @error('teacherPhone')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
 
                         <div class="modal-footer">
                             <button type="submit" class="add-button">{{__('massages.Add')}}</button>
@@ -132,6 +148,16 @@
                         <h4 class="page-header">{{__('massages.Teachers')}}</h4>
                         <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add teacher')}}</button>
                     </div>
+                    @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('success')}}
+                            </div>
+                    @elseif (Session::has('faild'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('faild')}}
+                            </div>
+                    @endif
+                <br>
                 </div>
                 @if(isset($teachers) && $teachers -> count() > 0)
                     @foreach($teachers as $teacher)

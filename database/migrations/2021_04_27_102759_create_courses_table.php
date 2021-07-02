@@ -16,10 +16,13 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->integer('course_degree');
-            $table->dateTime('date_of_exam');
-            $table->integer('duration');
+            $table->integer('course_degree')->nullable();
+            $table->dateTime('date_of_exam')->nullable();
+            $table->integer('duration')->nullable();
             $table->integer('teacher_id')->nullable();
+            $table->boolean('one_page')->default(TRUE);
+            $table->boolean('previous')->default(TRUE);
+            $table->integer('no_of_submit')->default(1);
             $table->timestamps();
         });
     }

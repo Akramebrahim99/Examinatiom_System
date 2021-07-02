@@ -20,10 +20,9 @@
     <title>{{__('massages.Teacher Courses')}}</title>
 </head>
 <body>
-
-    <!-- Start navbar -->
-
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+ <!-- Start navbar -->
+ <div class="container">
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,17 +40,16 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        {{__('massages.Services')}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">{{__('massages.Add Exam')}}</a>
-                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
-                        </div>
-                    </li>
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            </div>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -65,7 +63,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -74,70 +72,23 @@
 
     <!-- End navbar -->
 
-    <!-- Model Form Add Courses -->
-
-    <!-- Remove -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model ceneter in the page-->
-            <div class="modal-content" id="box-body"><!--contain the model contact-->
-                <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Courses')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span><!--the 'X' shape-->
-                    </button>
-                </div>
-                <div class="modal-body"><!--contain only the input fileds-->
-                    <label for="course-name">{{__('massages.Course name')}}
-                        <input type="text" id="course-name" placeholder="Course name">
-                    </label>
-                    <!-- <label for="course">Doctor name
-                        <input type="text" id="course">
-                    </label> -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="add-botton">{{__('massages.Add')}}</button>
-                    <button type="button" class="close-botton" data-dismiss="modal">{{__('massages.Close')}}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Remove -->
-
-    <!-- Model Form Add Courses -->
-
     <!-- Start Student Courses Section -->
     <section class="teacher-courses-main">
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">{{__('massages.Your courses')}}</h4>
+                    <h4 class="teacher-courses-header">Your Courses</h4>
                     <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
                 </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">635</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">525</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">322</span>
-                    <a class="student-register-course" href="{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
-                <div class="teacher-courses-info text-md-center col-8">
-                    <span class="teacher-subject-name">Computer Science</span>
-                    <span class="number-student-register-course">123</span>
-                    <a class="student-register-course" href=".{{route('teacher.studentreg')}}">Students Registered in course</a>
-                </div>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <div class="teacher-courses-info text-md-center col-8">
+                            <span class="teacher-subject-name">{{$course->name}}</span>
+                            <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
+                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">Manage Course</a>
+                        </div> 
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

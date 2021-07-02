@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Teacher;
+use App\Models\Question;
+use App\Models\Answer;
 use Validator;
 
 class ManageCourseController extends Controller
@@ -39,25 +41,34 @@ class ManageCourseController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'courseName' => 'required',
-            'courseDate' => 'required',
-            'courseDegree' => 'required',
-            'duration' => 'required',
-        ]);
+        $rules= [
+            'courseName' => 'required|unique:courses,name',
+        ];
+        $messages = $this->getMessages();
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        if($validator -> fails()){
+            return redirect()->route('show.courses')->withErrors($validator)->withInputs($request->all());
+        }
 
         $course = new Course([
-            'name' => $request->get('courseName'),
-            'date_of_exam' => $request->get('courseDate'),
-            'course_degree' => $request->get('courseDegree'),
-            'duration' => $request->get('duration'),
+            'name' => $request->get('courseName')
         ]);
 
         $course->save();
 
         return redirect()->route('show.courses');
     }
-
+    protected function getMessages(){
+        return $messages = [
+            'courseName.required' => 'course name is required please',
+            'courseDate.required' => 'course date is required please',
+            'courseDegree.required' => 'course degree is required please',
+            'duration.required' => 'duration is required please',
+            'courseName.unique' => 'The course has already been taken',
+        ];
+    }
     /**
      * Display the specified resource.
      *
@@ -101,6 +112,31 @@ class ManageCourseController extends Controller
     public function destroy($id)
     {
         $course = Course::find($id);
+        $studentsofcourse = $course->students; 
+        $questions = $course->questions;
+        
+        foreach($questions as $question)
+        {
+            $students = $question->students;
+            foreach($students as $student)
+            {
+                $student->pivot->delete();
+            }
+            $answers = $question->answers;
+            if(isset($answers))
+            {
+                foreach($answers as $answer)
+                    $answer->delete();
+            }
+            $question ->delete();
+        }
+
+
+        foreach($studentsofcourse as $student)
+        {
+            $student->pivot->delete();
+        }
+
         $course -> delete();
         return redirect()->route('show.courses');
     }

@@ -23,9 +23,9 @@
 </head>
 <body>
 
-    <!-- Start navbar -->
-
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+   <!-- Start navbar -->
+<div class="container">
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.index')}}"> {{__('massages.Home')}}<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('teacher.exam')}}">{{__('massages.Exam')}}</a>
@@ -43,18 +43,16 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            
-                        {{__('massages.Services')}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">{{__('massages.Add Exam')}}</a>
-                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
-                        </div>
-                    </li>
+                            <!-- use "javascript:void(0)" to make link do nothing at all -->
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            </div>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -68,7 +66,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -77,45 +75,22 @@
 
     <!-- End navbar -->
 
+
     <!-- Start Exam Section -->
     <section class="exam-link-teacher-main">
         <div class="container">
             <div class="row last" id="page-body">
-                <h4 class="exam-header col-12">{{__('massages.Schedule of exams dates')}}</h4>
-
-                <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/12/2</span>
-                    <span class="subject subject-time">9:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">12:00 PM</span>
-                    <span class="subject subject-duration">30 min</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">1:00 PM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-                <span class="exam-info teacher-link text-md-center col-8" href="{{route('teacher.exam.screen')}}">
-                    <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">Computer Science</a><!-- Name of Course will print from database -->
-                    <span class="subject subject-date">2021/11/2</span>
-                    <span class="subject subject-time">10:00 AM</span>
-                    <span class="subject subject-duration">2 h</span>
-                    <i class="fa fa-edit edit" value="edit"></i>
-                    <i class="fa fa-times remove" value="remove"></i>
-                </span>
-
+                <h4 class="exam-header col-12">Schedule of exams dates</h4>
+                @if(isset($courses) && $courses -> count() > 0)
+                    @foreach($courses as $course)
+                        <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
+                            <a class="subject subject-name" href="{{route('teacher.exam.screen')}}">{{$course -> name}}</a><!-- Name of Course will print from database -->
+                            <span class="subject subject-date">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-time">{{$course -> duration}} H</span>
+                            <span class="subject subject-duration">{{$course -> course_degree}}</span>
+                        </span>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
