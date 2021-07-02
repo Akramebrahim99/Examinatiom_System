@@ -73,24 +73,24 @@
             <div class="row last">
                 <h4 class="result-header col-12">{{__('massages.Yor result')}} </h4>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
+                    <span class="subject-name">Computer Science</span>
                     <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">{{__('massages.D')}}</span>
+                    <span class="subject-date">D</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
+                    <span class="subject-name">Computer Science</span>
                     <span class="subject-doctor">100 - 90</span>
-                    <span class="subject-date">{{__('massages.A+')}}</span>
+                    <span class="subject-date">A</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
+                    <span class="subject-name">Computer Science</span>
                     <span class="subject-doctor">100 - 60</span>
-                    <span class="subject-date">{{__('massages.D+')}}</span>
+                    <span class="subject-date">D</span>
                 </div>
                 <div class="result-info text-md-center col-8">
-                    <span class="subject-name">{{__('massages.Computer Science')}}</span>
+                    <span class="subject-name">Computer Science</span>
                     <span class="subject-doctor">100 - 50</span>
-                    <span class="subject-date">{{__('massages.D')}}</span>
+                    <span class="subject-date">D</span>
                 </div>
             </div>
         </div>

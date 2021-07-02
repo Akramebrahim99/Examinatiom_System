@@ -21,7 +21,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Assign Course For Teachers</title>
+    <title>{{__('massages.Assign Course To Teacher')}}</title>
 </head>
 <body>
     
@@ -36,25 +36,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}}  <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">{{__('massages.Teachers')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
+                        {{__('massages.Services')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -68,7 +68,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -114,8 +114,8 @@
                             </select>
                         </label>
                         <div class="modal-footer">
-                            <button type="submit" class="add-button">Add</button>
-                            <button type="button" class="close-button" data-dismiss="modal">Close</button>
+                            <button type="submit" class="add-button">{{__('massages.Add')}}</button>
+                            <button type="button" class="close-button" data-dismiss="modal">{{__('massages.Close')}}</button>
                         </div>
 
                     </form>
@@ -132,8 +132,8 @@
         <div class="container">
             <div class="row content" id="page-body">
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">Yor courses</h4>
-                    <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button>
+                    <h4 class="teacher-courses-header">{{__('massages.Yor courses')}}</h4>
+                    <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add course')}}</button>
                 </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)

@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Student Courses</title>
+    <title>{{__('massages.Student Courses')}}</title>
 </head>
 <body>
 
@@ -32,19 +32,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('student.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">Results</a>
+                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -71,7 +71,7 @@
     <section class="courses-main">
         <div class="container">
             <div class="row last">
-                <h4 class="courses-header col-12">Yor courses</h4>
+                <h4 class="courses-header col-12">{{__('massages.Yor Courses ')}}</h4>
                 <div class="courses-info text-md-center col-8">
                     <span class="subject-name">Computer Science</span>
                     <span class="subject-doctor">Dr.Mohamed Reda</span>
@@ -80,19 +80,19 @@
                 </div>
                 <div class="courses-info text-md-center col-8">
                     <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
+                    <span class="subject-doctor">Dr.Mohamed Reda</span>
                     <span class="subject-date"><a href="">Request</a></span>
                     <!-- <span class="subject-duration">2h</span> -->
                 </div>
                 <div class="courses-info text-md-center col-8">
                     <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
+                    <span class="subject-doctor">Dr.Mohamed Reda</span>
                     <span class="subject-date"><a href="">Request</a></span>
                     <!-- <span class="subject-duration">3h</span> -->
                 </div>
                 <div class="courses-info text-md-center col-8">
                     <span class="subject-name">Computer Science</span>
-                    <span class="subject-doctor">Dr.Ahmed Radi</span>
+                    <span class="subject-doctor">Dr.Mohamed Reda</span>
                     <span class="subject-date"><a href="">Request</a></span>
                     <!-- <span class="subject-duration">2h</span> -->
                 </div>

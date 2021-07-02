@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Student Requests</title>
+    <title>{{__('massages.Student Requests')}}</title>
 </head>
 <body>
 
@@ -32,26 +32,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
+                        {{__('massages.Services')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
+                            <a class="dropdown-item" href="#">{{__('massages.Add Exam')}}</a>
+                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -65,7 +65,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="{{route('login')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -78,10 +78,10 @@
     <section class="student-request">
         <div class="container">
             <div class="row last" id="page-content">
-                <h4 class="courses-header col-12">Yor courses</h4>
+                <h4 class="courses-header col-12">{{__('massages.Your courses')}}</h4>
                 <div class="select-all col-12">
                     <label for="select-all">
-                        <input type="checkbox" name="" value="Select All" id="select-all">Select All
+                        <input type="checkbox" name="" value="Select All" id="select-all">{{__('massages.Select All')}}
                     </label>
                     <input type="submit" name="" value="Accept All" class="accept-all">
                     <input type="submit" name="" value="Remove All" class="remove-all">

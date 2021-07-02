@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Teacher Courses</title>
+    <title>{{__('massages.Teacher Courses')}}</title>
 </head>
 <body>
 
@@ -32,26 +32,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.exam')}}">Exam</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">{{__('massages.Exam')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('teacher.courses')}}">Courses</a>
+                        <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
+                        {{__('massages.Services')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Add Exam</a>
-                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">Student Requests</a>
+                            <a class="dropdown-item" href="#">{{__('massages.Add Exam')}}</a>
+                            <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -65,7 +65,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">sing out</a>
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -81,13 +81,13 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model ceneter in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add Courses</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Courses')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
                 </div>
                 <div class="modal-body"><!--contain only the input fileds-->
-                    <label for="course-name">Course name
+                    <label for="course-name">{{__('massages.Course name')}}
                         <input type="text" id="course-name" placeholder="Course name">
                     </label>
                     <!-- <label for="course">Doctor name
@@ -95,8 +95,8 @@
                     </label> -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="add-botton">Add</button>
-                    <button type="button" class="close-botton" data-dismiss="modal">Close</button>
+                    <button type="button" class="add-botton">{{__('massages.Add')}}</button>
+                    <button type="button" class="close-botton" data-dismiss="modal">{{__('massages.Close')}}</button>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">Yor courses</h4>
+                    <h4 class="teacher-courses-header">{{__('massages.Your courses')}}</h4>
                     <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
                 </div>
                 <div class="teacher-courses-info text-md-center col-8">
