@@ -14,10 +14,10 @@
 
 
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="../../css/bootstrap.css">
+   <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="../../css/library/hover.css">
+    <link rel="stylesheet" href="../../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,7 +26,7 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
 <!-- Start navbar -->
@@ -92,7 +92,7 @@
                         <input type="submit" name="signin" id="signin" class="form-submit" value="{{__('auth.Log in')}}"/>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>

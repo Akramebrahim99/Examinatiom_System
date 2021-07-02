@@ -192,7 +192,7 @@
                                         ?>
                                         @if(isset($answers) && count($answers) > 0)
                                         @foreach($answers as $answer)
-                                        <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$question->answer1}}"> <span class="checkmark"></span> </label>
+                                        <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
                                         @endforeach
                                         @else
                                         <textarea name="radio{{$count}}" rows="5" cols="50">
@@ -253,7 +253,7 @@
             document.getElementById("demo").innerHTML = /*days + " Day " +*/ hours + " Hour " +
                 minutes + " Minutes " + seconds + " Second ";
 
-            // If the count down is over, write some text 
+            // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("demo").innerHTML = "EXPIRED";
