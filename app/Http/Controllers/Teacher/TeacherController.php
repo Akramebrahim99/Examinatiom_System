@@ -106,7 +106,7 @@ class TeacherController extends Controller
             'RightAns' => 'required',
             'degree' => 'required'
         ]);
-        
+
         if ($request->get('RightAns') == "option1") {
             $rightAns = "True";
         } else {
@@ -153,7 +153,7 @@ class TeacherController extends Controller
         ]);
         $question->save();
 
-        for ($i = (count($request->all()) - 4); $i > 0; $i++) {
+        for ($i = (count($request->all()) - 4); $i > 0; $i--) {
             $answer = new Answer([
                 'question_id' => $question->id,
                 'answer' => $request->get('option' . $i),
@@ -209,7 +209,7 @@ class TeacherController extends Controller
             foreach($answers as $answer){
                 $answer->delete();
             }
-            
+
             for ($i = (count($request->all()) - 4); $i > 0; $i--) {
                 $answer = new Answer([
                     'question_id' => $question->id,
@@ -217,8 +217,8 @@ class TeacherController extends Controller
                 ]);
                 $answer->save();
             }
-        } 
-        elseif ($question->qestiontype == 'TF') 
+        }
+        elseif ($question->qestiontype == 'TF')
         {
             $rightAns = Null;
             $this->validate($request, [
@@ -226,7 +226,7 @@ class TeacherController extends Controller
                 'RightAns' => 'required',
                 'degree' => 'required'
             ]);
-            
+
             if ($request->get('RightAns') == "option1") {
                 $rightAns = "True";
             } else {
@@ -236,8 +236,8 @@ class TeacherController extends Controller
             $question->correct_answer = $rightAns;
             $question->degree = $request->get('degree');
             $question->save();
-        } 
-        else 
+        }
+        else
         {
             $this->validate($request, [
                 'question' => 'required',
@@ -247,7 +247,7 @@ class TeacherController extends Controller
             $question->degree = $request->get('degree');
             $question->save();
         }
-        
+
         return $this->addexam($question->course_id);
     }
 

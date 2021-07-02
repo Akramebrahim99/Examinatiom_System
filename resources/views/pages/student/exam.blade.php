@@ -49,6 +49,7 @@
                                     <div class="py-2 h5">
                                         <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
                                     </div>
+<<<<<<< HEAD
                                     <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> 
                                         @if($question->answer1 != Null || $question->answer2 != Null || $question->answer3 != Null || $question->answer4 != Null)
                                             @if($question->answer1 != Null)
@@ -63,6 +64,17 @@
                                             @if($question->answer4 != Null)
                                             <label class="options">{{$question->answer4}} <input type="radio" name="radio{{$count}}" value="{{$question->answer4}}"> <span class="checkmark"></span> </label>
                                             @endif
+=======
+                                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                        <?php
+                                        $answers = iterator_to_array($question->answers);
+                                        shuffle($answers);
+                                        ?>
+                                        @if(isset($answers) && count($answers) > 0)
+                                        @foreach($answers as $answer)
+                                        <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
+                                        @endforeach
+>>>>>>> 5b140f9a5bb9ff13d5b356d78323d9a0f7a06052
                                         @else
                                         <textarea  name="radio{{$count}}" rows="5" cols="50">
                                         </textarea>
@@ -101,6 +113,7 @@
         // Update the count down every 1 second
         var x = setInterval(function() {
 
+<<<<<<< HEAD
         // Get today's date and time
         var now = new Date().getTime();
             
@@ -121,8 +134,65 @@
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "EXPIRED";
+=======
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = /*days + " Day " +*/ hours + " Hour " +
+                minutes + " Minutes " + seconds + " Second ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {
+                slideIndex = n - 1
+            }
+            if (n < 1) {
+                slideIndex = n + 1
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+
+>>>>>>> 5b140f9a5bb9ff13d5b356d78323d9a0f7a06052
         }
         }, 1000);
     </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+</html>
+>>>>>>> 5b140f9a5bb9ff13d5b356d78323d9a0f7a06052
