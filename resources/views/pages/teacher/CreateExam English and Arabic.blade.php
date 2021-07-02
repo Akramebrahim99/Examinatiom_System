@@ -116,25 +116,7 @@
                         </div>
                        
                         <div  id="options" class="col-sm-12"></div>
-                        <!--<div id="chkeng"  class="col-sm-12">
-                        <div id="chk" class="form-group">
-                        <label>Enter Option <span id="display"></span></label>
-                        <input type="text" name="option2" placeholder="Enter Option" class="form-control">
-                        </div>
-                        </div>-->
-
                         <p style="width: 100%;text-align: center;"><input value="Add Option" type="button" onclick="addoption()"/></p>
-
-            
-                        <!--<div id="chkeng" class="a1Eng">
-                            <div id="chk" class="form-check">
-                                <textarea id="txt7" name="Option" placeholder="Enter Option" cols="50" rows="1"></textarea>
-                                <input type="button" title="Add Option" value=" + " onclick="addrow()" />
-                                <input type="button" title="Remove Option" id="rmv" value=" - " onclick="removerow()" />
-                                
-                            </div>
-                        </div>-->
-
                         <div class="col-sm-6">
                         <div class="form-group">
                         <label>Enter Right Answer</label>

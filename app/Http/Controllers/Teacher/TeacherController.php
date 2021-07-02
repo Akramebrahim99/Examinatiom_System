@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Question;
 use App\Models\Teacher;
 use App\Models\Answer;
+use phpDocumentor\Reflection\Types\Null_;
 
 class TeacherController extends Controller
 {
@@ -18,8 +19,8 @@ class TeacherController extends Controller
 
     public function exams()
     {
-        $courses = Course::where('teacher_id',session('user_id'))->get();
-        return view('pages.teacher.exam-links',compact('courses'));
+        $courses = Course::where('teacher_id', session('user_id'))->get();
+        return view('pages.teacher.exam-links', compact('courses'));
     }
 
     public function result()
@@ -29,8 +30,8 @@ class TeacherController extends Controller
 
     public function course()
     {
-        $courses = Course::where('teacher_id',session('user_id'))->get();
-        return view('pages.teacher.teacher-courses',compact('courses'));
+        $courses = Course::where('teacher_id', session('user_id'))->get();
+        return view('pages.teacher.teacher-courses', compact('courses'));
     }
 
     public function examscreen()
@@ -41,18 +42,18 @@ class TeacherController extends Controller
     public function profile()
     {
         $teacher = Teacher::find(session('user_id'));
-        return view('pages.teacher.Teacher Profile',compact('teacher'));
+        return view('pages.teacher.Teacher Profile', compact('teacher'));
     }
     public function editprofile()
     {
         $teacher = Teacher::find(session('user_id'));
-        return view('pages.teacher.Edit Teacher Profile',compact('teacher'));
+        return view('pages.teacher.Edit Teacher Profile', compact('teacher'));
     }
 
     public  function editteacherprofile(Request $request)
     {
         $teacher = Teacher::find(session('user_id'));
-        $this->validate($request,[
+        $this->validate($request, [
             'teacherName' => 'required',
             'teacherEmail' => 'required',
             'teacherPassword' => 'required',
@@ -76,12 +77,12 @@ class TeacherController extends Controller
     {
         $course = Course::find($courseId);
         $questions = $course->questions;
-        return view('pages.teacher.CreateExam English and Arabic',compact('course','questions'));
+        return view('pages.teacher.CreateExam English and Arabic', compact('course', 'questions'));
     }
 
     public function addEssayQuestion(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'question' => 'required',
             'degree' => 'required'
         ]);
@@ -89,7 +90,8 @@ class TeacherController extends Controller
         $question = new Question([
             'description' => $request->get('question'),
             'degree' => $request->get('degree'),
-            'course_id' => $request->course_id
+            'course_id' => $request->course_id,
+            'qestiontype' => 'Essay'
         ]);
 
         $question->save();
@@ -98,17 +100,16 @@ class TeacherController extends Controller
 
     public function addTFQuestion(Request $request)
     {
-        $this->validate($request,[
+        $rightAns = Null;
+        $this->validate($request, [
             'question' => 'required',
             'RightAns' => 'required',
             'degree' => 'required'
         ]);
-        $rightAns;
-        if($request->get('RightAns') == "option1"){
-            $rightAns = "True"; 
-        }
-        else
-        {
+        
+        if ($request->get('RightAns') == "option1") {
+            $rightAns = "True";
+        } else {
             $rightAns = "False";
         }
 
@@ -116,7 +117,8 @@ class TeacherController extends Controller
             'description' => $request->get('question'),
             'degree' => $request->get('degree'),
             'correct_answer' => $rightAns,
-            'course_id' => $request->course_id
+            'course_id' => $request->course_id,
+            'qestiontype' => 'TF'
         ]);
 
         $question->save();
@@ -136,7 +138,7 @@ class TeacherController extends Controller
 
     public function addMcqQuestion(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'question' => 'required',
             'RightAns' => 'required',
             'degree' => 'required'
@@ -146,15 +148,15 @@ class TeacherController extends Controller
             'description' => $request->get('question'),
             'correct_answer' => $request->get($request->get('RightAns')),
             'degree' => $request->get('degree'),
-            'course_id' => $request->course_id
+            'course_id' => $request->course_id,
+            'qestiontype' => 'MCQ'
         ]);
         $question->save();
-        
-        for($i = 1;$i <= (count($request->all()) - 4);$i++)
-        {
+
+        for ($i = (count($request->all()) - 4); $i > 0; $i++) {
             $answer = new Answer([
                 'question_id' => $question->id,
-                'answer' => $request->get('option'.$i),
+                'answer' => $request->get('option' . $i),
             ]);
             $answer->save();
         }
@@ -162,58 +164,90 @@ class TeacherController extends Controller
         return back()->withInput();
     }
 
-    public function showexams(){
-        $courses = Course::where('teacher_id',session('user_id'))->get();
-        return view('pages.teacher.examspage',compact('courses'));
+    public function showexams()
+    {
+        $courses = Course::where('teacher_id', session('user_id'))->get();
+        return view('pages.teacher.examspage', compact('courses'));
     }
 
-    public function deletequestion($questionId){
+    public function deletequestion($questionId)
+    {
         $question = Question::find($questionId);
-        $answers = Answer::where('question_id',$questionId)->get();
-        if(isset($answers))
-        {
-            foreach($answers as $answer)
+        $answers = Answer::where('question_id', $questionId)->get();
+        if (isset($answers)) {
+            foreach ($answers as $answer)
                 $answer->delete();
         }
-        $question ->delete();
+        $question->delete();
         return back()->withInput();
     }
 
     public function editquestion($questionId)
     {
         $question = Question::find($questionId);
-        return view('pages.teacher.edit question',compact('question'));
+        return view('pages.teacher.edit question', compact('question'));
     }
 
     public function editquestioninfo(Request $request)
     {
         $question = Question::find($request->question_id);
 
-        $this->validate($request,[
-            'question' => 'required',
-            'RightAns' => 'required',
-            'degree' => 'required'
-        ]);
-        
-        $rightAns = $request->get('RightAns');
-        if($rightAns == 'Essay Question'){
-            $rightAns = NULL;
-        }
-        else
+        if ($question->qestiontype == 'MCQ') {
+            $this->validate($request, [
+                'question' => 'required',
+                'RightAns' => 'required',
+                'degree' => 'required'
+            ]);
+
+
+            $question->description = $request->get('question');
+            $question->correct_answer = $request->get($request->get('RightAns'));
+            $question->degree = $request->get('degree');
+            $question->save();
+
+            $answers = Answer::where('question_id', $request->question_id)->get();
+            foreach($answers as $answer){
+                $answer->delete();
+            }
+            
+            for ($i = (count($request->all()) - 4); $i > 0; $i--) {
+                $answer = new Answer([
+                    'question_id' => $question->id,
+                    'answer' => $request->get('option' . $i),
+                ]);
+                $answer->save();
+            }
+        } 
+        elseif ($question->qestiontype == 'TF') 
         {
-            $rightAns = $request->get($request->get('RightAns'));
+            $rightAns = Null;
+            $this->validate($request, [
+                'question' => 'required',
+                'RightAns' => 'required',
+                'degree' => 'required'
+            ]);
+            
+            if ($request->get('RightAns') == "option1") {
+                $rightAns = "True";
+            } else {
+                $rightAns = "False";
+            }
+            $question->description = $request->get('question');
+            $question->correct_answer = $rightAns;
+            $question->degree = $request->get('degree');
+            $question->save();
+        } 
+        else 
+        {
+            $this->validate($request, [
+                'question' => 'required',
+                'degree' => 'required'
+            ]);
+            $question->description = $request->get('question');
+            $question->degree = $request->get('degree');
+            $question->save();
         }
-
-        $question->description = $request->get('question');
-        $question->answer1 = $request->get('option1');
-        $question->answer2 = $request->get('option2');
-        $question->answer3 = $request->get('option3');
-        $question->answer4 = $request->get('option4');
-        $question->correct_answer = $rightAns;
-        $question->degree = $request->get('degree');
-        $question->save();
-
-
+        
         return $this->addexam($question->course_id);
     }
 
@@ -222,12 +256,12 @@ class TeacherController extends Controller
         $course = Course::find($courseId);
         $questions = $course->questions;
 
-        foreach($questions as $key => $question){
-            if($question->answer1 != Null || $question->answer2 != Null || $question->answer3 != Null || $question->answer4 != Null )
+        foreach ($questions as $key => $question) {
+            if ($question->qestiontype != 'Essay')
                 unset($questions[$key]);
         }
 
-        return view('pages.teacher.essayquestion',compact('questions'));
+        return view('pages.teacher.essayquestion', compact('questions'));
     }
 
     public function markessayquestion($questionId)
@@ -235,7 +269,7 @@ class TeacherController extends Controller
         $count = 0;
         $question = Question::find($questionId);
         $students = $question->students;
-        return view('pages.teacher.markessayquestion',compact('students','question','count'));
+        return view('pages.teacher.markessayquestion', compact('students', 'question', 'count'));
     }
 
     public function addmarkessayquestion(Request $request)
@@ -245,10 +279,9 @@ class TeacherController extends Controller
         $course = Course::find($question->course_id);
         session()->forget('questionsid');
 
-        for($i=0; $i<count($studentsIds); $i++)
-        {
-            $question->students()->updateExistingPivot($studentsIds[$i], ['question_degree' => $request->get('degree'.$i)]);
-            $course->students->find($studentsIds[$i])->pivot->course_degree += $request->get('degree'.$i);
+        for ($i = 0; $i < count($studentsIds); $i++) {
+            $question->students()->updateExistingPivot($studentsIds[$i], ['question_degree' => $request->get('degree' . $i)]);
+            $course->students->find($studentsIds[$i])->pivot->course_degree += $request->get('degree' . $i);
             $course->students->find($studentsIds[$i])->pivot->save();
         }
 
@@ -258,14 +291,14 @@ class TeacherController extends Controller
     public function editcourse($courseId)
     {
         $course = Course::find($courseId);
-        return view('pages.teacher.edit course',compact('course'));
+        return view('pages.teacher.edit course', compact('course'));
     }
-    
+
     public function editcourseinfo(Request $request)
     {
         $course = Course::find($request->course_id);
 
-        $this->validate($request,[
+        $this->validate($request, [
             'date_of_exam' => 'required',
             'course_degree' => 'required',
             'duration' => 'required',
@@ -283,7 +316,5 @@ class TeacherController extends Controller
         $course->save();
 
         return back()->withInput();
-
     }
-
 }
