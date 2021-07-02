@@ -42,10 +42,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -77,15 +78,15 @@
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">Your Courses</h4>
+                    <h4 class="teacher-courses-header">{{__('massages.Your Courses')}}</h4>
                     <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
                 </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <div class="teacher-courses-info text-md-center col-8">
                             <span class="teacher-subject-name">{{$course->name}}</span>
-                            <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
-                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">Manage Course</a>
+                            <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>{{__('massages.Show Results')}}</span></a>
+                            <a class="student-register-course" href="{{route('teacher.studentreg',$course->id)}}">{{__('massages.Students Registered in course')}}</a>
                         </div> 
                     @endforeach
                 @endif

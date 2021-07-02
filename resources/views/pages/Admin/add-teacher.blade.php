@@ -44,15 +44,13 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -79,7 +77,7 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add teacher')}}</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Teacher')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
@@ -89,37 +87,37 @@
                     <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
                         @csrf
                         <label for="teacher-name"><span>{{__('massages.Teacher Name')}}</span>
-                            <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="Teacher name" />
+                            <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="{{__('massages.Teacher Name')}}" />
                         </label>
                         @error('teacherName')
                                 <p style="color: red">{{$message}}</p>
                         @enderror
-                        <label for="teacher-email"><span>Email</span>
+                        <label for="teacher-email"><span>{{__('massages.Email')}}</span>
                             <input type="email" name="teacherEmail" class="teacher-email" id="teacher-email" placeholder="example@gmail.com" />
                         </label>
                         @error('teacherEmail')
                                 <p style="color: red">{{$message}}</p>
                         @enderror
-                        <label for="teacher-password"><span>Password</span>
-                            <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="Password" />
+                        <label for="teacher-password"><span>{{__('massages.Password')}}</span>
+                            <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="{{__('massages.Password')}}" />
                         </label>
                         @error('teacherPassword')
                                 <p style="color: red">{{$message}}</p>
                         @enderror
-                        <label for="collage-name"><span>Collage Name</span>
-                            <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder="Collage name" />
+                        <label for="collage-name"><span>{{__('massages.Collage Name')}}</span>
+                            <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder=" {{__('massages.Collage Name')}}" />
                         </label>
                         @error('teacherCollage')
                                 <p style="color: red">{{$message}}</p>
                         @enderror
-                        <label for="university-name"><span>University Name</span>
-                            <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="University name" />
+                        <label for="university-name"><span>{{__('massages.University Name')}}</span>
+                            <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="{{__('massages.University Name')}}" />
                         </label>
                         @error('teacherUniversity')
                                 <p style="color: red">{{$message}}</p>
                         @enderror
-                        <label for="teacher-phone"><span>Phone</span>
-                            <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="phone" />
+                        <label for="teacher-phone"><span>{{__('massages.Phone')}}</span>
+                            <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="{{__('massages.Phone')}}" />
                         </label>
                         @error('teacherPhone')
                                 <p style="color: red">{{$message}}</p>
@@ -146,7 +144,7 @@
                 <div class="container">
                     <div  class="col-12">
                         <h4 class="page-header">{{__('massages.Teachers')}}</h4>
-                        <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add teacher')}}</button>
+                        <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add Teacher')}}</button>
                     </div>
                     @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">

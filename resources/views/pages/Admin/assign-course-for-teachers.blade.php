@@ -46,15 +46,13 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -79,7 +77,7 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add course to doctor</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Course to Doctor')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
@@ -88,7 +86,7 @@
                 <div class="modal-body"><!--contain only the input fileds-->
                     <form action="{{route('add.course.teacher')}}" method="post" class="assign-course">
                             @csrf
-                        <label for="doctor-name">Doctor Name
+                        <label for="doctor-name">{{__('massages.Doctor Name')}}
                             <select class="doctor-name" id="doctor-name" name = "teacher_id">
                                 <option value = "" selected></option>
                                 @if(isset($teachers) && $teachers -> count() > 0)
@@ -98,7 +96,7 @@
                                 @endif
                             </select>
                         </label>
-                        <label for="course-name">Course Name
+                        <label for="course-name">{{__('massages.Course Name')}}
                             <select class="course-name" id="course-name" name = "course_id">
                                 <option value = "" selected></option>
                                 @if(isset($courses) && $courses -> count() > 0)

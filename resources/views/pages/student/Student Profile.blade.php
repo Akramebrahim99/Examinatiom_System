@@ -38,8 +38,8 @@
                             {{__('massages.Courses')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}}</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -74,7 +74,7 @@
              <table>
                     <tr> 
                         <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">Name :</label>
+                            <label style="font-weight:700">{{__('massages.Name')}} :</label>
                         </td>
                         <td>
                             <label id="lblStdName" style="font-weight:700">{{$student->name}}</label>
@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                         <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">SSN :</label>
+                            <label style="font-weight:700">{{__('massages.SSN')}} :</label>
                         </td>
                         <td>
                             <label id="lblStdSSR" style="font-weight:700">{{$student->ssn}}</label>
@@ -90,7 +90,7 @@
                     </tr>
                     <tr>
                         <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">University : </label>
+                            <label style="font-weight:700">{{__('massages.University')}} : </label>
                         </td>
                         <td>
                             <label id="lblStdUni" style="font-weight:700">{{$student->university_name}}</label>
@@ -99,7 +99,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">College :</label>
+                            <label style="font-weight:700"> {{__('massages.College')}}:</label>
                         </td>
                         <td>
 
@@ -109,7 +109,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">Email :</label>
+                            <label style="font-weight:700">{{__('massages.Email')}} :</label>
                         </td>
                         <td>
 
@@ -119,7 +119,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">Password :</label>
+                            <label style="font-weight:700"> {{__('massages.Password')}}:</label>
                         </td>
                         <td>
 
@@ -129,7 +129,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">Id :</label>
+                            <label style="font-weight:700">{{__('massages.Id')}} :</label>
                         </td>
                         <td>
 
@@ -139,7 +139,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;"> 
 
-                            <label style="font-weight:700">Phone :</label>
+                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
 
@@ -152,7 +152,7 @@
             
              <div class="btnsvStd">
                 <a href="{{route('student.editprofile')}}">
-                    <button id="btn13" class="btn btn-primary" type="submit">Edit</button>
+                    <button id="btn13" class="btn btn-primary" type="submit">{{__('massages.Edit')}}</button>
                 </a>
               </div>
             @endif

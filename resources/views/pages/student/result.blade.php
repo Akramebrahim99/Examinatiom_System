@@ -43,8 +43,8 @@
                             {{__('massages.Courses')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}}</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -77,11 +77,11 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">Your Results</h4>
+                <h4 class="result-header col-12">{{__('massages.Your Results')}}</h4>
                 <div class="result-info text-md-center col-8">
-                            <span class="subject-name">Course Name</span>
-                            <span class="subject-doctor">Course Degree</span>
-                            <span style="color: red" class="subject-date">Your Degree</span>
+                            <span class="subject-name">{{__('massages.Course Name')}}</span>
+                            <span class="subject-doctor">{{__('massages.Course Degree')}}</span>
+                            <span style="color: red" class="subject-date">{{__('massages.Your Degree')}}</span>
                 </div>
                 @if(isset($courses) && count($courses) > 0)
                     @foreach($courses as $course)

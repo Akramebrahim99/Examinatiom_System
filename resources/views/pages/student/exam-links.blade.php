@@ -43,8 +43,8 @@
                             {{__('massages.Courses')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}}</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -80,7 +80,7 @@
     <section class="exam-main">
         <div class="container">
             <div class="row last">
-                <h4 class="exam-header col-12">Schedule of exams dates</h4>
+                <h4 class="exam-header col-12">{{__('massages.Schedule of exams dates')}}</h4>
                 @if(isset($studendCourses) && $studendCourses -> count() > 0)
                     @foreach($studendCourses as $course)
                         @if($course->pivot->course_status == True && !(now()->greaterThan((Carbon\Carbon::parse($course->date_of_exam))->addHours($course->duration))))

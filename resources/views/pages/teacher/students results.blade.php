@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Exam links</title>
+    <title>{{__('massages.Exam links')}}</title>
 </head>
 <body>
 
@@ -45,10 +45,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -78,11 +79,11 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button>export excel</button></a></h4>
+                <h4 class="result-header col-12">{{$courseName}}</h4>
                 <div class="result-info text-md-center col-8">
-                            <span class="subject-name">Student Name</span>
-                            <span class="subject-doctor">Student ID</span>
-                            <span style="color: red" class="subject-date">Student Degree</span>
+                            <span class="subject-name">{{__('massages.Student Name')}}</span>
+                            <span class="subject-doctor">{{__('massages.Student ID')}}</span>
+                            <span style="color: red" class="subject-date">{{__('massages.Student Degree')}}</span>
                 </div>
                 @if(isset($studentsofcourse) && count($studentsofcourse) > 0)
                     @foreach($studentsofcourse as $studentofcourse)

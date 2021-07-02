@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Mark Essay Question</title>
+    <title>{{__('massages.Mark Essay Question')}}</title>
 </head>
 <body>
  <!-- Start navbar -->
@@ -42,10 +42,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -77,7 +78,7 @@
        <div class="row content" id="page-body">
                 <div class="container">
                     <div  class="col-12">
-                        <h4 style="text-align: center;">Mark Eassy Questions</h4>
+                        <h4 style="text-align: center;">{{__('massages.Mark Essay Question')}}</h4>
                     </div>
                 </div>
         </div>
@@ -97,11 +98,11 @@
                                         <b>Q. {{$question->description}}</b>
                                     </div>
                                     <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options"> 
-                                        <label class="options">Student Answe Is: <span style="color:red">{{$student->pivot->student_answer}}</span>  </label>
+                                        <label class="options">{{__('massages.Student Answer Is')}}: <span style="color:red">{{$student->pivot->student_answer}}</span>  </label>
                                     </div>
                                 </div>
                                 <br>
-                                <span>Question Degree: </span><input type="range" value="0" min="0" name="degree{{$count}}" max="{{$question->degree}}" oninput="this.nextElementSibling.value = this.value">
+                                <span>{{__('massages.Question Degree')}}: </span><input type="range" value="0" min="0" name="degree{{$count}}" max="{{$question->degree}}" oninput="this.nextElementSibling.value = this.value">
                                 <output>0</output>
                             </div>
                             <br>
@@ -123,7 +124,7 @@
                 ?>
             <br>
             @if(!$buttonStatue)
-            <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">OK</button></div>
+            <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">{{__('massages.OK')}}</button></div>
             @endif
             <br>  
         </form>

@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>My Profile</title>
+    <title>{{__('massages.My Profile')}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, intial-scale=1" />
     <link rel="stylesheet" href="../../css/bootstrap.css" />
@@ -38,10 +38,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -74,7 +75,7 @@
              <table>
                     <tr> 
                         <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">Name :</label>
+                            <label style="font-weight:700">{{__('massages.Name')}}  :</label>
                         </td>
                         <td>
                             <label id="lblTeachName" style="font-weight:700">{{$teacher->name}}</label>
@@ -82,7 +83,7 @@
                     </tr>
                     <tr>
                         <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">University : </label>
+                            <label style="font-weight:700">{{__('massages.University')}} : </label>
                         </td>
                         <td>
                             <label id="lblTeachUni" style="font-weight:700">{{$teacher->university_name}}</label>
@@ -91,7 +92,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">College :</label>
+                            <label style="font-weight:700">{{__('massages.College')}} :</label>
                         </td>
                         <td>
 
@@ -101,7 +102,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">Email :</label>
+                            <label style="font-weight:700">{{__('massages.Email')}} :</label>
                         </td>
                         <td>
 
@@ -111,7 +112,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">Password :</label>
+                            <label style="font-weight:700">{{__('massages.Password')}} :</label>
                         </td>
                         <td>
 
@@ -121,7 +122,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;"> 
 
-                            <label style="font-weight:700">Phone :</label>
+                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
 
@@ -134,7 +135,7 @@
             
              <div class="btnsvTeach">
                 <a href="{{route('teacher.editprofile')}}">
-                    <button id="btn14" class="btn btn-primary" type="submit">Edit</button>
+                    <button id="btn14" class="btn btn-primary" type="submit">{{__('massages.Edit')}}</button>
                 </a>
               </div>
             @endif

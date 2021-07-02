@@ -45,10 +45,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                             {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -80,7 +81,7 @@
     <section class="exam-link-teacher-main">
         <div class="container">
             <div class="row last" id="page-body">
-                <h4 class="exam-header col-12">Schedule of exams dates</h4>
+                <h4 class="exam-header col-12">{{__('massages.Schedule of exams dates')}}</h4>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">

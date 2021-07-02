@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
-    <link rel="stylesheet" href="../../css/library/hover.css">
+    <link rel="stylesheet" href="../../../css/library/hover.css">
     <!-- Hover CSS library -->
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,14 +16,14 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>{{__('massages.Student Courses')}}</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <title>{{__('massages.Students registered in course')}}</title>
 </head>
 <body>
 
     <!-- Start navbar -->
-    <div class="container">
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+<div class="container">
+<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,26 +32,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('teacher.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.exam')}}">{{__('massages.Exam')}}</a>
+                        <a class="nav-link" href="{{route('teacher.exam')}}">{{__('massages.Exam')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            {{__('massages.Courses')}}
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}}</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}} </a>
                             </div>
-                    </li>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -71,33 +71,41 @@
             </div>
         </div>
     </nav>
+
     <!-- End navbar -->
 
-    <!-- Start Student Courses Section -->
-    <section class="courses-main">
+
+    <!-- Start Student Requests Section -->
+    <section class="student-request">
         <div class="container">
-            <div class="row last">
-                <h4 class="courses-header col-12">{{__('massages.Your courses')}}</h4>
-                @if(isset($studentCourses) && $studentCourses -> count() > 0)
-                    @foreach($studentCourses as $course)
-                        <div class="courses-info text-md-center col-8">
-                            <span class="subject-name">{{$course -> name}}</span>
-                            <span class="subject-doctor">{{$course -> date_of_exam}}</span>
-                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
-                            <span class="subject-date"><a href="{{route('studentreq.delete',$course -> id)}}">Remove</a></span>
-                            <!-- <span class="subject-duration">2h</span> -->
-                        </div>
+            <div class="row last" id="page-content">
+                <h4 class="courses-header col-12"> {{__('massages.Students Registered At')}}<span style="color: red">{{$courseName}}</span> {{__('massages.Course')}}</h4>
+                <!-- Cards -->
+                @if(isset($studentsofcourse) && $studentsofcourse -> count() > 0)
+                    @foreach($studentsofcourse as $student)
+                        @if($student->pivot->course_status == True)
+                            <div class="student-info text-md-center col-8">
+                                <span class="student-name">{{$student->name}}</span>
+                                <span class="student-id">{{$student->id}}</span>
+                                <span class="request-input">
+                                    <a href="{{route('teacher.deletestd',['course_id' => $courseId,'student_id'=>$student->id])}}">
+                                    <input type="submit" value="Remove" class="remove">
+                                    </a>
+                                </span>
+                            </div>
+                        @endif
                     @endforeach
                 @endif
+                <!-- Cards -->
             </div>
         </div>
     </section>
-    <!-- End Student Courses Section -->
+    <!-- End Student Requests Section -->
 
     <!-- Scripts -->
         <!-- Bootstrap -->
-        <script src="../../JQuery/JQuery.js"></script>
-        <script src="../../javascript/bootstrap.js"></script>
+        <script src="../../../JQuery/JQuery.js"></script>
+        <script src="../../../javascript/bootstrap.js"></script>
         <!-- Bootstrap -->
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -107,6 +115,7 @@
         <!-- AOS -->
         <script src="../../JQuery/jq.js"></script>
         <script src="../../javascript/javascript.js"></script>
+        <!-- <script src="../../javascript/student-requests.js"></script> -->
     <!-- Scripts -->
 </body>
 </html>

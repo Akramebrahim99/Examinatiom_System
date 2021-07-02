@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Essay Question</title>
+    <title>{{__('massages.Essay Question')}}</title>
 </head>
 <body>
  <!-- Start navbar -->
@@ -42,10 +42,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -77,14 +78,14 @@
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
-                    <h4 class="col-12 exam-screen-header">Eassy Questions</h4>
+                    <h4 class="col-12 exam-screen-header">{{__('massages.Essay Question')}}</h4>
                     <!-- <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button> -->
                 </div>
                 @if(isset($questions) && $questions -> count() > 0)
                     @foreach($questions as $question)
                         <div class="teacher-courses-info text-md-center col-8">
                             <span class="teacher-subject-name">{{$question->description}}</span>
-                            <a class="student-register-course" href="{{route('teacher.markessayquestion',$question->id)}}"><span>Mark This Question</span></a>
+                            <a class="student-register-course" href="{{route('teacher.markessayquestion',$question->id)}}"><span>{{__('massages.Mark This Question')}}</span></a>
                         </div>
                     @endforeach
                 @endif

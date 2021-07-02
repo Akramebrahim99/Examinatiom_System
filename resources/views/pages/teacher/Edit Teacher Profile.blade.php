@@ -1,23 +1,30 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Edit Profile</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" href="../../css/bootstrap.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
+    <!-- Bootstrap -->
+    <!-- Hover CSS library -->
+    <link rel="stylesheet" href="../../../css/library/hover.css">
+    <!-- Hover CSS library -->
+    <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Mark Essay question English and Arabic.css" />
-    <script src="../../Javascript/html5shiv.min.js"></script>
-    <script src="../../Javascript/respond.min.js"></script>
-    <script type="text/javascript"></script>
+    <!-- Google fonts -->
+    <!-- fonts Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <!-- fonts Awesome -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <title>{{__('massages.Edit Question')}}</title>
 </head>
 <body>
-    <!-- Start navbar -->
-    <div class="container">
+
+   <!-- Start navbar -->
+<div class="container">
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -38,10 +45,11 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -67,86 +75,105 @@
     </nav>
 
     <!-- End navbar -->
-<div class="row" id="EnglishRow" style="display:block" ;>
-            <div class="EdtteachName">
-            @if(isset($teacher))
-            <form method="POST" action="{{route('teacher.editteacherprofile')}}">
-            @csrf
-                <table>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">Name :</label>
-                        </td>
-                        <td>
-                            <input name="teacherName" id="InpTeachName" type="text" value="{{$teacher->name}}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">University : </label>
-                        </td>
-                        <td>
-                            <input name="teacherUniversity" id="InpTeachUni" type="text" value="{{$teacher->university_name}}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
 
-                            <label style="font-weight:700">College :</label>
-                        </td>
-                        <td>
 
-                            <input name="teacherCollage" id="InpTeachColl" type="text" value="{{$teacher->collage_name}}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+    <!-- Start Exam Section -->
+    <section class="add-courses">
+        <div class="container">
+            <!-- Model Form Add Questions -->
+            <div class="modal-content" id="box-body"><!--contain the model contact-->
+                <div class="modal-header"><!--contain only X button to close the model-->
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Edit Question')}}</h5>
+                </div>
+                <div class="modal-body"><!--contain only the input fields-->
+                @if(isset($question))
+                <form method="POST" action="{{route('teacher.editquestioninfo',[$question->id])}}" class="add-teacher-model">
+                        @csrf
+                       <div class="row"> 
+                       <div class="col-sm-12">
+                      <div class="form-group">
+                       <label>{{__('massages.Enter Question')}}</label>
+                       <input style="width: 100%" type="text" required="required" name="question" placeholder="Enter Question" class="form-control" value="{{$question->description}}">
+                       </div>
+                       </div>
 
-                            <label style="font-weight:700">Email :</label>
-                        </td>
-                        <td>
+                         <div class="col-sm-6">
+                         <div class="form-group">
+                        <label>{{__('massages.Enter Option 1')}}</label>
+                        <input style="width: 100%;" type="text" name="option1" placeholder="Enter Option 1" class="form-control" value="{{$question->answer1}}">
+                        </div>
+                        </div>
 
-                            <input name="teacherEmail" id="InpTeachColl" type="text" value="{{$teacher->email}}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>{{__('massages.Enter Option 2')}}</label>
+                        <input style="width: 100%;" type="text" name="option2" placeholder="Enter Option 2" class="form-control" value="{{$question->answer2}}">
+                        </div>
+                        </div>
 
-                            <label style="font-weight:700">Password :</label>
-                        </td>
-                        <td>
 
-                            <input name="teacherPassword" id="InpTeachPass" type="password" value="{{$teacher->password}}"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>{{__('massages.Enter Option 3')}}</label>
+                        <input style="width: 100%;" type="text" name="option3" placeholder="Enter Option 3" class="form-control" value="{{$question->answer3}}">
+                        </div>
+                        </div>
 
-                            <label style="font-weight:700">Phone :</label>
-                        </td>
-                        <td>
 
-                            <input name="teacherPhone" id="InpTeachPass" type="phone" value="{{$teacher->phone}}"/>
-                        </td>
-                    </tr>
-                </table>
-                
-                
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>{{__('massages.Enter Option 4')}}</label>
+                        <input style="width: 100%;" type="text" name="option4" placeholder="Enter Option 4" class="form-control" value="{{$question->answer4}}">
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>{{__('massages.Enter Right Answer')}}</label>
+                        <select style="width: 50%;"  name = "RightAns">
+                            <option name="option1" value = "option1">{{__('massages.Option 1')}}</option>
+                            <option name="option2" value = "option2">{{__('massages.Option 2')}}</option>
+                            <option name="option3" value = "option3">{{__('massages.Option 3')}}</option>
+                            <option name="option4" value = "option4">{{__('massages.Option 4')}}</option>
+                            <option name="Essay Question" value = "Essay Question">{{__('massages.Essay Question')}}</option>
+                        </select>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>{{__('massages.Enter Question Degree')}}</label>
+                        <input type="text" required="required" name="degree" placeholder="Enter Question Degree" class="form-control" value="{{$question->degree}}">
+                        </div>
+                        </div>
+                    
+                        <div class="modal-footer">
+                        <button type="submit" class="add-button">{{__('massages.Edit')}}</button>
+                        </div>
+                        </div>
+                 </form>
+                 @endif
+              </div>
             </div>
-            <div class="btnsvTeach">
-                <button id="btn14" class="btn btn-primary" type="submit">Save</button>
-            </div>
-            </form>
-            @endif
-            
+    <!-- Model Form Add Questions -->
         </div>
-    </div>
-    <script src="../../jquery/query.js"></script>
-    <script src="../../Javascript/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../../jquery/jqq.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    </section>
+    <br><br><br>
+    <!-- End Exam Section -->
+
+    <!-- Scripts -->
+        <!-- Bootstrap -->
+        <script src="../../JQuery/JQuery.js"></script>
+        <script src="../../javascript/bootstrap.js"></script>
+        <!-- Bootstrap -->
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <!-- AOS -->
+        <script src="../../../JQuery/jq.js"></script>
+        <script src="../../.././javascript/javascript.js"></script>
+    <!-- Scripts -->
 </body>
 </html>

@@ -44,15 +44,13 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -72,7 +70,55 @@
         </div>
     </nav>
     <!-- End navbar -->
-    
+    <!-- Model Form Add Courses -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
+            <div class="modal-content" id="box-body"><!--contain the model contact-->
+                <div class="modal-header"><!--contain only X button to close the model-->
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Courses Time')}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span><!--the 'X' shape-->
+                    </button>
+                </div>
+                <div class="modal-body"><!--contain only the input fields-->
+
+                    <form action="{{route('add.course')}}" method="post" class="add-course-time">
+                        @csrf
+                        <label for="course-name"><span class="span-with-width">{{__('massages.Course Name')}}</span>
+                            <input type="text" name="courseName" class="course-name" id="course-name" placeholder="{{__('massages.Course Name')}}" />
+                        </label>
+                        @error('courseName')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="course-date"><span class="span-with-width">{{__('massages.Course Date')}}</span>
+                            <input type="datetime-local" name="courseDate" class="course-date" id="course-date" />
+                        </label>
+                        @error('courseDate')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="exam-degree"><span class="span-with-width">{{__('massages.Exam Degree')}}</span>
+                            <input type="text" name="courseDegree" class="exam-degree" id="exam-degree" placeholder="{{__('massages.Exam Degree')}}">
+                        </label>
+                        @error('courseDegree')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <label for="duration-time"><span class="span-with-width">{{__('massages.Duration time for Exam')}}</span>
+                            <input type="text" name="duration" class="duration-time" id="duration-time" placeholder="{{__('massages.Number of hours')}}" />
+                        </label>
+                        @error('duration')
+                                <p style="color: red">{{$message}}</p>
+                        @enderror
+                        <div class="modal-footer">
+                            <button type="submit" class="add-button">{{__('massages.Add')}}</button>
+                            <button type="button" class="close-button" data-dismiss="modal">{{__('massages.Close')}}</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Model Form Add Courses -->
 
     <!-- Start Student Courses Section -->
 
@@ -81,24 +127,26 @@
             <div class="row content" id="page-body">
 
                 <div  class="col-12">
-                    <h4 class="page-header">Courses</h4>
-                    <form action="{{route('add.course')}}" method="post" class="add-course-time">
-                        @csrf
-                        <label for="course-name"><span class="span-with-width">Course Name</span>
-                            <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
-                        </label>
-                        <button type="submit" class="add-button">Add</button>
-                        @error('courseName')
-                                <p style="color: red">{{$message}}</p>
-                        @enderror
-                    </form>
-                </div> 
+                    <h4 class="page-header">{{__('massages.Courses')}}</h4>
+                    <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add course')}}</button>
+                    @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('success')}}
+                            </div>
+                    @elseif (Session::has('faild'))
+                            <div class="alert alert-success" role="alert">
+                             {{Session::get('faild')}}
+                            </div>
+                    @endif
+                <br>
+                </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="course-info text-md-center col-8" id="teacher-link">
                             <span class="subject-name">{{$course -> name}}</span><!-- Name of Course will print from database -->
-                            <a href="{{route('admin.studentreg',$course->id)}}">Students Registered in course</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="{{route('admin.studentreq.course',$course->id)}}">Student Request</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="subject subject-date">{{$course -> date_of_exam}}</span>
+                            <span class="subject subject-duration">{{$course -> duration}}</span>
+                            <span class="subject subject-degree">{{$course -> course_degree}}</span>
                             <a href="{{route('delete.course',$course -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                         </span>
                     @endforeach
@@ -106,8 +154,6 @@
 
             </div>
         </div>
-        <br>
-        <br>
     </section>
     <!-- End Student Courses Section -->
 
