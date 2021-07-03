@@ -24,7 +24,7 @@
     <title>Assign Course For Teachers</title>
 </head>
 <body>
-    
+
 <!-- Start navbar -->
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
@@ -58,7 +58,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -130,7 +130,7 @@
             <div class="row content" id="page-body">
                 <div  class="col-12">
                     <h4 class="teacher-courses-header">Yor courses</h4>
-                    <button class="add-course"  data-toggle="modal" data-target="#staticBackdrop">Add courses</button>
+                    <button class="btn-assign-course"  data-toggle="modal" data-target="#staticBackdrop">Assign Course</button>
                 </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
@@ -143,7 +143,7 @@
                                 <pan class="subject-name">{{$course->name}}</pan><!-- Name of Course will print from database -->
                                 <a href="{{route('delete.course.teacher',$course->id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                             </span>
-                        @endif    
+                        @endif
                     @endforeach
                 @endif
 

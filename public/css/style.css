@@ -14,6 +14,12 @@
     /*navbar*/
     --section-background: #FBFCFD;
     --white-text-color: #FBFCFD;
+    /*buttons*/
+    --button-background: #FBFCFD;
+    --button-text: #090909;
+    /*hover button*/
+    --button-background-hover:#3D37F1;
+    --button-text-hover: #FBFCFD;
     /*Footer*/
     --footer-color: #4B647E;
     --shadow-color: #0000003d;
@@ -36,6 +42,9 @@ body{
 }
 a:hover{
     text-decoration: none;
+}
+select{
+    height: 30px;
 }
 /** Start Navbar Scroll */
 .smart-scroll{
@@ -367,7 +376,7 @@ a.exam-info{display: block;color: var(--nav-text-color);}
     border-radius: 24px;
     padding: 6px;
     width: 100px;
-    background-color: rgb(107, 107, 235);
+    background-color: var(--button-background);
     border-color: var(--border-color);
     transition: 0.4s ease;
 }
@@ -376,8 +385,8 @@ a.exam-info{display: block;color: var(--nav-text-color);}
     color: var(--white-text-color);
 }
 .add-button:hover{
-    background-color: var(--nav-hover-color);
-    color: var(--white-text-color);
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
 }
 /**Model*/
 .teacher-courses-main{padding-top: 90px;}
@@ -637,7 +646,22 @@ input[type=checkbox]{/** this for select all*/
     width: 150px;
     display: inline-block;
 }
-
+select > option{
+    border: none;
+}
+.teacher-main-info .btn-assign-course{
+    border-radius: 24px;
+    padding: 6px;
+    width: 130px;
+    background-color: var(--button-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.teacher-main-info .btn-assign-course:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
 .teacher-main-info{padding-top: 90px;}
 .teacher-main-info input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
     width: 135px;
@@ -684,11 +708,13 @@ input[type=checkbox]{/** this for select all*/
 .add-course-time .course-date,
 .add-course-time .exam-degree,
 .add-course-time .duration-time{
-    margin-left: 10px;
+    width: 170px;
+    margin-right: 20px;
+    margin-left: 5px;
     margin-bottom: 10px;
     border:0;
     border-bottom: 1px solid var(--border-color);
-    transition: 0.4s ease;
+    transition: 1s ease;
 }
 .add-course-time .course-name:focus,
 .add-course-time .course-date:focus,
@@ -700,7 +726,7 @@ input[type=checkbox]{/** this for select all*/
 }
 
 .add-course-time label > .span-with-width{
-    width: 200px;
+    width: 120px;
     display: inline-block;
 }
 .add-courses .page-header{
@@ -715,11 +741,13 @@ input[type=checkbox]{/** this for select all*/
     border-radius: 24px;
     padding: 6px;
     width: 130px;
-    background-color: var(--section-background);
+    background-color: var(--button-background);
     border-color: var(--border-color);
     transition: 0.4s ease;
 }
 .add-course-button:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
     box-shadow: 1px 3px 8px -1px var(--shadow-color);
 }
 .add-courses .course-info{
@@ -748,16 +776,17 @@ input[type=checkbox]{/** this for select all*/
 }
 .add-courses .course-info .subject-name{
     width: 175px;
+    word-break: break-word;
 }
 .add-courses .course-info .subject-duration,
 .add-courses .course-info .subject-degree{
         width: 70px;
 }
 .add-courses i{
-    transition: 0.45s ease;
-    font-size: 20px;
     margin-left: 5px;
+    font-size: 20px;
     display: inline-block;
+    transition: 0.45s ease;
 }
 .add-courses i.remove:hover{
     color: var(--red-color);
