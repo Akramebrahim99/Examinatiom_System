@@ -299,14 +299,20 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 }
 .exam-main .exam-info .subject-name,
 .exam-main .exam-info .subject-date,
-.exam-main .exam-info .subject-time,
-.exam-main .exam-info .subject-duration{
+.exam-main .exam-info .subject-duration,
+.exam-main .exam-info .subject-degree{
     width: 135px;
     margin: 5px;
     margin-top: 0;
     margin-bottom: 0;
     display: inline-block;
+    word-break: break-word;
 }
+.exam-main .exam-info .subject-name{width: 240px;}
+.exam-main .exam-info .subject-date::first-line{color: var(--red-color);}
+.exam-main .exam-info .subject-duration,
+.exam-main .exam-info .subject-degree
+{width: 80px;}
 .last{margin-bottom: 100px;}
 /****Exam Page****/
 
@@ -332,6 +338,7 @@ a.exam-info{display: block;color: var(--nav-text-color);}
     width: 135px;
     margin: 0 calc((100% - 40%)/12);
     display: inline-block;
+    word-break: break-word;
 }
 .last:last-child{margin-bottom: 100px;}/*this Shared between each of the course and exam pages for the student and the teacher */
 /****Student Courses Page****/
@@ -353,12 +360,15 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 }
 .result-main .result-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
 .result-main .result-info .subject-name,
-.result-main .result-info .subject-date,
-.result-main .result-info .subject-doctor{
+.result-main .result-info .subject-exam-degree,
+.result-main .result-info .subject-degree{
     width: 135px;
     margin: 0 calc((100% - 40%)/12);
     display: inline-block;
+    word-break: break-word;
 }
+.result-main .result-info .subject-degree{color: var(--red-color);}
+.result-main .result-info .subject-name{width:220px;}
 .last:last-child{margin-bottom: 100px;}/*this Shared between each of the course pages for the student and the teacher */
 /****Student result Page****/
 

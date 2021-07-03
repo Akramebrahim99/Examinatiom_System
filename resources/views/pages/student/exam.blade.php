@@ -1,21 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    * {
-        box-sizing: border-box
-    }
-
-    body {
-        font-family: Verdana, sans-serif;
-        margin: 0
-    }
-
     .mySlides {
         display: none
-    }
-
-    img {
-        vertical-align: middle;
     }
 
     /* Slideshow container */
@@ -54,9 +41,6 @@
     .next:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
-
-
-
     /* Number text (1/3 etc) */
     .numbertext {
         color: black;
@@ -65,14 +49,6 @@
         position: absolute;
         top: 0;
     }
-
-
-
-
-
-
-
-
     /* On smaller screens, decrease text size */
     @media only screen and (max-width: 300px) {
 

@@ -21,9 +21,8 @@
 </head>
 <body>
 
-     <!-- Start navbar -->
-     <div class="container">
-     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +55,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -78,17 +77,17 @@
         <div class="container">
             <div class="row last">
                 <h4 class="result-header col-12">Your Results</h4>
-                <div class="result-info text-md-center col-8">
-                            <span class="subject-name">Course Name</span>
-                            <span class="subject-doctor">Course Degree</span>
-                            <span style="color: red" class="subject-date">Your Degree</span>
-                </div>
+                <!-- <div class="result-info text-md-center col-8">
+                    <span class="fixed-subject-name">Course Name</span>
+                    <span class="fixed-subject-exam-degree">Course Degree</span>
+                    <span class="fixed-subject-degree">Your Degree</span>
+                </div> -->
                 @if(isset($courses) && count($courses) > 0)
                     @foreach($courses as $course)
                         <div class="result-info text-md-center col-8">
                             <span class="subject-name">{{$course->name}}</span>
-                            <span class="subject-doctor">{{$course->course_degree}}</span>
-                            <span style="color: red" class="subject-date">{{$course->pivot->course_degree}}</span>
+                            <span class="subject-exam-degree">{{$course->course_degree}}</span>
+                            <span class="subject-degree">{{$course->pivot->course_degree}}</span>
                         </div>
                     @endforeach
                 @endif

@@ -56,7 +56,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -87,8 +87,8 @@
                             <a class="exam-info text-md-center col-8" href="{{route('student.getexam',$course->id)}}">
                                 <span class="subject-name">{{$course -> name}}</span>
                                 <span class="subject-date">{{$course -> date_of_exam}}</span>
-                                <span class="subject-time">{{$course -> duration}} H</span>
-                                <span class="subject-duration">{{$course -> course_degree}}</span>
+                                <span class="subject-duration">{{$course -> duration}} H</span>
+                                <span class="subject-degree">{{$course -> course_degree}}</span>
                             </a>
                         @endif
                     @endforeach

@@ -56,7 +56,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
