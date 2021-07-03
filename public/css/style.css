@@ -656,9 +656,6 @@ input[type=checkbox]{/** this for select all*/
     width: 150px;
     display: inline-block;
 }
-select > option{
-    border: none;
-}
 .teacher-main-info .btn-assign-course{
     border-radius: 24px;
     padding: 6px;
@@ -744,9 +741,8 @@ select > option{
     display: inline-block;
 }
 .add-courses{padding-top: 90px;}
-.add-courses input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
-    width: 135px;
-}
+.add-courses input{width: 135px;} /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+
 .add-course-button{
     border-radius: 24px;
     padding: 6px;
@@ -801,9 +797,8 @@ select > option{
 .add-courses i.remove:hover{
     color: var(--red-color);
 }
-.subject {
-    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
-}
+.subject {word-break: break-word;}/* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
+
 /**** End Add Courses ****/
 
 /*************************************/
@@ -840,18 +835,21 @@ select > option{
     display: inline-block;
 }
 .add-courses{padding-top: 90px;overflow: hidden;}
-.add-courses input{ /*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
-    width: 135px;
-}
+.add-courses input{width: 135px;}/*It appears when you click on the Modify button, and in it, the values in the span are added to the input so that the user can modify the values*/
+
 .add-course-button{
     border-radius: 24px;
     padding: 6px;
     width: 130px;
-    background-color: var(--section-background);
+    background-color: var(--button-background);
     border-color: var(--border-color);
     transition: 0.4s ease;
 }
-.add-course-button:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
+.add-course-button:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
 .add-courses .teacher-info{
     width: 100%;
     margin-top: 56px;
@@ -873,9 +871,7 @@ select > option{
     margin: 0 5px;
     display: inline-block;
 }
-.add-courses .teacher-info .doctor-name{
-    width: 150px;
-}
+.add-courses .teacher-info .doctor-name{width: 150px;}
 .add-courses .teacher-info .doctor-email a{color: var(--link-color);}
 .add-courses .teacher-info .doctor-email a:hover{color: var(--logo-color);}
 .add-courses .teacher-info .collage-name{width: 285px;}
@@ -886,9 +882,7 @@ select > option{
     display: inline-block;
 }
 .add-courses i.remove:hover{color: var(--red-color);}
-.teacher{
-    word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
-}
+.teacher{word-break: break-word;}/* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
 /**** End Add Teacher ****/
 
 /*************************************/
@@ -963,5 +957,69 @@ select > option{
     word-break: break-word; /* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
 }
 /**** End Add Teacher ****/
+
+/**** Teacher Create Exam ****/
+
+/*** Start Create Exam **model** ***/
+
+/*** Start MCQ Question ***/
+.container-button-add-option{
+    width: 100%;
+    margin: 10px 0;
+}
+.add-option-button{
+    width: 215px;
+    padding: 6px;
+    margin: auto;
+    display: block;
+    border-radius: 24px;
+    background-color: var(--button-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-option-button:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+/*** End MCQ Question ***/
+
+.add-question-button{
+    border-radius: 24px;
+    padding: 6px;
+    width: 100px;
+    background-color: var(--button-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.correct-answer-option{
+    outline: none;
+    width: 120px;
+    border: 0;
+    border-bottom: 2px solid var(--border-color);
+}
+.correct-answer-option:hover{
+    border-bottom: 2px solid var(--nav-hover-color);
+    transition: 0.4s ease;
+}
+/*** End Create Exam **model** ***/
+
+
+.exam-type-button{
+    width: 215px;
+    padding: 6px;
+    margin-left: 20px;
+    border-radius: 24px;
+    background-color: var(--button-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.exam-type-button:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+
+/**** Teacher Create Exam ****/
 
 /*************************************/
