@@ -11,9 +11,8 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="../../css/Logreg/style.css">
-   
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="../../css/bootstrap.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
     <link rel="stylesheet" href="../../css/library/hover.css">
@@ -28,8 +27,8 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-<!-- Start navbar -->
-     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +39,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -62,7 +61,7 @@
                         <h2 class="form-title">{{__('auth.Register')}}</h2>
                         @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">
-                             {{Session::get('success')}}
+                                {{Session::get('success')}}
                             </div>
                         @endif
                         <br>
@@ -70,14 +69,14 @@
                         @csrf
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="{{__('auth.Name')}}"/> 
+                                <input type="text" name="name" id="name" placeholder="{{__('auth.Name')}}"/>
                             </div>
                             @error('name')
                                 <p style="color: red">{{$message}}</p>
                             @enderror
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="{{__('auth.Email')}}"/>             
+                                <input type="email" name="email" id="email" placeholder="{{__('auth.Email')}}"/>
                             </div>
                             @error('email')
                                 <p style="color: red">{{$message}}</p>
@@ -128,9 +127,11 @@
                             </div>
                         </form>
                     </div>
-                    <div class="signup-image">
-                        <figure><img src="../../img/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="{{route('login')}}" class="signup-image-link">{{__('auth.I am already member')}}</a>
+                    <div class="signup-image mt-sm-3 mt-xs-2">
+                        <figure>
+                            <img src="../../img/signup-image.jpg" class="d-none d-lg-block d-xl-none d-xl-block" alt="sing up image">
+                        </figure>
+                        <a href="{{route('login')}}" class="signup-image-link mt-lg-5">{{__('auth.I am already member')}}</a>
                     </div>
                 </div>
             </div>

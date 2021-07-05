@@ -23,8 +23,7 @@
 </head>
 <body>
 
-   <!-- Start navbar -->
-<div class="container">
+    <!-- Start navbar -->
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -43,21 +42,21 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                            <!-- use "javascript:void(0)" to make link do nothing at all -->
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
-                            </div>
-                        </li>
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -90,7 +89,7 @@
                 @if(isset($course))
                 <form method="POST" action="{{route('teacher.editcourseinfo',[$course->id])}}" class="add-teacher-model">
                 @csrf
-                <div class="row"> 
+                <div class="row">
                        <div class="col-sm-12">
                        <div class="form-group">
                        <label>Course Name</label>

@@ -128,7 +128,6 @@
                                     </div>
                                 </div>
 
-
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Enter Question Degree</label>
@@ -139,6 +138,7 @@
                             <div class="modal-footer">
                                 <button type="submit" class="add-question-button">Add</button>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -146,6 +146,7 @@
         </div>
     </div>
     <!-- Model Form Add Mcq Questions -->
+
     <!-- Model Form Add True/False Questions -->
     <div class="modal fade" id="TFmodel" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
@@ -170,7 +171,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Enter Right Answer</label>
-                                    <select  name = "RightAns">
+                                    <select class="correct-answer-option"  name="RightAns">
                                         <option name="option1" value = "option1">True</option>
                                         <option name="option2" value = "option2">False</option>
                                     </select>
@@ -185,7 +186,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="add-button">Add</button>
+                                <button type="submit" class="add-question-button">Add</button>
                             </div>
                         </div>
                     </form>
@@ -194,6 +195,7 @@
         </div>
     </div>
     <!-- Model Form Add True/False Questions -->
+
     <!-- Model Form Add Essay Questions -->
     <div class="modal fade" id="Essaymodel" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
@@ -221,9 +223,9 @@
                                     <input type="number" min="0" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
                                 </div>
                             </div>
-
+                                <br />
                             <div class="modal-footer">
-                                <button type="submit" class="add-button">Add</button>
+                                <button type="submit" class="add-question-button">Add</button>
                             </div>
                         </div>
                     </form>
@@ -234,7 +236,7 @@
     <!-- Model Form Add Essay Questions -->
     <!-- Start Student Courses Section -->
 
-    <section class="add-courses">
+    <section class="add-courses questions">
 
             <div class="row content" id="page-body">
                 <div class="container">
@@ -248,8 +250,8 @@
             </div>
             @if(isset($questions) &&   count($questions) > 0)
                 @foreach($questions as $question)
-                    <div class="teacher-courses-info text-md-center col-20" style="background-color: #ddd;border-radius: 10px;font-family: 'Montserrat', sans-serif;">
-                        <div class="container mt-sm-5 my-1">
+                    <div class="teacher-courses-info text-md-center col-12">
+                        <div class="container question-body mt-sm-5 my-1">
                             <div class="question ml-sm-5 pl-sm-5 pt-2">
                                 <div class="py-2 h5">
                                     <b>Q. {{$question->description}}</b>
@@ -263,13 +265,13 @@
                                         <label class="options">{{$answer->answer}}  </label>
                                         @endforeach
                                     @endif
-                                    <label class="options" style="color: green">Correct Answer Is: <span style="color: red">{{$question->correct_answer}}</span> </label>
-                                    <label class="options" style="color: green">Degree Is: <span style="color: red">{{$question->degree}}</span> </label>
+                                    <label class="options question-info">Correct Answer Is: <span>{{$question->correct_answer}}</span> </label>
+                                    <label class="options question-info">Degree Is: <span>{{$question->degree}}</span> </label>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center pt-3">
-                                <div id="prev"> <a href="{{route('teacher.editquestion',[$question->id])}}"><button class="btn btn-success">Edit</button></a> </div>
-                                <div class="ml-auto mr-sm-5"> <a href="{{route('teacher.deletequestion',[$question->id])}}"><button class="btn btn-danger">Delete</button></a> </div>
+                                <div id="prev"> <a href="{{route('teacher.editquestion',[$question->id])}}"><button class="edit-question-button">Edit</button></a> </div>
+                                <div class="ml-auto mr-sm"> <a href="{{route('teacher.deletequestion',[$question->id])}}"><button class="delete-question-button">Delete</button></a> </div>
                             </div>
                         </div>
                     </div>

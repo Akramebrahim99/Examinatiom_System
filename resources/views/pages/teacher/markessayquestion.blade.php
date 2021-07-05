@@ -20,9 +20,8 @@
     <title>Mark Essay Question</title>
 </head>
 <body>
- <!-- Start navbar -->
- <div class="container">
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +53,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -73,30 +72,30 @@
     <!-- End navbar -->
 
     <!-- Start Student Courses Section -->
-    <section class="teacher-courses-main">
-       <div class="row content" id="page-body">
-                <div class="container">
-                    <div  class="col-12">
-                        <h4 style="text-align: center;">Mark Eassy Questions</h4>
-                    </div>
+    <section class="container teacher-courses-main">
+        <div class="row content" id="page-body">
+            <div class="container">
+                <div  class="col-12">
+                    <h4 style="text-align: center;">Mark Eassy Questions</h4>
                 </div>
+            </div>
         </div>
-        <form method="POST" action="{{route('teacher.addmarkessayquestion',[$question->id])}}"> 
+        <form method="POST" class="mark-essay-form" action="{{route('teacher.addmarkessayquestion',[$question->id])}}">
         @csrf
-        <?php
-            $array1 = [];
-            $buttonStatue = FALSE;
-        ?>
+            <?php
+                $array1 = [];
+                $buttonStatue = FALSE;
+            ?>
             @if(isset($students) &&   count($students) > 0)
                 @foreach($students as $student)
                     @if($student->pivot->question_degree == NULL)
-                        <div class="teacher-courses-info text-md-center col-20" style="background-color: #ddd;border-radius: 10px;font-family: 'Montserrat', sans-serif;">
-                            <div class="container mt-sm-5 my-1">
+                        <div class="container teacher-courses-info text-sm-center col-10">
+                            <div class="mt-sm-5 my-1">
                                 <div class="question ml-sm-9 pl-sm-5 pt-2">
                                     <div class="py-2 h4">
                                         <b>Q. {{$question->description}}</b>
                                     </div>
-                                    <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options"> 
+                                    <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options">
                                         <label class="options">Student Answe Is: <span style="color:red">{{$student->pivot->student_answer}}</span>  </label>
                                     </div>
                                 </div>
@@ -107,28 +106,28 @@
                             <br>
                         </div>
                         <?php
-                        $array1[$count]= $student->id;
-                        $count++; 
+                            $array1[$count]= $student->id;
+                            $count++;
                         ?>
                     @else
                     <?php $buttonStatue = TRUE; ?>
                     @endif
                 @endforeach
-            
-            <?php
-                if($array1)
-                {
-                    session(['studentsid'=>$array1]);
-                }
+
+                <?php
+                    if($array1){
+                        session(['studentsid'=>$array1]);
+                    }
                 ?>
             <br>
             @if(!$buttonStatue)
-            <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">OK</button></div>
+                <div style="text-align: center;">
+                    <button type="submit" class="edit-question-button">OK</button>
+                </div>
             @endif
-            <br>  
+            <br>
         </form>
         @endif
-        <br><br>
     </section>
     <!-- End Student Courses Section -->
 

@@ -23,9 +23,8 @@
 </head>
 <body>
 
-   <!-- Start navbar -->
-<div class="container">
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +56,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -78,18 +77,13 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button>export excel</button></a></h4>
-                <div class="result-info text-md-center col-8">
-                            <span class="subject-name">Student Name</span>
-                            <span class="subject-doctor">Student ID</span>
-                            <span style="color: red" class="subject-date">Student Degree</span>
-                </div>
+                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button class="export-excel">export excel</button></a></h4>
                 @if(isset($studentsofcourse) && count($studentsofcourse) > 0)
                     @foreach($studentsofcourse as $studentofcourse)
                         <div class="result-info text-md-center col-8">
                             <span class="subject-name">{{$studentofcourse->name}}</span>
                             <span class="subject-doctor">{{$studentofcourse->id}}</span>
-                            <span style="color: red" class="subject-date">{{$studentofcourse->pivot->course_degree}}</span>
+                            <span class="subject-degree">{{$studentofcourse->pivot->course_degree}}</span>
                         </div>
                     @endforeach
                 @endif
@@ -100,7 +94,7 @@
 
 
 
-     <!-- Scripts -->
+        <!-- Scripts -->
         <!-- Bootstrap -->
         <script src="../../../JQuery/JQuery.js"></script>
         <script src="../../../javascript/bootstrap.js"></script>
