@@ -20,14 +20,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/create_question.css">
-<<<<<<< HEAD
-    <title>{{__('massages.Create Exam')}}</title>
-=======
     <link rel="stylesheet" href="../../css/bootstrap.css" />
     <link rel="stylesheet" href="../../../css/style.css">
 
     <title>Create Exam</title>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
 </head>
 <body>
 <!-- Start navbar -->
@@ -50,17 +46,6 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-<<<<<<< HEAD
-                            <!-- use "javascript:void(0)" to make link do nothing at all -->
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                {{__('massages.Services')}}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
-                                
-                            </div>
-                        </li>
-=======
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                             Services
@@ -69,7 +54,6 @@
                             <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
                         </div>
                     </li>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
@@ -107,69 +91,6 @@
                 <div class="modal-body"><!--contain only the input fields-->
                 <form method="POST" action="{{route('teacher.addquestion',[$course->id])}}" class="add-teacher-model">
                         @csrf
-<<<<<<< HEAD
-                       <div class="row">
-                       <div class="col-sm-12">
-                      <div class="form-group">
-                       <label>{{__('massages.Enter Question')}}</label>
-                       <input type="text" required="required" name="question" placeholder="Enter Question" class="form-control">
-                       </div>
-                       </div>
-
-                         <div class="col-sm-6">
-                         <div class="form-group">
-                        <label>{{__('massages.Enter Option 1')}}</label>
-                        <input type="text" name="option1" placeholder="Enter Option 1" class="form-control">
-                        </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>{{__('massages.Enter Option 2')}}</label>
-                        <input type="text" name="option2" placeholder="Enter Option 2" class="form-control">
-                        </div>
-                        </div>
-
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>{{__('massages.Enter Option 3')}}</label>
-                        <input type="text" name="option3" placeholder="Enter Option 3" class="form-control">
-                        </div>
-                        </div>
-
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>{{__('massages.Enter Option 4')}}</label>
-                        <input type="text" name="option4" placeholder="Enter Option 4" class="form-control">
-                        </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>{{__('massages.Enter Right Answer')}}</label>
-                        <select  name = "RightAns">
-                            <option name="option1" value = "option1">{{__('massages.Option 1')}}</option>
-                            <option name="option2" value = "option2">{{__('massages.Option 2')}}</option>
-                            <option name="option3" value = "option3">{{__('massages.Option 3')}}</option>
-                            <option name="option4" value = "option4">{{__('massages.Option 4')}}</option>
-                            <option name="Essay Question" value = "Essay Question">{{__('massages.Essay Question')}}</option>
-                        </select>
-                        </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                        <div class="form-group">
-                        <label>{{__('massages.Enter Question Degree')}}</label>
-                        <input type="text" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
-                        </div>
-                        </div>
-                    
-                        <div class="modal-footer">
-                        <button type="submit" class="add-button">{{__('massages.Add')}}</button>
-                        </div>
-=======
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -303,7 +224,6 @@
                             <div class="modal-footer">
                                 <button type="submit" class="add-button">Add</button>
                             </div>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                         </div>
                     </form>
                 </div>
@@ -320,13 +240,9 @@
                 <div class="container">
                     <div  class="col-12">
                         <h4 class="page-header">{{$course->name}}</h4>
-<<<<<<< HEAD
-                        <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add Question')}}</button>
-=======
                         <button class="exam-type-button"  data-toggle="modal" data-target="#staticBackdrop">Add Mcq Question</button>
                         <button class="exam-type-button"  data-toggle="modal" data-target="#TFmodel">Add True/False Question</button>
                         <button class="exam-type-button"  data-toggle="modal" data-target="#Essaymodel">Add Essay Question</button>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                     </div>
                 </div>
             </div>
@@ -338,15 +254,6 @@
                                 <div class="py-2 h5">
                                     <b>Q. {{$question->description}}</b>
                                 </div>
-<<<<<<< HEAD
-                                <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options"> 
-                                    <label class="options">{{$question->answer1}}  </label>
-                                    <label class="options">{{$question->answer2}}  </label>
-                                    <label class="options">{{$question->answer3}}  </label>
-                                    <label class="options">{{$question->answer4}}  </label> 
-                                    <label class="options" style="color: green">{{__('massages.Correct Answer Is')}}: <span style="color: red">{{$question->correct_answer}}</span> </label>
-                                    <label class="options" style="color: green">{{__('massages.Degree Is')}}: <span style="color: red">{{$question->degree}}</span> </label>  
-=======
                                 <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options">
                                     <?php
                                         $answers  = App\Models\Answer::where('question_id',$question->id)->get();
@@ -358,7 +265,6 @@
                                     @endif
                                     <label class="options" style="color: green">Correct Answer Is: <span style="color: red">{{$question->correct_answer}}</span> </label>
                                     <label class="options" style="color: green">Degree Is: <span style="color: red">{{$question->degree}}</span> </label>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                                 </div>
                             </div>
                             <div class="d-flex align-items-center pt-3">
@@ -371,13 +277,10 @@
             @endif
 
     </section>
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
     <!-- End Student Courses Section -->
 
     <!-- Scripts -->
@@ -397,8 +300,6 @@
 
         <script src="../../../JQuery/jq.js"></script>
         <script src="../../../javascript/javascript.js" defer></script>
-<<<<<<< HEAD
-=======
         <script>
             var count = 3;
             function setAttributes(el, attrs) {
@@ -431,7 +332,6 @@
         </script>
 
 
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
     <!-- Scripts -->
 </body>
 </html>

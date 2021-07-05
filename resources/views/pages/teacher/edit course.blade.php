@@ -84,7 +84,7 @@
             <br>
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit Course</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Edit Course')}}</h5>
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
                 @if(isset($course))
@@ -93,21 +93,21 @@
                 <div class="row"> 
                        <div class="col-sm-12">
                        <div class="form-group">
-                       <label>Course Name</label>
+                       <label>{{__('massages.Course Name')}}</label>
                        <input style="width: 100%" value="{{$course->name}}" type="text" required="required" name="name" class="form-control" readonly>
                        </div>
                        </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Exam Date</label>
+                        <label>{{__('massages.Exam Date')}}</label>
                         <input style="width: 100%;" required="required" value="{{$course->date_of_exam}}" type="datetime-local" name="date_of_exam" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Course Degree</label>
+                        <label>{{__('massages.Course Degree')}}</label>
                         <input style="width: 100%;" type="number" min="1" required="required" value="{{$course->course_degree}}" type="text" name="course_degree" class="form-control">
                         </div>
                         </div>
@@ -115,28 +115,28 @@
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Duration time for Exam</label>
+                        <label>{{__('massages.Duration time for Exam')}}</label>
                         <input style="width: 100%;" type="number" min="1" required="required" value="{{$course->duration}}" type="text" name="duration" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <label>Number of Submit</label>
+                        <label>{{__('massages.Number of Submit')}}</label>
                         <input type="number" min="1" value="{{$course->no_of_submit}}" required="required" name="no_of_submit" class="form-control">
                         </div>
                         </div>
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <p>One Page Exam Or Many Pages</p>
+                        <p>{{__('massages.One Page Exam Or Many Pages')}}</p>
                         @if($course->one_page)
-                        <label for="true"><input value="1" id="true" type="radio" name="pages" checked>All Question In One Page</label>
-                        <label for="false"><input value="0" id="false" type="radio" name="pages">All Question In Many Pages</label>
+                        <label for="true"><input value="1" id="true" type="radio" name="pages" checked>{{__('massages.All Question In One Page')}}</label>
+                        <label for="false"><input value="0" id="false" type="radio" name="pages">{{__('massages.All Question In Many Pages')}}</label>
                         <br>
                         @else
-                        <label for="true"><input value="1" id="true" type="radio" name="pages">All Question In One Page</label>
-                        <label for="false"><input value="0" id="false" type="radio" name="pages" checked>All Question In Many Pages</label>
+                        <label for="true"><input value="1" id="true" type="radio" name="pages">{{__('massages.All Question In One Page')}}</label>
+                        <label for="false"><input value="0" id="false" type="radio" name="pages" checked>{{__('massages.All Question In Many Pages')}}</label>
                         <br>
                         @endif
                         </div>
@@ -147,17 +147,17 @@
                         <div class="form-group">
                         <p>Allow Previous Button</p>
                         @if($course->previous)
-                        <label for="yes"><input value="1" id="yes" type="radio" name="previous" checked>Allow</label><br>
-                        <label for="no"><input value="0" id="no" type="radio" name="previous">Not Allow</label>
+                        <label for="yes"><input value="1" id="yes" type="radio" name="previous" checked>{{__('massages.Allow')}}</label><br>
+                        <label for="no"><input value="0" id="no" type="radio" name="previous">{{__('massages.Not Allow')}}</label>
                         @else
-                        <label for="yes"><input value="1" id="yes" type="radio" name="previous">Allow</label><br>
-                        <label for="no"><input value="0" id="no" type="radio" name="previous" checked>Not Allow</label>
+                        <label for="yes"><input value="1" id="yes" type="radio" name="previous">{{__('massages.Allow')}}</label><br>
+                        <label for="no"><input value="0" id="no" type="radio" name="previous" checked>{{__('massages.Not Allow')}}</label>
                         @endif
                         </div>
                         </div>
 
                         <div class="modal-footer">
-                        <button type="submit" class="add-button">Save</button>
+                        <button type="submit" class="add-button">{{__('massages.Save')}}</button>
                         </div>
                         </div>
                 </form>

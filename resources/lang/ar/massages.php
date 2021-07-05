@@ -158,7 +158,8 @@ return [
     "Degree Is" => 'الدرجة',
     "Edit Question"=> 'تعديل السؤال ',
     "Delete" => 'ازالة',
-    "Students Registered in course" => 'تم تسجيل الطالب في المادة',
+    "Students Registered in course" => 'الطلاب المسجلين داخل المادة',
+    "Student Request" => 'طلبات التسجيل',
     "Your Courses" => 'المواد الخاصه بك',
     "Mark Essay Question" => 'علامه سؤال مقالي ',
     "Student Answer Is " => 'اجابة الطالب هيا ',
@@ -181,5 +182,16 @@ return [
     "Manage Exam" => 'اداره الامتحان',
     "Mark Eassy Question" => 'علامه سؤال مقالي',
     "Remove" => 'ازاله',
+    "Edit Course" => 'تعديل الماده ',
+   
+     "Exam Date" => 'تاريخ الامتحان',
+     "Number of Submit" => 'عدد مرات الارسال ',
+     "One Page Exam Or Many Pages" => 'امتحان صفحه واحده او عده صفحات ',
+     "All Question In One Page" => 'الاسئله في صفحه واحده',
+     "All Question In Many Pages" => 'الاسئله في عده صفحات ',
+     "Allow" => 'مسموح',
+     "Not Allow" => 'غير مسموح',
+     "Assign Course" => 'اضافه ماده',
+     "Courses" => 'المواد',
 ];
 

@@ -155,6 +155,7 @@ return [
      "Edit Question" => 'Edit Question',
      "Delete" => 'Delete',
      "Students Registered in course" => 'Students Registered in course',
+     "Student Request" => 'Student Request',
      "Your Courses" => 'Your Courses',
      "Mark Essay Question" => 'Mark Essay Question',
      "Student Answer Is" => 'Student Answer Is',
@@ -178,4 +179,15 @@ return [
      "Manage Exam" => 'Manage Exam',
      "Mark Eassy Question" => 'Mark Eassy Question',
      "Remove" => "Remove",
+     "Edit Course" => 'Edit Course', 
+     
+     "Exam Date" => 'Exam Date',
+     "Number of Submit" => 'Number of Submit',
+     "One Page Exam Or Many Pages" => 'One Page Exam Or Many Pages',
+     "All Question In One Page" => 'All Question In One Page',
+     "All Question In Many Pages" => 'All Question In Many Pages',
+     "Allow" => 'Allow',
+     "Not Allow" => 'Not Allow',
+     "Assign Course"  => 'Assign Course',
+     "Courses" => 'Courses',   
 ];

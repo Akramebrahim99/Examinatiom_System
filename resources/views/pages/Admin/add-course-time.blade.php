@@ -20,7 +20,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Add Courses</title>
+    <title>{{__('massages.Add Courses')}}</title>
 </head>
 <body>
     <!-- Start navbar -->
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">{{__('massages.Teachers')}} </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
@@ -44,10 +44,10 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -81,13 +81,13 @@
             <div class="row content" id="page-body">
 
                 <div class="col-12">
-                    <h4 class="page-header">Courses</h4>
+                    <h4 class="page-header">{{__('massages.Courses')}}</h4>
                     <form action="{{route('add.course')}}" method="post" class="add-course-time">
                         @csrf
-                        <label for="course-name"><span class="span-with-width">Course Name</span>
+                        <label for="course-name"><span class="span-with-width">{{__('massages.Course Name')}}</span>
                             <input type="text" name="courseName" class="course-name" id="course-name" placeholder="Course name" />
                         </label>
-                        <button type="submit" class="add-button">Add</button>
+                        <button type="submit" class="add-button">{{__('massages.Add')}}</button>
                         @error('courseName')
                             <p style="color: red">{{$message}}</p>
                         @enderror
@@ -97,8 +97,8 @@
                     @foreach($courses as $course)
                         <span class="course-info text-md-center col-8" id="teacher-link">
                             <span class="subject-name">{{$course -> name}}</span><!-- Name of Course will print from database -->
-                            <a href="{{route('admin.studentreg',$course->id)}}">Students Registered in course</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="{{route('admin.studentreq.course',$course->id)}}">Student Request</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{route('admin.studentreg',$course->id)}}">{{__('massages.Students Registered in course')}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{route('admin.studentreq.course',$course->id)}}">{{__('massages.Student Request')}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="{{route('delete.course',$course -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
                         </span>
                     @endforeach

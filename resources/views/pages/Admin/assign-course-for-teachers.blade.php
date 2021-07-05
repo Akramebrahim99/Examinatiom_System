@@ -29,13 +29,8 @@ use App\Models\Teacher; ?>
 
 <body>
 
-<<<<<<< HEAD
-    <!-- Start navbar -->
-    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
-=======
 <!-- Start navbar -->
 <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,28 +135,9 @@ use App\Models\Teacher; ?>
     <section class="teacher-main-info">
         <div class="container">
             <div class="row content" id="page-body">
-<<<<<<< HEAD
-                <div class="col-12">
-                    <h4 class="teacher-courses-header">{{__('massages.Yor courses')}}</h4>
-                    <button class="add-course" data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add course')}}</button>
-                </div>
-                @if(isset($courses) && $courses -> count() > 0)
-                @foreach($courses as $course)
-                @if($course->teacher_id != NULL)
-                <?php
-                $teacher1 = Teacher::find($course->teacher_id);
-                ?>
-                <span class="teacher-info teacher-link text-md-center col-8">
-                    <span class="subject-doctor-name">{{$teacher1->name}}</span>
-                    <pan class="subject-name">{{$course->name}}</pan><!-- Name of Course will print from database -->
-                    <a href="{{route('delete.course.teacher',$course->id)}}"><i class="fa fa-times remove" value="remove"></i></a>
-                </span>
-                @endif
-                @endforeach
-=======
                 <div  class="col-12">
-                    <h4 class="teacher-courses-header">Yor courses</h4>
-                    <button class="btn-assign-course"  data-toggle="modal" data-target="#staticBackdrop">Assign Course</button>
+                    <h4 class="teacher-courses-header">{{__('massages.Yor courses')}}</h4>
+                    <button class="btn-assign-course"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Assign Course')}}</button>
                 </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
@@ -176,7 +152,6 @@ use App\Models\Teacher; ?>
                             </span>
                         @endif
                     @endforeach
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                 @endif
 
 
@@ -197,9 +172,4 @@ use App\Models\Teacher; ?>
                 <script src="../../javascript/javascript.js" defer></script>
                 <!-- Scripts -->
 </body>
-<<<<<<< HEAD
-
 </html>
-=======
-</html>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d

@@ -76,21 +76,12 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-<<<<<<< HEAD
-                <h4 class="result-header col-12">{{__('massages.Your Results')}}</h4>
-                <div class="result-info text-md-center col-8">
-                            <span class="subject-name">{{__('massages.Course Name')}}</span>
-                            <span class="subject-doctor">{{__('massages.Course Degree')}}</span>
-                            <span style="color: red" class="subject-date">{{__('massages.Your Degree')}}</span>
-                </div>
-=======
                 <h4 class="result-header col-12">Your Results</h4>
                 <!-- <div class="result-info text-md-center col-8">
                     <span class="fixed-subject-name">Course Name</span>
                     <span class="fixed-subject-exam-degree">Course Degree</span>
                     <span class="fixed-subject-degree">Your Degree</span>
                 </div> -->
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                 @if(isset($courses) && count($courses) > 0)
                     @foreach($courses as $course)
                         <div class="result-info text-md-center col-8">

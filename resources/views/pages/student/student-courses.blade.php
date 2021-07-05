@@ -75,7 +75,7 @@
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/create_question.css">
-    <title>Exam</title>
+    <title>{{__('massages.Exam')}}</title>
 </head>
 
 <body>
@@ -86,7 +86,7 @@
                 <div class="container">
                     <h4 id="demo"></h4>
                     <div class="col-12">
-                        <h3 style="text-align: center;color: red">{{$course->name}} Exam</h3>
+                        <h3 style="text-align: center;color: red">{{$course->name}} {{__('massages.Exam')}}</h3>
                     </div>
                 </div>
             </div>
@@ -120,8 +120,6 @@
                                 @endif
                                 <br>
                             </div>
-<<<<<<< HEAD
-=======
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
@@ -138,7 +136,6 @@
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
                         @endforeach
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                         </div>
                     </div>
                 </div>
@@ -269,9 +266,4 @@
         }
     </script>
 </body>
-<<<<<<< HEAD
-
 </html>
-=======
-</html>
->>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d

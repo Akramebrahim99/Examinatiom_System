@@ -42,7 +42,7 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                            {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
@@ -73,7 +73,7 @@
     <!-- Start Student Requests Section -->
     <section class="student-request">
         <div class="container">
-            <h3 style="text-align: center;">{{$course->name}} {{__('massages.Course')}}</h3>
+            <h3 style="text-align: center;">{{$course->name}} course</h3>
             <div class="row last" id="page-content">
                 <!-- Cards -->
                 @if(isset($students) && $students -> count() > 0)

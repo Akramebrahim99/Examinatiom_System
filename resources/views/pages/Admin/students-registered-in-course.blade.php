@@ -42,7 +42,7 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
@@ -76,7 +76,7 @@
     <section class="student-request">
         <div class="container">
             <div class="row last" id="page-content">
-                <h4 class="courses-header col-12">{{__('massages.Students Registered At')}}<span style="color: red">{{$courseName}}</span>{{__('massages.Course')}}</h4>
+                <h4 class="courses-header col-12"> Students Registered At <span style="color: red">{{$courseName}}</span> Course</h4>
                 <!-- Cards -->
                 @if(isset($studentsofcourse) && $studentsofcourse -> count() > 0)
                     @foreach($studentsofcourse as $student)
