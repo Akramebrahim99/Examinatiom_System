@@ -120,6 +120,25 @@
                                 @endif
                                 <br>
                             </div>
+<<<<<<< HEAD
+=======
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            {{__('massages.Languages')}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
+                        @endforeach
+>>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
                         </div>
                     </div>
                 </div>
@@ -250,5 +269,9 @@
         }
     </script>
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+>>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d

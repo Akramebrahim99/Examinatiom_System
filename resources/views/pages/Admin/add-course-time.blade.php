@@ -24,7 +24,7 @@
 </head>
 <body>
     <!-- Start navbar -->
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,9 +54,9 @@
                         <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- use "javascript:void(0)" to make link do nnothing at all -->
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -72,7 +72,7 @@
         </div>
     </nav>
     <!-- End navbar -->
-    
+
 
     <!-- Start Student Courses Section -->
 
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row content" id="page-body">
 
-                <div  class="col-12">
+                <div class="col-12">
                     <h4 class="page-header">Courses</h4>
                     <form action="{{route('add.course')}}" method="post" class="add-course-time">
                         @csrf
@@ -89,10 +89,10 @@
                         </label>
                         <button type="submit" class="add-button">Add</button>
                         @error('courseName')
-                                <p style="color: red">{{$message}}</p>
+                            <p style="color: red">{{$message}}</p>
                         @enderror
                     </form>
-                </div> 
+                </div>
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="course-info text-md-center col-8" id="teacher-link">

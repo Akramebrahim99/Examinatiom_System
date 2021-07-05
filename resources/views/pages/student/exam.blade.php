@@ -4,6 +4,10 @@
     .mySlides {
         display: none
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a02ac105e22621b9dc9a2589777d87ae39cb701d
     /* Slideshow container */
     .slideshow-container {
         background-color: #ddd;
