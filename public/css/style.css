@@ -8,7 +8,7 @@
     --logo-color:#3D37F1;
     --logo-font:'Permanent Marker', cursive;
     /*logo*/
-    --switch-color: #2A85C9;
+    /* --switch-color: #2A85C9; */
     --nav-hover-color:#3D37F1;/* Not a repetition of color but an easy change of color */
     --nav-text-color:#090909;
     /*navbar*/
@@ -1236,3 +1236,40 @@ input[type=checkbox]{/** this for select all*/
 /*** End Mark Essay Question ***/
 
 /*************************************/
+
+/*** Start profile ***/
+
+.profile{
+    font-family: var(--main-font);
+    margin-top: 120px;
+}
+.profile .person-info{
+    /* background-color: #11ca00; */
+    width: 400px;
+    margin: auto;
+}
+.profile .button-submit-edit{
+    width: 200px;
+    margin: auto;
+}
+.profile .person-info tr {
+    margin: 20px;
+    display: block;
+}
+.profile .person-info td {
+    width: 100px;
+}
+.profile .button-submit-edit button{
+    width: 136px;
+    margin: 40px;
+    padding: 7px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+}
+.profile .button-submit-edit button:hover{
+    color: var(--button-text-hover);
+    background-color: #007bff;
+}
+/*** End profile ***/

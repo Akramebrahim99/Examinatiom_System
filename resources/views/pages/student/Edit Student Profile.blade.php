@@ -2,18 +2,25 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" href="../../css/bootstrap.css" />
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <!-- Bootstrap -->
+    <!-- Hover CSS library -->
+    <link rel="stylesheet" href="../../css/library/hover.css">
+    <!-- Hover CSS library -->
+    <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Mark Essay question English and Arabic.css" />
-    <script src="../../Javascript/html5shiv.min.js"></script>
-    <script src="../../Javascript/respond.min.js"></script>
-    <script type="text/javascript"></script>
+    <!-- Google fonts -->
+    <!-- fonts Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <!-- fonts Awesome -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Student Edit profile</title>
 </head>
 <body>
 
@@ -68,41 +75,40 @@
     </nav>
 
     <!-- End navbar -->
-        <div class="row" id="EnglishRow" style="display:block" ;>
 
-            <div class="EdtStdName">
+        <div class="profile">
             @if(isset($student))
             <form method="POST" action="{{route('student.editstudentprofile')}}">
             @csrf
-                <table>
+                <table class="person-info">
                     <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">Name :</label>
+                        <td>
+                            <label>Name :</label>
                         </td>
                         <td>
                             <input name="name" id="InpStdName" type="text" value="{{$student->name}}"/>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">SSN :</label>
+                        <td>
+                            <label>SSN :</label>
                         </td>
                         <td>
                             <input name="ssn" id="InpStdSsr" type="number" value="{{$student->ssn}}"/>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">University : </label>
+                        <td>
+                            <label>University : </label>
                         </td>
                         <td>
                             <input name="university" id="InpStdUni" type="text" value="{{$student->university_name}}"/>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <td>
 
-                            <label style="font-weight:700">College :</label>
+                            <label>College :</label>
                         </td>
                         <td>
 
@@ -110,9 +116,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <td>
 
-                            <label style="font-weight:700">Email :</label>
+                            <label>Email :</label>
                         </td>
                         <td>
 
@@ -120,9 +126,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <td>
 
-                            <label style="font-weight:700">Password :</label>
+                            <label>Password :</label>
                         </td>
                         <td>
 
@@ -130,9 +136,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <td>
 
-                            <label style="font-weight:700">Id :</label>
+                            <label>Id :</label>
                         </td>
                         <td>
 
@@ -140,9 +146,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;">
+                        <td>
 
-                            <label style="font-weight:700">Phone :</label>
+                            <label>Phone :</label>
                         </td>
                         <td>
 
@@ -151,16 +157,13 @@
                     </tr>
 
                 </table>
-
-
-            </div>
-            <div class="btnsvStd">
-                <button id="btn13" class="btn btn-primary" type="submit">Save</button>
-            </div>
+                <div class="button-submit-edit">
+                    <button id="btn13" class="btn btn-primary" type="submit">Save</button>
+                </div>
             </form>
             @endif
         </div>
-    </div>
+
     <script src="../../jquery/query.js"></script>
     <script src="../../Javascript/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
