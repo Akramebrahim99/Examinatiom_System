@@ -1,0 +1,38 @@
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /*** Start Student Exam in One Page***/
+    .exam-body #demo{
+        width: 330px;
+        margin-right: 50px;
+    }
+    .teacher-courses-info .question .textarea-answer{
+        width: 254px;
+        height: 200px;
+    }
+    /*** End Student Exam in One Page***/
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*** Start Student Exam in One Page***/
+    .teacher-courses-info .question .textarea-answer{
+        width: 454px;
+        height: 200px;
+        margin-left: -33px;
+    }
+    /*** End Student Exam in One Page***/
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

@@ -21,18 +21,19 @@
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/create_question.css">
     <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/media.css">
     <title>Exam</title>
 </head>
 
 <body>
     <!-- Start Student Courses Section -->
     <div class="container">
-        <section class="add-courses">
+        <section class="exam-body">
             <div class="row content" id="page-body">
                 <div class="container">
-                    <h4 id="demo"></h4>
+                    <h5 id="demo"></h5>
                     <div class="col-12">
-                        <h3 style="text-align: center;color: red">{{$course->name}} Exam</h3>
+                        <h3 style="text-align: center;color: red" class="mt-sm-4">{{$course->name}} Exam</h3>
                     </div>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                         <div class="container question-body mt-sm-5 my-1">
                             <div class="question ml-sm-5 pl-sm-5 pt-2">
                                 <div class="py-2 h5">
-                                    <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
+                                    <p>Q. {{$question->description}} ({{$question->degree}} Mark)</p>
                                 </div>
                                 <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
                                     <?php
@@ -61,7 +62,7 @@
                                         <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
                                     @endforeach
                                     @else
-                                        <textarea placeholder="Enter Your Answer" name="radio{{$count}}" rows="5" cols="50"></textarea>
+                                        <textarea placeholder="Enter Your Answer" rows="5" cols="50" name="radio{{$count}}" rows="5" cols="50"></textarea>
                                     @endif
                                     <br>
                                 </div>
@@ -85,7 +86,7 @@
             </form>
             @endif
             @else
-            <form method="POST" action="{{route('student.correectexam')}}">
+            <form class="form-question" method="POST" action="{{route('student.correectexam')}}">
                 <div data-countdown="2021/01/01"></div>
                 @csrf
                 <?php
@@ -97,9 +98,9 @@
                     <div class="mySlides">
                         <div class="numbertext">{{$count+1}} / {{count($questions)}}</div>
                             <div class="teacher-courses-info text-md-center">
-                                <div class="container question-body mt-sm-5 my-1">
+                                <div class="question-body mt-sm-5 my-1">
                                     <div class="question ml-sm-5 pl-sm-5 pt-2">
-                                        <div class="py-2 h5">
+                                        <div class="py-3 h5">
                                             <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
                                         </div>
                                         <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
@@ -112,7 +113,7 @@
                                                 <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
                                             @endforeach
                                             @else
-                                                <textarea name="radio{{$count}}" rows="5" cols="50"></textarea>
+                                                <textarea class="textarea-answer" name="radio{{$count}}"></textarea>
                                             @endif
                                             <br>
                                         </div>
