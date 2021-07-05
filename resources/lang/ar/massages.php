@@ -20,7 +20,7 @@ return [
     "Exam" => 'الامتحان',
     "Courses" => 'المواد',
     "Results" => 'النتائج',
-    "Profile" => 'البروفايل',
+    "Profile" => 'الصفحه الشخصيه ',
     "sing out" => 'تسجيل الخروج',
     "OUR SERVICES" => 'خدماتنا',
     "We Provide The Best Exam Attempt" => 'نحن نقدم أفضل محاولة للامتحان',
@@ -116,8 +116,8 @@ return [
     "Previous" => 'السابق',
     "True" => 'صح',
     "False" => 'خطأ',
-    "My Profile" => 'بروفايلي',
-    "Edit Profile" => 'تعديل البروفايل',
+    "My Profile" => 'صفحتي الشخصيه',
+    "Edit Profile" => 'تعديل الصفحه الشخصيه',
     "Mark Essay question" => 'درجه سؤال مقالي ', 
     "Go to Essay questions" => 'الذهاب الي سؤال مقالي ' ,
     "Create the Exam" => 'اجراء الامتحان', 
@@ -180,5 +180,6 @@ return [
     "Mark This Question" => 'ضع علامة على هذا السؤال',
     "Manage Exam" => 'اداره الامتحان',
     "Mark Eassy Question" => 'علامه سؤال مقالي',
+    "Remove" => 'ازاله',
 ];
 

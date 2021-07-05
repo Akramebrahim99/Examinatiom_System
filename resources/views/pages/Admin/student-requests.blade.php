@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Student Requests</title>
+    <title>{{__('massages.Student Requests')}}</title>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">{{__('massages.Teachers')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
@@ -45,7 +45,7 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -73,7 +73,7 @@
     <!-- Start Student Requests Section -->
     <section class="student-request">
         <div class="container">
-            <h3 style="text-align: center;">{{$course->name}} Course</h3>
+            <h3 style="text-align: center;">{{$course->name}} {{__('massages.Course')}}</h3>
             <div class="row last" id="page-content">
                 <!-- Cards -->
                 @if(isset($students) && $students -> count() > 0)

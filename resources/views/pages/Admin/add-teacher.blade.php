@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,9 +23,10 @@
     <link rel="stylesheet" href="../../css/style.css">
     <title> {{__('massages.Add Teacher')}}</title>
 </head>
+
 <body>
-<!-- Start navbar -->
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,28 +44,28 @@
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                            <!-- use "javascript:void(0)" to make link do nothing at all -->
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                             {{__('massages.Services')}}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
-                            </div>
-                        </li>
-                    
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
-                        @endforeach
+                            @endforeach
                         </div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
@@ -74,15 +76,20 @@
 
     <!-- Model Form Add Courses -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
-            <div class="modal-content" id="box-body"><!--contain the model contact-->
-                <div class="modal-header"><!--contain only X button to close the model-->
+        <div class="modal-dialog modal-dialog-centered">
+            <!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
+            <div class="modal-content" id="box-body">
+                <!--contain the model contact-->
+                <div class="modal-header">
+                    <!--contain only X button to close the model-->
                     <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add Teacher')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span><!--the 'X' shape-->
+                        <span aria-hidden="true">&times;</span>
+                        <!--the 'X' shape-->
                     </button>
                 </div>
-                <div class="modal-body"><!--contain only the input fields-->
+                <div class="modal-body">
+                    <!--contain only the input fields-->
 
                     <form method="POST" action="{{route('add.teacher')}}" class="add-teacher-model">
                         @csrf
@@ -90,37 +97,37 @@
                             <input type="text" name="teacherName" class="teacher-name" id="teacher-name" placeholder="{{__('massages.Teacher Name')}}" />
                         </label>
                         @error('teacherName')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
                         <label for="teacher-email"><span>{{__('massages.Email')}}</span>
                             <input type="email" name="teacherEmail" class="teacher-email" id="teacher-email" placeholder="example@gmail.com" />
                         </label>
                         @error('teacherEmail')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
                         <label for="teacher-password"><span>{{__('massages.Password')}}</span>
-                            <input type="password" name="teacherPassword" class="teacher-password"  id="teacher-password" placeholder="{{__('massages.Password')}}" />
+                            <input type="password" name="teacherPassword" class="teacher-password" id="teacher-password" placeholder="{{__('massages.Password')}}" />
                         </label>
                         @error('teacherPassword')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
                         <label for="collage-name"><span>{{__('massages.Collage Name')}}</span>
                             <input type="text" name="teacherCollage" class="collage-name" id="collage-name" placeholder=" {{__('massages.Collage Name')}}" />
                         </label>
                         @error('teacherCollage')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
                         <label for="university-name"><span>{{__('massages.University Name')}}</span>
                             <input type="text" name="teacherUniversity" class="university-name" id="university-name" placeholder="{{__('massages.University Name')}}" />
                         </label>
                         @error('teacherUniversity')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
                         <label for="teacher-phone"><span>{{__('massages.Phone')}}</span>
                             <input type="text" name="teacherPhone" class="teacher-phone" id="course-name" placeholder="{{__('massages.Phone')}}" />
                         </label>
                         @error('teacherPhone')
-                                <p style="color: red">{{$message}}</p>
+                        <p style="color: red">{{$message}}</p>
                         @enderror
 
                         <div class="modal-footer">
@@ -139,54 +146,55 @@
 
     <section class="add-courses">
 
-            <div class="row content" id="page-body">
+        <div class="row content" id="page-body">
 
-                <div class="container">
-                    <div  class="col-12">
-                        <h4 class="page-header">{{__('massages.Teachers')}}</h4>
-                        <button class="add-course-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add Teacher')}}</button>
-                    </div>
-                    @if (Session::has('success'))
-                            <div class="alert alert-success" role="alert">
-                             {{Session::get('success')}}
-                            </div>
-                    @elseif (Session::has('faild'))
-                            <div class="alert alert-success" role="alert">
-                             {{Session::get('faild')}}
-                            </div>
-                    @endif
-                <br>
+            <div class="container">
+                <div class="col-12">
+                    <h4 class="page-header">{{__('massages.Teachers')}}</h4>
+                    <button class="add-course-button" data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add Teacher')}}</button>
                 </div>
-                @if(isset($teachers) && $teachers -> count() > 0)
-                    @foreach($teachers as $teacher)
-                        <span class="teacher-info text-md-center col-8" id="teacher-link">
-                            <span class="teacher doctor-name">{{$teacher -> name}}</span><!-- Name of Course will print from database -->
-                            <span class="teacher doctor-email"><a href="{{$teacher -> email}}"> {{$teacher -> email}}</a></span>
-                            <span class="teacher collage-name">{{$teacher -> collage_name}}</span>
-                            <span class="teacher university-name">{{$teacher -> university_name}}</span>
-                            <a href="{{route('delete.teacher',$teacher -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
-                        </span>
-                    @endforeach
+                @if (Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                </div>
+                @elseif (Session::has('faild'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('faild')}}
+                </div>
                 @endif
-
+                <br>
             </div>
+            @if(isset($teachers) && $teachers -> count() > 0)
+            @foreach($teachers as $teacher)
+            <span class="teacher-info text-md-center col-8" id="teacher-link">
+                <span class="teacher doctor-name">{{$teacher -> name}}</span><!-- Name of Course will print from database -->
+                <span class="teacher doctor-email"><a href="{{$teacher -> email}}"> {{$teacher -> email}}</a></span>
+                <span class="teacher collage-name">{{$teacher -> collage_name}}</span>
+                <span class="teacher university-name">{{$teacher -> university_name}}</span>
+                <a href="{{route('delete.teacher',$teacher -> id)}}"><i class="fa fa-times remove" value="remove"></i></a>
+            </span>
+            @endforeach
+            @endif
+
+        </div>
 
     </section>
     <!-- End Student Courses Section -->
 
     <!-- Scripts -->
-        <!-- Bootstrap -->
-        <script src="../../JQuery/JQuery.js"></script>
-        <script src="../../javascript/bootstrap.js"></script>
-        <!-- Bootstrap -->
-        <!-- AOS -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <!-- AOS -->
-        <script src="../../JQuery/jq.js"></script>
-        <script src="../../javascript/javascript.js" defer></script>
+    <!-- Bootstrap -->
+    <script src="../../JQuery/JQuery.js"></script>
+    <script src="../../javascript/bootstrap.js"></script>
+    <!-- Bootstrap -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- AOS -->
+    <script src="../../JQuery/jq.js"></script>
+    <script src="../../javascript/javascript.js" defer></script>
     <!-- Scripts -->
 </body>
+
 </html>

@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Edit Course</title>
+    <title>{{__('massages.Edit Course')}}</title>
 </head>
 <body>
 
@@ -45,10 +45,10 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">

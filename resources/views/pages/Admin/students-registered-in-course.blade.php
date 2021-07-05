@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
     <link rel="stylesheet" href="../../../css/style.css">
-    <title>Students registered in course</title>
+    <title>{{__('massages.Students registered in course')}}</title>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">{{__('massages.Teachers')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
@@ -45,7 +45,7 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                            <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -76,7 +76,7 @@
     <section class="student-request">
         <div class="container">
             <div class="row last" id="page-content">
-                <h4 class="courses-header col-12">Students Registered At <span style="color: red">{{$courseName}}</span> Course</h4>
+                <h4 class="courses-header col-12">{{__('massages.Students Registered At')}}<span style="color: red">{{$courseName}}</span>{{__('massages.Course')}}</h4>
                 <!-- Cards -->
                 @if(isset($studentsofcourse) && $studentsofcourse -> count() > 0)
                     @foreach($studentsofcourse as $student)

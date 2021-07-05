@@ -177,4 +177,5 @@ return [
      "Mark This Question" => 'Mark This Question',
      "Manage Exam" => 'Manage Exam',
      "Mark Eassy Question" => 'Mark Eassy Question',
+     "Remove" => "Remove",
 ];

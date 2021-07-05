@@ -142,7 +142,7 @@
                     <tr>
                         <td style="padding:10px;text-align:right;"> 
 
-                            <label style="font-weight:700">Phone :</label>
+                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
 

@@ -47,7 +47,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
-                                <a class="dropdown-item" href="{{route('teacher.studentreq')}}">{{__('massages.Student Requests')}} </a>
+                               
                             </div>
                         </li>
                     <li class="nav-item">

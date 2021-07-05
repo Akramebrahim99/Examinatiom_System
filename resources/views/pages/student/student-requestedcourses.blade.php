@@ -84,7 +84,7 @@
                             <span class="subject-name">{{$course -> name}}</span>
                             <span class="subject-doctor">{{$course -> date_of_exam}}</span>
                             <span class="subject subject-degree">{{$course -> course_degree}}</span>
-                            <span class="subject-date"><a href="{{route('studentreq.delete',$course -> id)}}">Remove</a></span>
+                            <span class="subject-date"><a href="{{route('studentreq.delete',$course -> id)}}">{{__('massages.Remove')}}</a></span>
                             <!-- <span class="subject-duration">2h</span> -->
                         </div>
                     @endforeach
