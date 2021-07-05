@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{__('massages.Sign In')}}</title>
-
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
     <!-- Main css -->
     <link rel="stylesheet" href="css/Logreg/style.css">
-
-
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="../../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
     <!-- Bootstrap -->
     <!-- Hover CSS library -->
     <link rel="stylesheet" href="../../../css/library/hover.css">
@@ -41,7 +37,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -62,7 +58,9 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
-                <figure><img src="img/signin-image.jpg" alt="sing up image"></figure>
+                <figure>
+                    <img src="img/signin-image.jpg" class="d-none d-lg-block d-xl-none d-xl-block" alt="sing up image">
+                </figure>
                 <a href="{{route('register')}}" class="signup-image-link">{{__('auth.Create an account')}}</a>
             </div>
 
@@ -84,10 +82,10 @@
                     @error('password')
                         <p style="color: red">{{$message}}</p>
                     @enderror
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>{{__('auth.Remember me')}}</label>
-                    </div>
+                    </div> -->
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="{{__('auth.Log in')}}"/>
                     </div>

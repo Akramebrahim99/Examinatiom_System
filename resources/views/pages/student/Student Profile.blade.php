@@ -10,15 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Mark Essay question English and Arabic.css" />
-    <script src="../../Javascript/html5shiv.min.js"></script>
-    <script src="../../Javascript/respond.min.js"></script>
-    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
- <!-- Start navbar -->
-           <div class="container">
-           <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +62,7 @@
             </div>
         </div>
     </nav>
+<<<<<<< HEAD
 <!-- End navbar -->
    <div class="row" id="EnglishRow" style="display:block" ;>
             
@@ -102,51 +99,109 @@
                             <label style="font-weight:700"> {{__('massages.College')}}:</label>
                         </td>
                         <td>
+=======
+    <!-- End navbar -->
 
-                            <label id="lblStdColl" style="font-weight:700">{{$student->collage_name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+    <div class="profile">
+        @if(isset($student))
+        <table class="person-info">
+            <tr>
+                <td>
+                    <label>Name :</label>
+                </td>
+                <td>
+                    <label id="lblStdName">{{$student->name}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>SSN :</label>
+                </td>
+                <td>
+                    <label id="lblStdSSR">{{$student->ssn}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>University : </label>
+                </td>
+                <td>
+                    <label id="lblStdUni">{{$student->university_name}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
+                    <label>College :</label>
+                </td>
+                <td>
+
+<<<<<<< HEAD
                             <label style="font-weight:700">{{__('massages.Email')}} :</label>
                         </td>
                         <td>
+=======
+                    <label id="lblStdColl">{{$student->collage_name}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                            <label id="lblStdEmail" style="font-weight:700">{{$student->email}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+                    <label>Email :</label>
+                </td>
+                <td>
 
+<<<<<<< HEAD
                             <label style="font-weight:700"> {{__('massages.Password')}}:</label>
                         </td>
                         <td>
+=======
+                    <label id="lblStdEmail">{{$student->email}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                            <label id="lblStdPass" style="font-weight:700">{{$student->password}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
+                    <label>Password :</label>
+                </td>
+                <td>
 
+<<<<<<< HEAD
                             <label style="font-weight:700">{{__('massages.Id')}} :</label>
                         </td>
                         <td>
+=======
+                    <label id="lblStdPass">{{$student->password}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                           <label id="lblStdID" style="font-weight:700">{{$student->id}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;"> 
+                    <label>Id :</label>
+                </td>
+                <td>
 
+<<<<<<< HEAD
                             <label style="font-weight:700">{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
+=======
+                    <label id="lblStdID">{{$student->id}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                            <label id="lblStdColl" style="font-weight:700">{{$student->phone}}</label>
-                        </td>
-                    </tr>
+                    <label>Phone :</label>
+                </td>
+                <td>
 
+<<<<<<< HEAD
                 </table>
         </div>
             
@@ -157,7 +212,22 @@
               </div>
             @endif
         </div>
+=======
+                    <label id="lblStdColl">{{$student->phone}}</label>
+                </td>
+            </tr>
+
+        </table>
+        <!-- col-lg-4 col-sm-12 -->
+        <div class="button-submit-edit">
+            <a href="{{route('student.editprofile')}}">
+                <button id="btn13" class="btn btn-primary" type="submit">Edit</button>
+            </a>
+        <!-- </div  > -->
+        @endif
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
     </div>
+
     <script src="../../jquery/query.js"></script>
     <script src="../../Javascript/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

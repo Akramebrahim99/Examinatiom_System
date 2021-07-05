@@ -50,7 +50,10 @@
                             <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                         </div>
                     </li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -459,5 +462,9 @@
     <script src="../.././javascript/javascript.js"></script>
     <!-- Scripts -->
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a

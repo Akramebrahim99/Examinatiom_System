@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <style>
     .mySlides {
         display: none
@@ -54,6 +55,8 @@
     }
 </style>
 
+=======
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,8 +76,8 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/create_question.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <title>Exam</title>
 </head>
 
@@ -93,49 +96,49 @@
             @if($course->one_page)
             <form method="POST" action="{{route('student.correectexam')}}">
                 <div data-countdown="2021/01/01"></div>
-                @csrf
-                <?php
-                $array1 = [];
-                ?>
-                @if(isset($questions) && count($questions) > 0)
-                @foreach($questions as $question)
-                <div class="teacher-courses-info text-md-center col-20" style="background-color: #ddd;border-radius: 10px;font-family: 'Montserrat', sans-serif;">
-                    <div class="container mt-sm-5 my-1">
-                        <div class="question ml-sm-5 pl-sm-5 pt-2">
-                            <div class="py-2 h5">
-                                <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
-                            </div>
-                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                                <?php
-                                $answers = iterator_to_array($question->answers);
-                                shuffle($answers);
-                                ?>
-                                @if(isset($answers) && count($answers) > 0)
-                                @foreach($answers as $answer)
-                                <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
-                                @endforeach
-                                @else
-                                <textarea name="radio{{$count}}" rows="5" cols="50">
-                                        </textarea>
-                                @endif
-                                <br>
+                    @csrf
+                    <?php
+                        $array1 = [];
+                    ?>
+                    @if(isset($questions) && count($questions) > 0)
+                    @foreach($questions as $question)
+                    <div class="teacher-courses-info text-md-center col-12">
+                        <div class="container question-body mt-sm-5 my-1">
+                            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                                <div class="py-2 h5">
+                                    <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
+                                </div>
+                                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                    <?php
+                                        $answers = iterator_to_array($question->answers);
+                                        shuffle($answers);
+                                    ?>
+                                    @if(isset($answers) && count($answers) > 0)
+                                    @foreach($answers as $answer)
+                                        <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
+                                    @endforeach
+                                    @else
+                                        <textarea placeholder="Enter Your Answer" name="radio{{$count}}" rows="5" cols="50"></textarea>
+                                    @endif
+                                    <br>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <?php
+                        $array1[$count] = $question->id;
+                        $count++;
+                    ?>
+                    @endforeach
+                    <?php
+                    if ($array1) {
+                        session(['questionsid' => $array1]);
+                    }
+                    ?>
+                    <div style="text-align: center;">
+                        <button class="submit-question-button" type="submit">Submit</button>
+                    </div>
                 </div>
-                <?php
-                $array1[$count] = $question->id;
-                $count++;
-                ?>
-                @endforeach
-                <?php
-                if ($array1) {
-                    session(['questionsid' => $array1]);
-                }
-                ?>
-                <br>
-                <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">Submit</button></div>
-                <br>
             </form>
             @endif
             @else
@@ -143,64 +146,64 @@
                 <div data-countdown="2021/01/01"></div>
                 @csrf
                 <?php
-                $array1 = [];
+                    $array1 = [];
                 ?>
                 <div class="slideshow-container">
                     @if(isset($questions) && count($questions) > 0)
                     @foreach($questions as $question)
                     <div class="mySlides">
                         <div class="numbertext">{{$count+1}} / {{count($questions)}}</div>
-                        <div style="width: 100%;" class="teacher-courses-info text-md-center col-20" style="background-color: #ddd;border-radius: 10px;font-family: 'Montserrat', sans-serif;">
-                            <div class="container mt-sm-5 my-1">
-                                <div class="question ml-sm-5 pl-sm-5 pt-2">
-                                    <div class="py-2 h5">
-                                        <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
-                                    </div>
-                                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                                        <?php
-                                        $answers = iterator_to_array($question->answers);
-                                        shuffle($answers);
-                                        ?>
-                                        @if(isset($answers) && count($answers) > 0)
-                                        @foreach($answers as $answer)
-                                        <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
-                                        @endforeach
-                                        @else
-                                        <textarea name="radio{{$count}}" rows="5" cols="50">
-                            </textarea>
-                                        @endif
-                                        <br>
+                            <div class="teacher-courses-info text-md-center">
+                                <div class="container question-body mt-sm-5 my-1">
+                                    <div class="question ml-sm-5 pl-sm-5 pt-2">
+                                        <div class="py-2 h5">
+                                            <b>Q. {{$question->description}} ({{$question->degree}} Mark)</b>
+                                        </div>
+                                        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                            <?php
+                                                $answers = iterator_to_array($question->answers);
+                                                shuffle($answers);
+                                            ?>
+                                            @if(isset($answers) && count($answers) > 0)
+                                            @foreach($answers as $answer)
+                                                <label class="options">{{$answer->answer}} <input type="radio" name="radio{{$count}}" value="{{$answer->answer}}"> <span class="checkmark"></span> </label>
+                                            @endforeach
+                                            @else
+                                                <textarea name="radio{{$count}}" rows="5" cols="50"></textarea>
+                                            @endif
+                                            <br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                                $array1[$count] = $question->id;
+                                $count++;
+                            ?>
                         </div>
-                        <?php
-                        $array1[$count] = $question->id;
-                        $count++;
-                        ?>
+                        @endforeach
+                        @if($course->previous)
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        @endif
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
-                    @endforeach
-                    @if($course->previous)
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    @endif
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+                    <br>
                 </div>
+                <?php
+                    if ($array1) {
+                        session(['questionsid' => $array1]);
+                    }
+                ?>
                 <br>
+                <div style="text-align: center;">
+                    <button class="submit-question-button" type="submit">Submit</button>
+                </div>
+            </form>
+            @endif
+            @endif
+        </section>
     </div>
-    <?php
-    if ($array1) {
-        session(['questionsid' => $array1]);
-    }
-    ?>
-    <br>
-    <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">Submit</button></div>
-    <br>
-    </form>
-    @endif
-    @endif
     <!-- End Student Courses Section -->
-    </section>
     <script type="text/javascript">
         // Set the date we're counting down to
         var countDownDate = new Date("{{(Carbon\Carbon::parse($course->date_of_exam))->addHours($course->duration)}}").getTime();

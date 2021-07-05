@@ -8,7 +8,7 @@
     --logo-color:#3D37F1;
     --logo-font:'Permanent Marker', cursive;
     /*logo*/
-    --switch-color: #2A85C9;
+    /* --switch-color: #2A85C9; */
     --nav-hover-color:#3D37F1;/* Not a repetition of color but an easy change of color */
     --nav-text-color:#090909;
     /*navbar*/
@@ -16,10 +16,19 @@
     --white-text-color: #FBFCFD;
     /*buttons*/
     --button-background: #FBFCFD;
+    --button-red-color: #e74343;
+    --button-green-color: #11ca00;
+    --hover-button-red-color: #cc2d2d;
+    --hover-button-green-color: #169e0a;
     --button-text: #090909;
     /*hover button*/
     --button-background-hover:#3D37F1;
     --button-text-hover: #FBFCFD;
+    /*Question*/
+    --question-background: #FBFCFD;
+    --question-text: #090909;
+    --question-red-color: #e74343;
+    --question-green-color: #11ca00;
     /*Footer*/
     --footer-color: #4B647E;
     --shadow-color: #0000003d;
@@ -302,9 +311,7 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 .exam-main .exam-info .subject-duration,
 .exam-main .exam-info .subject-degree{
     width: 135px;
-    margin: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 15px;
     display: inline-block;
     word-break: break-word;
 }
@@ -312,9 +319,44 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 .exam-main .exam-info .subject-date::first-line{color: var(--red-color);}
 .exam-main .exam-info .subject-duration,
 .exam-main .exam-info .subject-degree
-{width: 80px;}
+{width: 90px;}
 .last{margin-bottom: 100px;}
 /****Exam Page****/
+
+/****Exam Link Page****/
+.exam-link{padding-top: 90px;}
+a.exam-info{display: block;color: var(--nav-text-color);}
+.exam-link .exam-info{
+    width: 100%;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-weight: bolder;
+    transition: 0.25s ease;
+}
+.exam-link .exam-info:hover{
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+    cursor: pointer;
+}
+.exam-link .exam-info .subject-link,
+.exam-link .exam-info .subject-date,
+.exam-link .exam-info .subject-duration,
+.exam-link .exam-info .subject-degree{
+    width: 145px;
+    margin: 0 16px;
+    display: inline-block;
+}
+.exam-link .exam-info .subject-link{width: 240px;}
+.exam-link .exam-info .subject-date::first-line{color: var(--red-color);}
+.exam-link .exam-info .subject-duration,
+.exam-link .exam-info .subject-degree
+{width: 80px;}
+.last{margin-bottom: 100px;}
+/****Exam Link Page****/
 
 /*************************************/
 
@@ -358,6 +400,20 @@ a.exam-info{display: block;color: var(--nav-text-color);}
     font-weight: 500;
     transition: 0.25s ease;
 }
+.result-main .export-excel{
+    width: 190px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    padding: 6px;
+    border-radius: 24px;
+    border: none;
+    background-color: var(--button-green-color);
+    color: var(--white-text-color);
+    transition: 0.4s ease;
+}
+.result-main .export-excel:hover{
+    background-color: var(--hover-button-green-color);
+}
 .result-main .result-info:hover{box-shadow: 1px 3px 8px -1px var(--shadow-color);}
 .result-main .result-info .subject-name,
 .result-main .result-info .subject-exam-degree,
@@ -371,6 +427,105 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 .result-main .result-info .subject-name{width:220px;}
 .last:last-child{margin-bottom: 100px;}/*this Shared between each of the course pages for the student and the teacher */
 /****Student result Page****/
+
+/*** Start Student Exam Page***/
+
+/*** Start Timer ***/
+#demo{
+    width: 310px;
+    font-size: 20px;
+    top: 10px;
+    left: 10px;
+    padding: 20px;
+    background-color: var(--button-background-hover);
+    color: var(--white-text-color);
+    border-radius: 38px;
+    position: fixed;
+    z-index: 100;
+}
+/*** End Timer ***/
+
+.teacher-courses-info .question-body textarea{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-color: var(--border-color);
+}
+.teacher-courses-info .question-body textarea:focus{
+    outline: 1px solid var(--border-color);
+}
+.submit-question-button{
+    width: 200px;
+    background-color: var(--button-green-color);
+    margin: 50px;
+    padding: 6px;
+    border: none;
+    border-radius: 24px;
+    color: var(--white-text-color);
+    transition: 0.4s ease;
+}
+.submit-question-button:hover{
+    background-color: var(--hover-button-green-color);
+}
+/*** End Student Exam Page***/
+.mySlides {
+    display: none
+}
+/* Slideshow container */
+.slideshow-container {
+    min-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.slideshow-container .question-body{
+    /* max-height: 500px; */
+    overflow: hidden;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    color: var(--white-text-color);
+    background-color: var(--button-background-hover);
+}
+/* Number text (1/3 etc) */
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next {
+        font-size: 11px
+    }
+}
+/*** Start Student Exam in One Page***/
+
+
+/*** End Student Exam in One Page***/
 
 /*************************************/
 
@@ -519,10 +674,6 @@ a.exam-info{display: block;color: var(--nav-text-color);}
 .svg-404 svg{
     width: 60%;
 }
-/* img.img-404{
-    height: 73%;
-    width: 100%;
-} */
 .page-404 a{
     margin: 0 auto 40px auto;
     padding: 13px;
@@ -619,13 +770,6 @@ input[type=checkbox]{/** this for select all*/
     margin: 0 calc((100% - 80%)/6);
     display: inline-block;
 }
-/* .student-request label.label-student-card{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-} */
 .student-request .student-info .student-name{
     word-break: break-word;/* add break to handle to long and Intertwined string like aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - this long word will damage the span style without breaking it */
     min-width: 220px;
@@ -737,7 +881,7 @@ input[type=checkbox]{/** this for select all*/
     display: inline-block;
 }
 .add-courses .page-header{
-    width: 150px;
+    width: 300px;
     display: inline-block;
 }
 .add-courses{padding-top: 90px;}
@@ -786,7 +930,7 @@ input[type=checkbox]{/** this for select all*/
 }
 .add-courses .course-info .subject-duration,
 .add-courses .course-info .subject-degree{
-        width: 70px;
+    width: 70px;
 }
 .add-courses i{
     margin-left: 5px;
@@ -831,7 +975,7 @@ input[type=checkbox]{/** this for select all*/
     display: inline-block;
 }
 .add-courses .page-header{
-    width: 150px;
+    width: 300px;
     display: inline-block;
 }
 .add-courses{padding-top: 90px;overflow: hidden;}
@@ -961,12 +1105,18 @@ input[type=checkbox]{/** this for select all*/
 /**** Teacher Create Exam ****/
 
 /*** Start Create Exam **model** ***/
-
-/*** Start MCQ Question ***/
-.container-button-add-option{
-    width: 100%;
-    margin: 10px 0;
+.questions{
+    margin-bottom: 50px;
 }
+.form-group input{
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+}
+.form-group input:focus,select:focus{
+    outline: none;
+}
+/*** Start MCQ Question ***/
+.container-button-add-option{width: 100%;margin: 10px 0;}
 .add-option-button{
     width: 215px;
     padding: 6px;
@@ -983,32 +1133,38 @@ input[type=checkbox]{/** this for select all*/
     box-shadow: 1px 3px 8px -1px var(--shadow-color);
 }
 /*** End MCQ Question ***/
-
-.add-question-button{
-    border-radius: 24px;
-    padding: 6px;
-    width: 100px;
-    background-color: var(--button-background);
-    border-color: var(--border-color);
-    transition: 0.4s ease;
-}
 .correct-answer-option{
-    outline: none;
-    width: 120px;
+    width: 140px;
     border: 0;
     border-bottom: 2px solid var(--border-color);
+    outline: none;
 }
 .correct-answer-option:hover{
     border-bottom: 2px solid var(--nav-hover-color);
     transition: 0.4s ease;
 }
+.add-question-button{
+    width: 100px;
+    padding: 6px;
+    border-radius: 24px;
+    background-color: var(--button-background);
+    border-color: var(--border-color);
+    transition: 0.4s ease;
+}
+.add-question-button:hover{
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.modal-footer{width: 100%;}
+.modal-footer button{margin: auto;}
 /*** End Create Exam **model** ***/
-
 
 .exam-type-button{
     width: 215px;
-    padding: 6px;
+    margin-bottom: 10px;
     margin-left: 20px;
+    padding: 6px;
     border-radius: 24px;
     background-color: var(--button-background);
     border-color: var(--border-color);
@@ -1019,7 +1175,101 @@ input[type=checkbox]{/** this for select all*/
     color: var(--button-text-hover);
     box-shadow: 1px 3px 8px -1px var(--shadow-color);
 }
+.teacher-courses-info .question-body{
+    background: var(--question-background);
+    color: var(--question-text);
+    border-radius: 15px;
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.teacher-courses-info .question-body .question-info{
+    color: var(--question-green-color);
+    font-size: 17px;
+}
+.teacher-courses-info .question-body .question-info > span{
+    color: var(--question-red-color);
+    margin-left: 5px;
+}
 
+.teacher-courses-info .question-body .edit-question-button,
+.teacher-courses-info .question-body .delete-question-button{
+    width: 130px;
+    margin-bottom: 10px;
+    padding: 6px;
+    border-radius: 24px;
+    border: none;
+    color: var(--white-text-color);
+    transition: 0.4s ease;
+}
+.teacher-courses-info .question-body .edit-question-button:hover{
+    background-color: var(--hover-button-green-color);
+}
+.teacher-courses-info .question-body .delete-question-button:hover{
+    background-color: var(--hover-button-red-color);
+}
+.teacher-courses-info .question-body .edit-question-button{
+    background-color: var(--button-green-color);
+}
+.teacher-courses-info .question-body .delete-question-button{
+    background-color: var(--button-red-color);
+}
 /**** Teacher Create Exam ****/
 
+/*** Start Mark Essay Question ***/
+.mark-essay-form .teacher-courses-info{
+    width:98%;
+    box-shadow: 1px 3px 8px -1px var(--shadow-color);
+}
+.mark-essay-form .edit-question-button{
+    width: 130px;
+    margin-bottom: 10px;
+    padding: 6px;
+    border-radius: 24px;
+    border: none;
+    background: var(--button-green-color);
+    color: var(--white-text-color);
+    transition: 0.4s ease;
+}
+.mark-essay-form .edit-question-button:hover{
+    background-color: var(--hover-button-green-color);
+}
+
+/*** End Mark Essay Question ***/
+
 /*************************************/
+
+/*** Start profile ***/
+
+.profile{
+    font-family: var(--main-font);
+    margin-top: 120px;
+}
+.profile .person-info{
+    /* background-color: #11ca00; */
+    width: 400px;
+    margin: auto;
+}
+.profile .button-submit-edit{
+    width: 200px;
+    margin: auto;
+}
+.profile .person-info tr {
+    margin: 20px;
+    display: block;
+}
+.profile .person-info td {
+    width: 100px;
+}
+.profile .button-submit-edit button{
+    width: 136px;
+    margin: 40px;
+    padding: 7px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--button-background-hover);
+    color: var(--button-text-hover);
+}
+.profile .button-submit-edit button:hover{
+    color: var(--button-text-hover);
+    background-color: #007bff;
+}
+/*** End profile ***/

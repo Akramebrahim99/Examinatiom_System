@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <title>{{__('massages.My Profile')}}</title>
@@ -10,15 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Mark Essay question English and Arabic.css" />
-    <script src="../../Javascript/html5shiv.min.js"></script>
-    <script src="../../Javascript/respond.min.js"></script>
-    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-<!-- Start navbar -->
-<div class="container">
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +46,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -68,6 +63,7 @@
     </nav>
 
     <!-- End navbar -->
+<<<<<<< HEAD
     <div class="row" id="EnglishRow" style="display:block" ;>
             
             <div class="teachName">
@@ -134,13 +130,86 @@
         </div>
             
              <div class="btnsvTeach">
+=======
+
+    <div class="profile">
+        @if(isset($teacher))
+            <table class="person-info">
+                <tr>
+
+                    <td>
+                        <label>Name :</label>
+                    </td>
+                    <td>
+                        <label id="lblTeachName">{{$teacher->name}}</label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>University : </label>
+                    </td>
+                    <td>
+                        <label id="lblTeachUni">{{$teacher->university_name}}</label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>College :</label>
+                    </td>
+                    <td>
+                        <label id="lblTeachColl">{{$teacher->collage_name}}</label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>Email :</label>
+                    </td>
+                    <td>
+                        <label id="lblTeachEmail">{{$teacher->email}}</label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>Password :</label>
+                    </td>
+                    <td>
+                        <label type="password" id="lblTeachPass">{{$teacher->password}}</label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>Phone :</label>
+                    </td>
+                    <td>
+                        <label id="InpTeachPhone">{{$teacher->phone}}</label>
+                    </td>
+
+                </tr>
+
+            </table>
+            <div class="button-submit-edit">
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                 <a href="{{route('teacher.editprofile')}}">
                     <button id="btn14" class="btn btn-primary" type="submit">{{__('massages.Edit')}}</button>
                 </a>
-              </div>
-            @endif
-        </div>
+            </div>
+        @endif
     </div>
+
+
+    <script src="../../Javascript/html5shiv.min.js"></script>
+    <script src="../../Javascript/respond.min.js"></script>
+    <script type="text/javascript"></script>
 
     <script src="../../jquery/query.js"></script>
     <script src="../../Javascript/bootstrap.min.js"></script>

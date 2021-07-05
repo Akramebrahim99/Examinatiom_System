@@ -40,6 +40,7 @@
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
+<<<<<<< HEAD
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                             {{__('massages.Services')}}
@@ -50,11 +51,20 @@
                         </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+=======
+                        <!-- use "javascript:void(0)" to make link do nothing at all -->
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                        </div>
+>>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
