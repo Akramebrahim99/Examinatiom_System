@@ -20,9 +20,8 @@
     <title>Teacher Courses</title>
 </head>
 <body>
- <!-- Start navbar -->
- <div class="container">
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +53,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -86,7 +85,7 @@
                             <span class="teacher-subject-name">{{$course->name}}</span>
                             <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
                             <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">Manage Course</a>
-                        </div> 
+                        </div>
                     @endforeach
                 @endif
             </div>

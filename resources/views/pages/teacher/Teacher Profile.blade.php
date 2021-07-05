@@ -16,9 +16,8 @@
     <script type="text/javascript"></script>
 </head>
 <body>
-<!-- Start navbar -->
-<div class="container">
-<nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
+    <!-- Start navbar -->
+    <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +49,7 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                           {{__('massages.Languages')}}
+                            {{__('massages.Languages')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -68,11 +67,11 @@
 
     <!-- End navbar -->
     <div class="row" id="EnglishRow" style="display:block" ;>
-            
+
             <div class="teachName">
             @if(isset($teacher))
-             <table>
-                    <tr> 
+            <table>
+                    <tr>
                         <td style="padding:10px;text-align:right;">
                             <label style="font-weight:700">Name :</label>
                         </td>
@@ -119,7 +118,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:10px;text-align:right;"> 
+                        <td style="padding:10px;text-align:right;">
 
                             <label style="font-weight:700">Phone :</label>
                         </td>
@@ -131,12 +130,12 @@
 
                 </table>
         </div>
-            
-             <div class="btnsvTeach">
+
+            <div class="btnsvTeach">
                 <a href="{{route('teacher.editprofile')}}">
                     <button id="btn14" class="btn btn-primary" type="submit">Edit</button>
                 </a>
-              </div>
+            </div>
             @endif
         </div>
     </div>
