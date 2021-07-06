@@ -84,7 +84,7 @@
                 @if(isset($courses) && $courses -> count() > 0)
                     @foreach($courses as $course)
                         <span class="exam-info teacher-link text-md-center col-8" id="teacher-link">
-                            <a class="subject subject-link" href="{{route('teacher.exam.screen')}}">{{$course -> name}}</a><!-- Name of Course will print from database -->
+                            <a class="subject subject-link" href="#">{{$course -> name}}</a><!-- Name of Course will print from database -->
                             <span class="subject subject-date">{{$course -> date_of_exam}}</span>
                             <span class="subject subject-duration">{{$course -> duration}} H</span>
                             <span class="subject subject-degree">{{$course -> course_degree}}</span>

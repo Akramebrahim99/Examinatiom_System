@@ -63,74 +63,6 @@
     </nav>
 
     <!-- End navbar -->
-<<<<<<< HEAD
-    <div class="row" id="EnglishRow" style="display:block" ;>
-            
-            <div class="teachName">
-            @if(isset($teacher))
-             <table>
-                    <tr> 
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.Name')}}  :</label>
-                        </td>
-                        <td>
-                            <label id="lblTeachName" style="font-weight:700">{{$teacher->name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.University')}} : </label>
-                        </td>
-                        <td>
-                            <label id="lblTeachUni" style="font-weight:700">{{$teacher->university_name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-
-                            <label style="font-weight:700">{{__('massages.College')}} :</label>
-                        </td>
-                        <td>
-
-                            <label id="lblTeachColl" style="font-weight:700">{{$teacher->collage_name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-
-                            <label style="font-weight:700">{{__('massages.Email')}} :</label>
-                        </td>
-                        <td>
-
-                            <label id="lblTeachEmail" style="font-weight:700">{{$teacher->email}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-
-                            <label style="font-weight:700">{{__('massages.Password')}} :</label>
-                        </td>
-                        <td>
-
-                            <label id="lblTeachPass" style="font-weight:700">{{$teacher->password}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;"> 
-
-                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
-                        </td>
-                        <td>
-
-                            <label id="InpTeachPhone" style="font-weight:700">{{$teacher->phone}}</label>
-                        </td>
-                    </tr>
-
-                </table>
-        </div>
-            
-             <div class="btnsvTeach">
-=======
 
     <div class="profile">
         @if(isset($teacher))
@@ -138,7 +70,7 @@
                 <tr>
 
                     <td>
-                        <label>Name :</label>
+                        <label>{{__('massages.Name')}} :</label>
                     </td>
                     <td>
                         <label id="lblTeachName">{{$teacher->name}}</label>
@@ -148,7 +80,7 @@
                 <tr>
 
                     <td>
-                        <label>University : </label>
+                        <label>{{__('massages.University')}} : </label>
                     </td>
                     <td>
                         <label id="lblTeachUni">{{$teacher->university_name}}</label>
@@ -158,7 +90,7 @@
                 <tr>
 
                     <td>
-                        <label>College :</label>
+                        <label>{{__('massages.College')}} :</label>
                     </td>
                     <td>
                         <label id="lblTeachColl">{{$teacher->collage_name}}</label>
@@ -168,7 +100,7 @@
                 <tr>
 
                     <td>
-                        <label>Email :</label>
+                        <label>{{__('massages.Email')}} :</label>
                     </td>
                     <td>
                         <label id="lblTeachEmail">{{$teacher->email}}</label>
@@ -178,7 +110,7 @@
                 <tr>
 
                     <td>
-                        <label>Password :</label>
+                        <label>{{__('massages.Password')}} :</label>
                     </td>
                     <td>
                         <label type="password" id="lblTeachPass">{{$teacher->password}}</label>
@@ -188,7 +120,7 @@
                 <tr>
 
                     <td>
-                        <label>Phone :</label>
+                        <label>{{__('massages.Phone')}} :</label>
                     </td>
                     <td>
                         <label id="InpTeachPhone">{{$teacher->phone}}</label>
@@ -198,7 +130,6 @@
 
             </table>
             <div class="button-submit-edit">
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                 <a href="{{route('teacher.editprofile')}}">
                     <button id="btn14" class="btn btn-primary" type="submit">{{__('massages.Edit')}}</button>
                 </a>

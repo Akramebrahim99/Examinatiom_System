@@ -42,25 +42,15 @@
                         <a class="nav-link" href="{{route('teacher.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-<<<<<<< HEAD
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                                 {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
+                               
                             </div>
                         </li>
-=======
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
-                        </div>
-                    </li>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('teacher.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
@@ -91,7 +81,12 @@
         <div class="container">
             <!-- Model Form Add Questions -->
             <br>
-            <br>
+            <br>    
+            @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('success')}}
+                            </div>
+                        @endif
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
                     <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Edit Course')}}</h5>
@@ -155,7 +150,7 @@
 
                         <div class="col-sm-6">
                         <div class="form-group">
-                        <p>Allow Previous Button</p>
+                        <p>{{__('massages.Allow Previous Button')}}</p>
                         @if($course->previous)
                         <label for="yes"><input value="1" id="yes" type="radio" name="previous" checked>{{__('massages.Allow')}}</label><br>
                         <label for="no"><input value="0" id="no" type="radio" name="previous">{{__('massages.Not Allow')}}</label>

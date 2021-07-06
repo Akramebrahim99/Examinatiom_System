@@ -78,16 +78,7 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-<<<<<<< HEAD
-                <h4 class="result-header col-12">{{$courseName}}</h4>
-                <div class="result-info text-md-center col-8">
-                            <span class="subject-name">{{__('massages.Student Name')}}</span>
-                            <span class="subject-doctor">{{__('massages.Student ID')}}</span>
-                            <span style="color: red" class="subject-date">{{__('massages.Student Degree')}}</span>
-                </div>
-=======
-                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button class="export-excel">export excel</button></a></h4>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                <h4 class="result-header col-12">{{$course->name}} <a href="{{route('teacher.exportexcel',$course->id)}}"><button class="export-excel">{{__('massages.export excel')}}</button></a></h4>
                 @if(isset($studentsofcourse) && count($studentsofcourse) > 0)
                     @foreach($studentsofcourse as $studentofcourse)
                         <div class="result-info text-md-center col-8">

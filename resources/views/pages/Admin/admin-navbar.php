@@ -11,7 +11,7 @@
                         <a class="nav-link" href="{{route('admin.index')}}">{{__('massages.Home')}} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('show.teachers')}}">Teachers</a>
+                        <a class="nav-link" href="{{route('show.teachers')}}">{{__('massages.Teachers')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
@@ -19,10 +19,10 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
+                        {{__('massages.Services')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
+                        <a class="dropdown-item" href="{{route('show.course.teacher')}}">{{__('massages.Assign Course To Teacher')}}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

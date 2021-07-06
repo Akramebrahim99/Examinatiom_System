@@ -71,8 +71,8 @@
 
     <!-- End navbar -->
 
-    <!-- Start Student Courses Section -->
-    <section class="teacher-courses-main">
+   <!-- Start Student Courses Section -->
+   <section class="teacher-courses-main">
         <div class="container">
             <div class="row last" id="page-body">
                 <div  class="col-12">
@@ -83,15 +83,9 @@
                     @foreach($courses as $course)
                         <div class="teacher-courses-info text-md-center col-8">
                             <span class="teacher-subject-name">{{$course->name}}</span>
-<<<<<<< HEAD
                             <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>{{__('massages.Show Results')}}</span></a>
-                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">{{__('massages.Students Registered in course')}}</a>
-                        </div> 
-=======
-                            <a class="number-student-register-course" href="{{route('teacher.showstudentsresults',$course->id)}}"><span>Show Results</span></a>
-                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">Manage Course</a>
+                            <a class="student-register-course" href="{{route('teacher.editcourse',$course->id)}}">{{__('massages.Manage Course')}}</a>
                         </div>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                     @endforeach
                 @endif
             </div>

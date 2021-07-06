@@ -44,10 +44,10 @@
                     <li class="nav-item dropdown">
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                Services
+                                {{__('massages.Services')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
                             </div>
                         </li>
                     <li class="nav-item">
@@ -80,7 +80,7 @@
                 <table class="person-info">
                     <tr>
                         <td>
-                            <label>Name :</label>
+                            <label>{{__('massages.Name')}} :</label>
                         </td>
                         <td>
                             <input name="teacherName" id="InpTeachName" type="text" value="{{$teacher->name}}"/>
@@ -88,7 +88,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <label>University : </label>
+                            <label>{{__('massages.University')}} : </label>
                         </td>
                         <td>
                             <input name="teacherUniversity" id="InpTeachUni" type="text" value="{{$teacher->university_name}}"/>
@@ -97,7 +97,7 @@
                     <tr>
                         <td>
 
-                            <label>College :</label>
+                            <label>{{__('massages.College')}} :</label>
                         </td>
                         <td>
 
@@ -107,7 +107,7 @@
                     <tr>
                         <td>
 
-                            <label>Email :</label>
+                            <label>{{__('massages.Email')}} :</label>
                         </td>
                         <td>
 
@@ -117,7 +117,7 @@
                     <tr>
                         <td>
 
-                            <label>Password :</label>
+                            <label>{{__('massages.Password')}} :</label>
                         </td>
                         <td>
 
@@ -127,7 +127,7 @@
                     <tr>
                         <td>
 
-                            <label>Phone :</label>
+                            <label>{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
 
@@ -136,7 +136,7 @@
                     </tr>
                 </table>
                 <div class="button-submit-edit">
-                    <button id="btn14" class="btn btn-primary" type="submit">Save</button>
+                    <button id="btn14" class="btn btn-primary" type="submit">{{__('massages.Save')}}</button>
                 </div>
             </form>
             @endif

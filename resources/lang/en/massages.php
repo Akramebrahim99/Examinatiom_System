@@ -149,8 +149,8 @@ return [
      "Essay Question " => 'Essay Question',
      "Enter Question Degree" => 'Enter Question Degree',
      "Add Question" => 'Add Question',
-     "Correct Answer Is" => 'Correct Answer Is',
-     "Degree Is" => 'Degree Is',
+     "Correct Answer Is:" => 'Correct Answer Is:',
+     "Degree Is:" => 'Degree Is:',
 
      "Edit Question" => 'Edit Question',
      "Delete" => 'Delete',
@@ -160,6 +160,16 @@ return [
      "Mark Essay Question" => 'Mark Essay Question',
      "Student Answer Is" => 'Student Answer Is',
      "Question Degree" => 'Question Degree',
+     "Add New MCQ Question" => 'Add New MCQ Question',
+     "Add New True/False Question" => 'Add New True/False Question',
+     "Add New Essay Question" => 'Add New Essay Question',
+     "Add Option" => 'Add Option',
+     "Create Exam" => 'Create Exam',
+     "Correct Answer Is" => "Correct Answer Is",
+     "Degree Is" => "Degree Is",
+     "export excel" => "export excel",
+     "Manage Course" => 'Manage Course',
+     "Allow Previous Button" => 'Allow Previous Button',
     
      "OK"=>'OK',
      "Select"=>'Select',
@@ -189,5 +199,8 @@ return [
      "Allow" => 'Allow',
      "Not Allow" => 'Not Allow',
      "Assign Course"  => 'Assign Course',
-     "Courses" => 'Courses',   
+     "Courses" => 'Courses',  
+     "Enter Option" => 'Enter Option',
+     "Accept" => 'Accept',
+    
 ];

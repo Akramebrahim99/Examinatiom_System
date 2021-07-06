@@ -62,44 +62,6 @@
             </div>
         </div>
     </nav>
-<<<<<<< HEAD
-<!-- End navbar -->
-   <div class="row" id="EnglishRow" style="display:block" ;>
-            
-            <div class="EdtStdName">
-            @if(isset($student))
-             <table>
-                    <tr> 
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.Name')}} :</label>
-                        </td>
-                        <td>
-                            <label id="lblStdName" style="font-weight:700">{{$student->name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.SSN')}} :</label>
-                        </td>
-                        <td>
-                            <label id="lblStdSSR" style="font-weight:700">{{$student->ssn}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.University')}} : </label>
-                        </td>
-                        <td>
-                            <label id="lblStdUni" style="font-weight:700">{{$student->university_name}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;text-align:right;">
-
-                            <label style="font-weight:700"> {{__('massages.College')}}:</label>
-                        </td>
-                        <td>
-=======
     <!-- End navbar -->
 
     <div class="profile">
@@ -107,7 +69,7 @@
         <table class="person-info">
             <tr>
                 <td>
-                    <label>Name :</label>
+                    <label>{{__('massages.Name')}} :</label>
                 </td>
                 <td>
                     <label id="lblStdName">{{$student->name}}</label>
@@ -115,7 +77,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>SSN :</label>
+                    <label>{{__('massages.SSN')}} :</label>
                 </td>
                 <td>
                     <label id="lblStdSSR">{{$student->ssn}}</label>
@@ -123,7 +85,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>University : </label>
+                    <label>{{__('massages.University')}} : </label>
                 </td>
                 <td>
                     <label id="lblStdUni">{{$student->university_name}}</label>
@@ -131,88 +93,51 @@
             </tr>
             <tr>
                 <td>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                    <label>College :</label>
+                    <label>{{__('massages.College')}}  :</label>
                 </td>
                 <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Email')}} :</label>
-                        </td>
-                        <td>
-=======
                     <label id="lblStdColl">{{$student->collage_name}}</label>
                 </td>
             </tr>
             <tr>
                 <td>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                    <label>Email :</label>
+                    <label>{{__('massages.Email')}}  :</label>
                 </td>
                 <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700"> {{__('massages.Password')}}:</label>
-                        </td>
-                        <td>
-=======
                     <label id="lblStdEmail">{{$student->email}}</label>
                 </td>
             </tr>
             <tr>
                 <td>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                    <label>Password :</label>
+                    <label>{{__('massages.Password')}}  :</label>
                 </td>
                 <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Id')}} :</label>
-                        </td>
-                        <td>
-=======
                     <label id="lblStdPass">{{$student->password}}</label>
                 </td>
             </tr>
             <tr>
                 <td>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                    <label>Id :</label>
+                    <label>{{__('massages.Id')}}  :</label>
                 </td>
                 <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
-                        </td>
-                        <td>
-=======
                     <label id="lblStdID">{{$student->id}}</label>
                 </td>
             </tr>
             <tr>
                 <td>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
 
-                    <label>Phone :</label>
+                    <label>{{__('massages.Phone')}}  :</label>
                 </td>
                 <td>
 
-<<<<<<< HEAD
-                </table>
-        </div>
-            
-             <div class="btnsvStd">
-                <a href="{{route('student.editprofile')}}">
-                    <button id="btn13" class="btn btn-primary" type="submit">{{__('massages.Edit')}}</button>
-                </a>
-              </div>
-            @endif
-        </div>
-=======
                     <label id="lblStdColl">{{$student->phone}}</label>
                 </td>
             </tr>
@@ -221,11 +146,10 @@
         <!-- col-lg-4 col-sm-12 -->
         <div class="button-submit-edit">
             <a href="{{route('student.editprofile')}}">
-                <button id="btn13" class="btn btn-primary" type="submit">Edit</button>
+                <button id="btn13" class="btn btn-primary" type="submit">{{__('massages.Edit')}} </button>
             </a>
         <!-- </div  > -->
         @endif
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
     </div>
 
     <script src="../../jquery/query.js"></script>

@@ -22,7 +22,6 @@
 <body>
 
     <!-- Start navbar -->
-    <div class="container">
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -51,7 +50,7 @@
                         <a class="nav-link" href="{{route('student.result')}}">{{__('massages.Results')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
+                        <a class="nav-link" href="{{route('student.profile')}}">{{__('massages.Profile')}}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -65,15 +64,12 @@
                         </div>
                     </li>
                     <li class="nav-item">
-
-                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
-
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
 
     <!-- Start Exam Section -->

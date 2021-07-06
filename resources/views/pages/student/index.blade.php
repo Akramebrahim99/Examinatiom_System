@@ -20,8 +20,7 @@
     <title>{{__('massages.Student Page')}}</title>
 </head>
 <body>
-        <!-- Start navbar -->
-
+       <!-- Start navbar -->
     <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-light" dir="auto">
         <div class="container">
             <a class="navbar-brand" href="#"><span class="logo-nav">ONLINE</span>exam</a>
@@ -42,8 +41,8 @@
                             {{__('massages.Courses')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}}</a>
                             </div>
                     </li>
                     <li class="nav-item">
@@ -64,13 +63,12 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
+                    <a class="nav-link" href="{{route('logout')}}" tabindex="-1" aria-disabled="true">{{__('massages.sing out')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- End navbar -->
 
     <!-- Start First Section -->

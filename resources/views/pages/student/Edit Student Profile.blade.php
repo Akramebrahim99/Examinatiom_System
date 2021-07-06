@@ -82,39 +82,24 @@
             @csrf
                 <table class="person-info">
                     <tr>
-<<<<<<< HEAD
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.Name')}} :</label>
-=======
                         <td>
-                            <label>Name :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.Name')}}  :</label>
                         </td>
                         <td>
                             <input name="name" id="InpStdName" type="text" value="{{$student->name}}"/>
                         </td>
                     </tr>
                     <tr>
-<<<<<<< HEAD
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.SSN')}} :</label>
-=======
                         <td>
-                            <label>SSN :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.SSN')}} :</label>
                         </td>
                         <td>
                             <input name="ssn" id="InpStdSsr" type="number" value="{{$student->ssn}}"/>
                         </td>
                     </tr>
                     <tr>
-<<<<<<< HEAD
-                        <td style="padding:10px;text-align:right;">
-                            <label style="font-weight:700">{{__('massages.University')}} : </label>
-=======
                         <td>
-                            <label>University : </label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.University')}} : </label>
                         </td>
                         <td>
                             <input name="university" id="InpStdUni" type="text" value="{{$student->university_name}}"/>
@@ -123,11 +108,7 @@
                     <tr>
                         <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.College')}} :</label>
-=======
-                            <label>College :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.College')}} :</label>
                         </td>
                         <td>
 
@@ -137,11 +118,7 @@
                     <tr>
                         <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Email')}} :</label>
-=======
-                            <label>Email :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.Email')}} :</label>
                         </td>
                         <td>
 
@@ -151,11 +128,7 @@
                     <tr>
                         <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Password')}} :</label>
-=======
-                            <label>Password :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.Password')}} :</label>
                         </td>
                         <td>
 
@@ -165,11 +138,7 @@
                     <tr>
                         <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Id')}} :</label>
-=======
-                            <label>Id :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label> {{__('massages.Id')}}:</label>
                         </td>
                         <td>
 
@@ -179,11 +148,7 @@
                     <tr>
                         <td>
 
-<<<<<<< HEAD
-                            <label style="font-weight:700">{{__('massages.Phone')}} :</label>
-=======
-                            <label>Phone :</label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <label>{{__('massages.Phone')}} :</label>
                         </td>
                         <td>
 
@@ -192,18 +157,9 @@
                     </tr>
 
                 </table>
-<<<<<<< HEAD
-
-
-            </div>
-            <div class="btnsvStd">
-                <button id="btn13" class="btn btn-primary" type="submit">{{__('massages.Save')}} </button>
-            </div>
-=======
                 <div class="button-submit-edit">
-                    <button id="btn13" class="btn btn-primary" type="submit">Save</button>
+                    <button id="btn13" class="btn btn-primary" type="submit">{{__('massages.Save')}} </button>
                 </div>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
             </form>
             @endif
         </div>

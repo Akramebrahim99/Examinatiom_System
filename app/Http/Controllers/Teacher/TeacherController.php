@@ -315,6 +315,6 @@ class TeacherController extends Controller
         $course->previous = $request->get('previous');
         $course->save();
 
-        return back()->withInput();
+        return back()->withInput()->with(['success' => 'Saved successfully']);
     }
 }

@@ -40,7 +40,6 @@
                         <a class="nav-link" href="{{route('show.courses')}}">{{__('massages.Courses')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-<<<<<<< HEAD
                             <!-- use "javascript:void(0)" to make link do nothing at all -->
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
                                 {{__('massages.Services')}}
@@ -51,15 +50,6 @@
                         </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{__('massages.Profile')}}</a>
-=======
-                        <!-- use "javascript:void(0)" to make link do nothing at all -->
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('show.course.teacher')}}">Assign Course To Teacher</a>
-                        </div>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                     </li>
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nnothing at all -->
@@ -96,7 +86,7 @@
                                 <span class="student-id">{{$student->id}}</span>
                                 <span class="request-input">
                                     <a href="{{route('admin.deletestd',['course_id' => $courseId,'student_id'=>$student->id])}}">
-                                    <input type="submit" value="Remove" class="remove">
+                                    <input type="submit" value="{{__('massages.Remove')}}" class="remove">
                                     </a>
                                 </span>
                             </div>

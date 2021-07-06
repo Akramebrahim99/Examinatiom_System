@@ -19,8 +19,8 @@
                             {{__('massages.Courses')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('student.courses')}}">Show Courses</a>
-                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">Courses Requested</a>
+                                <a class="dropdown-item" href="{{route('student.courses')}}">{{__('massages.Show Courses')}}</a>
+                                <a class="dropdown-item" href="{{route('student.requstedcourses')}}">{{__('massages.Courses Requested')}</a>
                             </div>
                     </li>
                     <li class="nav-item">

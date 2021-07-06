@@ -76,7 +76,7 @@
     <section class="result-main">
         <div class="container">
             <div class="row last">
-                <h4 class="result-header col-12">Your Results</h4>
+                <h4 class="result-header col-12">{{__('massages.Your Results')}}</h4>
                 <!-- <div class="result-info text-md-center col-8">
                     <span class="fixed-subject-name">Course Name</span>
                     <span class="fixed-subject-exam-degree">Course Degree</span>

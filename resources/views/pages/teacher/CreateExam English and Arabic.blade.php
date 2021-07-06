@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.css" />
     <link rel="stylesheet" href="../../../css/style.css">
 
-    <title>Create Exam</title>
+    <title>{{__('massages.Create Exam')}}</title>
 </head>
 <body>
 <!-- Start navbar -->
@@ -48,10 +48,10 @@
                     <li class="nav-item dropdown">
                         <!-- use "javascript:void(0)" to make link do nothing at all -->
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Services
+                            {{__('massages.Services')}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">Add Exam</a>
+                            <a class="dropdown-item" href="{{route('teacher.showexams')}}">{{__('massages.Add Exam')}}</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -83,43 +83,43 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add New Question')}}</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add New MCQ Question')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
                 </div>
                 <div class="modal-body"><!--contain only the input fields-->
-                <form method="POST" action="{{route('teacher.addquestion',[$course->id])}}" class="add-teacher-model">
+                <form method="POST" action="{{route('teacher.addMcqQuestion',[$course->id])}}" class="add-teacher-model">
                         @csrf
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Enter Question</label>
-                                    <input type="text" required="required" name="question" placeholder="Enter Question" class="form-control">
+                                    <label>{{__('massages.Enter Question')}}</label>
+                                    <input type="text" required="required" name="question" placeholder="{{__('massages.Enter Question')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Enter Option 1</label>
-                                    <input required="required" type="text" name="option1" placeholder="Enter Option 1" class="form-control">
+                                    <label>{{__('massages.Enter Option 1')}}</label>
+                                    <input required="required" type="text" name="option1" placeholder="{{__('massages.Enter Option 1')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Enter Option 2</label>
-                                    <input required="required" type="text" name="option2" placeholder="Enter Option 2" class="form-control">
+                                    <label>{{__('massages.Enter Option 2')}}</label>
+                                    <input required="required" type="text" name="option2" placeholder="{{__('massages.Enter Option 2')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div id="options" class="col-sm-12"></div>
                                 <div class="container-button-add-option col-12">
-                                    <input class="add-option-button" value="Add Option" type="button" onclick="addoption()"/>
+                                    <input class="add-option-button" value="{{__('massages.Add Option')}}" type="button" onclick="addoption()"/>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Enter Right Answer</label>
+                                        <label>{{__('massages.Enter Right Answer')}}</label>
                                         <select class="correct-answer-option" id="answers" name ="RightAns">
                                             <option name="option1" value = "option1">Option 1</option>
                                             <option name="option2" value = "option2">Option 2</option>
@@ -129,13 +129,13 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Enter Question Degree</label>
-                                    <input type="number" min="0" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
+                                    <label>{{__('massages.Enter Question Degree')}}</label>
+                                    <input type="number" min="0" required="required" name="degree" placeholder="{{__('massages.Enter Question Degree')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="add-question-button">Add</button>
+                                <button type="submit" class="add-question-button">{{__('massages.Add')}}</button>
                             </div>
 
                         </div>
@@ -151,7 +151,7 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add New True/False Question</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add New True/False Question')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
@@ -162,30 +162,30 @@
                         <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label>Enter Question</label>
-                                        <input type="text" required="required" name="question" placeholder="Enter Question" class="form-control">
+                                        <label>{{__('massages.Enter Question')}}</label>
+                                        <input type="text" required="required" name="question" placeholder="{{__('massages.Enter Question')}}" class="form-control">
                                     </div>
                                 </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Enter Right Answer</label>
+                                    <label>{{__('massages.Enter Right Answer')}}</label>
                                     <select class="correct-answer-option"  name="RightAns">
-                                        <option name="option1" value = "option1">True</option>
-                                        <option name="option2" value = "option2">False</option>
+                                        <option name="option1" value = "option1">{{__('massages.True')}}</option>
+                                        <option name="option2" value = "option2">{{__('massages.False')}}</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Enter Question Degree</label>
-                                    <input type="number" min="0" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
+                                    <label>{{__('massages.Enter Question Degree')}}</label>
+                                    <input type="number" min="0" required="required" name="degree" placeholder="{{__('massages.Enter Question Degree')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="add-question-button">Add</button>
+                                <button type="submit" class="add-question-button">{{__('massages.Add')}}</button>
                             </div>
                         </div>
                     </form>
@@ -200,7 +200,7 @@
         <div class="modal-dialog modal-dialog-centered"><!--"modal-dialog" -> make model take small size "modal-dialog-centered" -> Make model center in the page-->
             <div class="modal-content" id="box-body"><!--contain the model contact-->
                 <div class="modal-header"><!--contain only X button to close the model-->
-                    <h5 class="modal-title" id="staticBackdropLabel">Add New Essay Question</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('massages.Add New Essay Question')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span><!--the 'X' shape-->
                     </button>
@@ -211,20 +211,20 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Enter Question</label>
-                                    <input type="text" required="required" name="question" placeholder="Enter Question" class="form-control">
+                                    <label>{{__('massages.Enter Question')}}</label>
+                                    <input type="text" required="required" name="question" placeholder="{{__('massages.Enter Question')}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Enter Question Degree</label>
-                                    <input type="number" min="0" required="required" name="degree" placeholder="Enter Question Degree" class="form-control">
+                                    <label>{{__('massages.Enter Question Degree')}}</label>
+                                    <input type="number" min="0" required="required" name="degree" placeholder="{{__('massages.Enter Question Degree')}}" class="form-control">
                                 </div>
                             </div>
                                 <br />
                             <div class="modal-footer">
-                                <button type="submit" class="add-question-button">Add</button>
+                                <button type="submit" class="add-question-button">{{__('massages.Add')}}</button>
                             </div>
                         </div>
                     </form>
@@ -242,9 +242,9 @@
                 <div class="container">
                     <div  class="col-12">
                         <h4 class="page-header">{{$course->name}}</h4>
-                        <button class="exam-type-button"  data-toggle="modal" data-target="#staticBackdrop">Add Mcq Question</button>
-                        <button class="exam-type-button"  data-toggle="modal" data-target="#TFmodel">Add True/False Question</button>
-                        <button class="exam-type-button"  data-toggle="modal" data-target="#Essaymodel">Add Essay Question</button>
+                        <button class="exam-type-button"  data-toggle="modal" data-target="#staticBackdrop">{{__('massages.Add New MCQ Question')}}</button>
+                        <button class="exam-type-button"  data-toggle="modal" data-target="#TFmodel">{{__('massages.Add New True/False Question')}}</button>
+                        <button class="exam-type-button"  data-toggle="modal" data-target="#Essaymodel">{{__('massages.Add New Essay Question')}}</button>
                     </div>
                 </div>
             </div>
@@ -262,21 +262,28 @@
                                     ?>
                                     @if(isset($answers) &&   count($answers) > 0)
                                         @foreach($answers as $answer)
+                                        @if($answer->answer == 'True')
+                                            <label class="options">{{__('massages.True')}}  </label>
+                                        @elseif($answer->answer == 'False')
+                                            <label class="options">{{__('massages.False')}}  </label>
+                                        @else
                                         <label class="options">{{$answer->answer}}  </label>
+                                        @endif
                                         @endforeach
                                     @endif
-                                    <label class="options question-info">Correct Answer Is: <span>{{$question->correct_answer}}</span> </label>
-                                    <label class="options question-info">Degree Is: <span>{{$question->degree}}</span> </label>
+                                    @if($question->correct_answer == 'True')
+                                            <label class="options question-info">{{__('massages.Correct Answer Is:')}} <span>{{__('massages.True')}}</span> </label>
+                                        @elseif($question->correct_answer == 'False')
+                                            <label class="options question-info">{{__('massages.Correct Answer Is:')}} <span>{{__('massages.False')}}</span> </label>
+                                        @else
+                                        <label class="options question-info">{{__('massages.Correct Answer Is:')}} <span>{{$question->correct_answer}}</span> </label>
+                                        @endif
+                                    <label class="options question-info">{{__('massages.Degree Is:')}} <span>{{$question->degree}}</span> </label>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center pt-3">
-<<<<<<< HEAD
-                                <div id="prev"> <a href="{{route('teacher.editquestion',[$question->id])}}"><button class="btn btn-success">{{__('massages.Edit')}}</button></a> </div>
-                                <div class="ml-auto mr-sm-5"> <a href="{{route('teacher.deletequestion',[$question->id])}}"><button class="btn btn-danger">{{__('massages.Delete')}}</button></a> </div>
-=======
-                                <div id="prev"> <a href="{{route('teacher.editquestion',[$question->id])}}"><button class="edit-question-button">Edit</button></a> </div>
-                                <div class="ml-auto mr-sm"> <a href="{{route('teacher.deletequestion',[$question->id])}}"><button class="delete-question-button">Delete</button></a> </div>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
+                            <div class="d-flex align-items-center pt-3">    
+                                <div id="prev"> <a href="{{route('teacher.editquestion',[$question->id])}}"><button class="edit-question-button">{{__('massages.Edit')}}</button></a> </div>
+                                <div class="ml-auto mr-sm"> <a href="{{route('teacher.deletequestion',[$question->id])}}"><button class="delete-question-button">{{__('massages.Delete')}}</button></a> </div>
                             </div>
                         </div>
                     </div>
@@ -319,10 +326,10 @@
                 var para = document.createElement("div");
                 para.setAttribute("class", "form-group");
                 var child1 = document.createElement("label");
-                var node = document.createTextNode("Enter Option " + count);
+                var node = document.createTextNode("{{__('massages.Enter Option')}} " + count);
                 child1.appendChild(node);
                 var child2 = document.createElement("input");
-                setAttributes(child2, {"type":"text","name":"option"+count,"placeholder":"Enter Option "+count,"class":"form-control","required":"required"});
+                setAttributes(child2, {"type":"text","name":"option"+count,"placeholder":"{{__('massages.Enter Option')}} "+count,"class":"form-control","required":"required"});
                 para.appendChild(child1);
                 para.appendChild(child2);
                 var element = document.getElementById("options");

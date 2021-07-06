@@ -73,20 +73,12 @@
     <!-- End navbar -->
 
     <!-- Start Student Courses Section -->
-<<<<<<< HEAD
     <section class="teacher-courses-main">
        <div class="row content" id="page-body">
                 <div class="container">
                     <div  class="col-12">
-                        <h4 style="text-align: center;">{{__('massages.Mark Essay Question')}}</h4>
+                        <h4 style="text-align: center;">{{__('massages.Mark Eassy Question')}}</h4>
                     </div>
-=======
-    <section class="container teacher-courses-main">
-        <div class="row content" id="page-body">
-            <div class="container">
-                <div  class="col-12">
-                    <h4 style="text-align: center;">Mark Eassy Questions</h4>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                 </div>
             </div>
         </div>
@@ -105,13 +97,8 @@
                                     <div class="py-2 h4">
                                         <b>Q. {{$question->description}}</b>
                                     </div>
-<<<<<<< HEAD
                                     <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options"> 
                                         <label class="options">{{__('massages.Student Answer Is')}}: <span style="color:red">{{$student->pivot->student_answer}}</span>  </label>
-=======
-                                    <div class="ml-md-10 ml-sm-10 pl-md-12 pt-sm-0 pt-3" id="options">
-                                        <label class="options">Student Answe Is: <span style="color:red">{{$student->pivot->student_answer}}</span>  </label>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
                                     </div>
                                 </div>
                                 <br>
@@ -136,13 +123,9 @@
                 ?>
             <br>
             @if(!$buttonStatue)
-<<<<<<< HEAD
-            <div style="text-align: center;"> <button style="font-size: 20px" type="submit" class="btn btn-success">{{__('massages.OK')}}</button></div>
-=======
                 <div style="text-align: center;">
-                    <button type="submit" class="edit-question-button">OK</button>
+                    <button type="submit" class="edit-question-button">{{__('massages.OK')}}</button>
                 </div>
->>>>>>> 8cfa1ecb78786cfbab92cc992a29e6ab54073f1a
             @endif
             <br>
         </form>
