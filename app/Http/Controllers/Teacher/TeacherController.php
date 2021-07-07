@@ -248,7 +248,7 @@ class TeacherController extends Controller
             $question->save();
         }
 
-        return $this->addexam($question->course_id);
+        return back()->withInput()->with(['success' => 'Saved successfully']);
     }
 
     public function getessay($courseId)

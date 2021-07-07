@@ -22,10 +22,13 @@ class ManageStudentController extends Controller
         $course = Course::find($request->course_id);
         $students = $course->students;
         foreach($students as $student){
-            if($student->id == $request->student_id)
+            if($student->id == $request->student_id){
                 $student->pivot->course_status = True;
+                $student->pivot->save();
+            }
+                
         }
-        $student->pivot->save();
+        
         return back()->withInput();
     }
 
